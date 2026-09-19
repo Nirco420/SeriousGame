@@ -1,19 +1,19 @@
 name: Unity Tests
 
 on:
-  push:
-    branches:
-      - develop
-      - main
-
   pull_request:
     branches:
       - develop
       - main
 
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
 permissions:
   contents: read
-  checks: write
 
 jobs:
   editmode-tests:
@@ -37,16 +37,50 @@ jobs:
         with:
           lfs: true
 
-      - name: Run Unity EditMode Tests
-        uses: game-ci/unity-test-runner@v4
+      - name: Read Unity version
+        id: unity
+        shell: bash
+        run: |
+          UNITY_VERSION=$(awk '/m_EditorVersion:/ { print $2 }' ProjectSettings/ProjectVersion.txt)
+          echo "version=$UNITY_VERSION" >> "$GITHUB_OUTPUT"
+          echo "Unity version: $UNITY_VERSION"
+
+      - name: Prepare Unity license
+        shell: bash
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        with:
-          testMode: editmode
-          artifactsPath: artifacts
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p artifacts
+          printf '%s' "$UNITY_LICENSE" | tr -d '\r' > "$RUNNER_TEMP/Unity_lic.ulf"
+
+      - name: Run Unity EditMode Tests
+        id: unity_tests
+        continue-on-error: true
+        shell: bash
+        run: |
+          docker run --rm \
+            --shm-size=1g \
+            -v "$GITHUB_WORKSPACE:/github/workspace" \
+            -v "$RUNNER_TEMP/Unity_lic.ulf:/tmp/Unity_lic.ulf:ro" \
+            -w /github/workspace \
+            unityci/editor:ubuntu-${{ steps.unity.outputs.version }}-base-3 \
+            bash -lc '
+              mkdir -p /root/.cache/unity3d
+              mkdir -p /root/.local/share/unity3d/Unity
+              mkdir -p /github/workspace/artifacts
+
+              cp /tmp/Unity_lic.ulf \
+                /root/.local/share/unity3d/Unity/Unity_lic.ulf
+
+              unity-editor \
+                -projectPath /github/workspace \
+                -batchmode \
+                -nographics \
+                -runTests \
+                -testPlatform editmode \
+                -testResults /github/workspace/artifacts/editmode-results.xml \
+                -logFile /github/workspace/artifacts/editmode.log
+            '
 
       - name: Upload Unity test results
         if: always()
@@ -55,3 +89,51 @@ jobs:
           name: Unity-Test-Results
           path: artifacts
           if-no-files-found: warn
+
+      - name: Check Unity test results
+        if: always()
+        shell: bash
+        env:
+          UNITY_STEP_OUTCOME: ${{ steps.unity_tests.outcome }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import sys
+          import xml.etree.ElementTree as ET
+
+          result_file = "artifacts/editmode-results.xml"
+          log_file = "artifacts/editmode.log"
+
+          if not os.path.exists(result_file):
+              print("ERROR: Unity did not create editmode-results.xml.")
+
+              if os.path.exists(log_file):
+                  print("\nLast lines of Unity log:")
+                  with open(log_file, "r", errors="replace") as f:
+                      lines = f.readlines()
+                      print("".join(lines[-100:]))
+
+              sys.exit(1)
+
+          root = ET.parse(result_file).getroot()
+
+          total = int(root.attrib.get("total", 0))
+          passed = int(root.attrib.get("passed", 0))
+          failed = int(root.attrib.get("failed", 0))
+          skipped = int(root.attrib.get("skipped", 0))
+
+          print(f"Total:   {total}")
+          print(f"Passed:  {passed}")
+          print(f"Failed:  {failed}")
+          print(f"Skipped: {skipped}")
+
+          if os.environ.get("UNITY_STEP_OUTCOME") != "success":
+              print("ERROR: Unity exited with an error.")
+              sys.exit(1)
+
+          if failed > 0:
+              print("ERROR: One or more Unity tests failed.")
+              sys.exit(1)
+
+          print("Unity EditMode tests passed.")
+          PY
