@@ -1,0 +1,155 @@
+{
+  "InputManager": {
+    "base": "MonoBehaviour",
+    "attrs": [],
+    "events": [
+      "+ OnFingerMoved: Action<Vector2>",
+      "+ OnFingerBegan: Action<Vector2>",
+      "+ OnFingerEnded: Action<Vector2>"
+    ],
+    "ops": [
+      "- OnEnable()",
+      "- Update()",
+      "+ TrackFingerPosition(touch: Touch): Vector2",
+      "+ TrackFingerStartPosition(touch: Touch): Vector2",
+      "+ TrackFingerEndPosition(touch: Touch): Vector2",
+      "+ OnDisable()"
+    ]
+  },
+  "BuildingUI": {
+    "base": "MonoBehaviour",
+    "attrs": [
+      "- buildingButton: Button [0..1]",
+      "- buildingPanel: GameObject [0..1]",
+      "- building1: Button [0..1]",
+      "- building2: Button [0..1]",
+      "- building3: Button [0..1]",
+      "- building1x1: BuildingData [0..1]",
+      "- building2x2: BuildingData [0..1]",
+      "- building3x3: BuildingData [0..1]"
+    ],
+    "events": [
+      "+ OnBuildingSelected: Action<BuildingData>"
+    ],
+    "ops": [
+      "+ Start()",
+      "+ OnBuildingButtonClicked()",
+      "+ BuildingFinished()",
+      "+ OnBuilding1Clicked()",
+      "+ OnBuilding2Clicked()",
+      "+ OnBuilding3Clicked()"
+    ]
+  },
+  "BuildingModel": {
+    "base": "MonoBehaviour",
+    "attrs": [
+      "- wrapper: GameObject [0..1]",
+      "+ rotation: float",
+      "- shapeUnits: BuildingShapeUnit [0..*] {ordered, nonunique}"
+    ],
+    "events": [],
+    "ops": [
+      "+ Awake()",
+      "+ Rotate(rotationStep: float)",
+      "+ GetAllBuildingPositions(): List<Vector3>"
+    ]
+  },
+  "BuildingPlacement": {
+    "base": "MonoBehaviour",
+    "attrs": [
+      "- mainCamera: Camera [0..1]",
+      "- inputManager: InputManager [0..1]",
+      "- buildingUI: BuildingUI [0..1]",
+      "- previewPrefab: BuildingPreview [0..1]",
+      "- grid: GridManager [0..1]",
+      "- meshCollider: MeshCollider [0..1]",
+      "- tapThreshold: float = 20",
+      "- currentBuilding: BuildingData [0..1]",
+      "- currentPreview: BuildingPreview [0..1]",
+      "- isDragging: bool",
+      "- touchStartPosition: Vector2",
+      "- hasMoved: bool"
+    ],
+    "events": [],
+    "ops": [
+      "- OnEnable()",
+      "+ OnTouchBegan(pos: Vector2)",
+      "+ OnTouchMoved(pos: Vector2)",
+      "+ OnTouchEnded(pos: Vector2)",
+      "+ GetSelectedBuilding(buildingData: BuildingData)",
+      "+ PlaceBuilding()",
+      "- OnDisable()"
+    ]
+  },
+  "BuildingPreview": {
+    "base": "MonoBehaviour",
+    "attrs": [
+      "+ state: BuildingState",
+      "- buildingData: BuildingData [0..1]",
+      "- buildingModel: BuildingModel [0..1]",
+      "- gridManager: GridManager [0..1]",
+      "- renderers: Renderer [0..*] {ordered, nonunique}",
+      "- positive: Material [0..1]",
+      "- negative: Material [0..1]"
+    ],
+    "events": [],
+    "ops": [
+      "+ Setup(data: BuildingData, grid: GridManager)",
+      "+ Update()",
+      "+ GetBuildingModel(): BuildingModel",
+      "+ CanPlace(): bool",
+      "+ SetPreview(newState: BuildingState)"
+    ]
+  },
+  "BuildingShapeUnit": {
+    "base": "MonoBehaviour",
+    "attrs": [],
+    "events": [],
+    "ops": []
+  },
+  "GridManager": {
+    "base": "MonoBehaviour",
+    "attrs": [
+      "- width: int",
+      "- height: int",
+      "- cellSize: float = 1",
+      "- meshCollider: MeshCollider [0..1]",
+      "- grid: BuildingGridCell [0..*] {C#: 2D-Array}"
+    ],
+    "events": [],
+    "ops": [
+      "- Start()",
+      "+ GridToWorldPosition(x: int, z: int): Vector3",
+      "+ WorldToGridPosition(worldPos: Vector3): GridCoordinates",
+      "+ SetBuildig(building: BuildingModel, allBuildingPositions: List<Vector3>)",
+      "+ CanBuild(allBuildingPositions: List<Vector3>): bool",
+      "+ OnDrawGizmos()",
+      "+ IsCellOnCollider(x: int, z: int): bool",
+      "+ GridToWorldCenterPosition(x: int, z: int): Vector3"
+    ]
+  },
+  "BuildingGridCell": {
+    "base": null,
+    "attrs": [
+      "- building: BuildingModel [0..1]",
+      "- isBuildable: bool"
+    ],
+    "events": [],
+    "ops": [
+      "+ SetBuilding(building: BuildingModel)",
+      "+ SetBuildable(isBuild: bool)",
+      "+ GetBuildable(): bool",
+      "+ IsEmpty(): bool"
+    ]
+  },
+  "BuildingData": {
+    "base": "ScriptableObject",
+    "attrs": [
+      "+ Description: string [0..1] {C#: get public; set private}",
+      "+ Cost: int {C#: get public; set private}",
+      "+ Model: BuildingModel [0..1] {C#: get public; set private}"
+    ],
+    "events": [],
+    "ops": []
+  }
+}

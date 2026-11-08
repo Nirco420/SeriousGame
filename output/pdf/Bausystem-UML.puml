@@ -1,0 +1,173 @@
+@startuml
+title Bausystem - Code-Stand 08.11.2026
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide empty members
+left to right direction
+class InputManager {
+  -- C#-Events --
+  + OnFingerMoved: Action<Vector2>
+  + OnFingerBegan: Action<Vector2>
+  + OnFingerEnded: Action<Vector2>
+  -- Operationen --
+  - OnEnable()
+  - Update()
+  + TrackFingerPosition(touch: Touch): Vector2
+  + TrackFingerStartPosition(touch: Touch): Vector2
+  + TrackFingerEndPosition(touch: Touch): Vector2
+  + OnDisable()
+}
+class BuildingUI {
+  -- Attribute / Properties --
+  - buildingButton: Button [0..1]
+  - buildingPanel: GameObject [0..1]
+  - building1: Button [0..1]
+  - building2: Button [0..1]
+  - building3: Button [0..1]
+  - building1x1: BuildingData [0..1]
+  - building2x2: BuildingData [0..1]
+  - building3x3: BuildingData [0..1]
+  -- C#-Events --
+  + OnBuildingSelected: Action<BuildingData>
+  -- Operationen --
+  + Start()
+  + OnBuildingButtonClicked()
+  + BuildingFinished()
+  + OnBuilding1Clicked()
+  + OnBuilding2Clicked()
+  + OnBuilding3Clicked()
+}
+class BuildingModel {
+  -- Attribute / Properties --
+  - wrapper: GameObject [0..1]
+  + rotation: float
+  - shapeUnits: BuildingShapeUnit [0..*] {ordered, nonunique}
+  -- Operationen --
+  + Awake()
+  + Rotate(rotationStep: float)
+  + GetAllBuildingPositions(): List<Vector3>
+}
+class BuildingPlacement {
+  -- Attribute / Properties --
+  - mainCamera: Camera [0..1]
+  - inputManager: InputManager [0..1]
+  - buildingUI: BuildingUI [0..1]
+  - previewPrefab: BuildingPreview [0..1]
+  - grid: GridManager [0..1]
+  - meshCollider: MeshCollider [0..1]
+  - tapThreshold: float = 20
+  - currentBuilding: BuildingData [0..1]
+  - currentPreview: BuildingPreview [0..1]
+  - isDragging: bool
+  - touchStartPosition: Vector2
+  - hasMoved: bool
+  -- Operationen --
+  - OnEnable()
+  + OnTouchBegan(pos: Vector2)
+  + OnTouchMoved(pos: Vector2)
+  + OnTouchEnded(pos: Vector2)
+  + GetSelectedBuilding(buildingData: BuildingData)
+  + PlaceBuilding()
+  - OnDisable()
+}
+class BuildingPreview {
+  -- Attribute / Properties --
+  + state: BuildingState
+  - buildingData: BuildingData [0..1]
+  - buildingModel: BuildingModel [0..1]
+  - gridManager: GridManager [0..1]
+  - renderers: Renderer [0..*] {ordered, nonunique}
+  - positive: Material [0..1]
+  - negative: Material [0..1]
+  -- Operationen --
+  + Setup(data: BuildingData, grid: GridManager)
+  + Update()
+  + GetBuildingModel(): BuildingModel
+  + CanPlace(): bool
+  + SetPreview(newState: BuildingState)
+}
+class BuildingShapeUnit {
+}
+class GridManager {
+  -- Attribute / Properties --
+  - width: int
+  - height: int
+  - cellSize: float = 1
+  - meshCollider: MeshCollider [0..1]
+  - grid: BuildingGridCell [0..*] {C#: 2D-Array}
+  -- Operationen --
+  - Start()
+  + GridToWorldPosition(x: int, z: int): Vector3
+  + WorldToGridPosition(worldPos: Vector3): GridCoordinates
+  + SetBuildig(building: BuildingModel, allBuildingPositions: List<Vector3>)
+  + CanBuild(allBuildingPositions: List<Vector3>): bool
+  + OnDrawGizmos()
+  + IsCellOnCollider(x: int, z: int): bool
+  + GridToWorldCenterPosition(x: int, z: int): Vector3
+}
+class BuildingGridCell {
+  -- Attribute / Properties --
+  - building: BuildingModel [0..1]
+  - isBuildable: bool
+  -- Operationen --
+  + SetBuilding(building: BuildingModel)
+  + SetBuildable(isBuild: bool)
+  + GetBuildable(): bool
+  + IsEmpty(): bool
+}
+class BuildingData {
+  -- Attribute / Properties --
+  + Description: string [0..1] {C#: get public; set private}
+  + Cost: int {C#: get public; set private}
+  + Model: BuildingModel [0..1] {C#: get public; set private}
+}
+enum "BuildingPreview::BuildingState" as BuildingState {
+  None = 0
+  POSITIVE = 1
+  NEGATIVE = 2
+}
+class "UnityEngine::MonoBehaviour" as MonoBehaviour
+class "UnityEngine::ScriptableObject" as ScriptableObject
+class GridCoordinates <<datatype>> {
+  + x: int
+  + z: int
+}
+InputManager --|> MonoBehaviour
+BuildingUI --|> MonoBehaviour
+BuildingModel --|> MonoBehaviour
+BuildingPlacement --|> MonoBehaviour
+BuildingPreview --|> MonoBehaviour
+BuildingShapeUnit --|> MonoBehaviour
+GridManager --|> MonoBehaviour
+BuildingData --|> ScriptableObject
+BuildingPlacement "0..*" --> "0..1" InputManager : inputManager
+BuildingPlacement "0..*" --> "0..1" BuildingUI : buildingUI
+BuildingPlacement "0..*" --> "0..1" BuildingPreview : previewPrefab
+BuildingPlacement "0..*" --> "0..1" BuildingPreview : currentPreview
+BuildingPlacement "0..*" --> "0..1" BuildingData : currentBuilding
+BuildingPlacement "0..*" --> "0..1" GridManager : grid
+BuildingPreview "0..*" --> "0..1" BuildingData : buildingData
+BuildingPreview "0..*" --> "0..1" BuildingModel : buildingModel
+BuildingPreview "0..*" --> "0..1" GridManager : gridManager
+BuildingData "0..*" --> "0..1" BuildingModel : Model
+BuildingGridCell "0..*" --> "0..1" BuildingModel : building
+BuildingUI "0..*" --> "0..1" BuildingData : building1x1
+BuildingUI "0..*" --> "0..1" BuildingData : building2x2
+BuildingUI "0..*" --> "0..1" BuildingData : building3x3
+BuildingModel "0..*" --> "0..*" BuildingShapeUnit : shapeUnits
+GridManager "1" *--> "0..*" BuildingGridCell : grid
+BuildingPlacement ..> BuildingModel : erzeugt
+BuildingPreview ..> BuildingState : verwendet
+GridManager ..> GridCoordinates : Rückgabetyp
+note right of GridCoordinates : Alias für C# (int x, int z); keine Projektklasse.
+note right of BuildingState : Öffentlich in BuildingPreview verschachtelt.
+legend bottom
++ public / - private. Kein Rückgabetyp = void.
+C#-Events: optionale Implementierungsdarstellung, keine UML-Signale.
+Property-Constraints dokumentieren C#-Accessor-Sichtbarkeit.
+Referenzrollen und Attribute benennen dieselben Properties.
+Framework-Typen werden nicht intern expandiert.
+Quelle: OMG UML 2.5.1, 9.2.4, 9.5.4, 9.6.4, 11.4.4-5, 11.5.4.
+11.6.5 / Abb. 11.39 zeigt ein Komponentendiagramm, kein Klassendiagramm.
+endlegend
+@enduml

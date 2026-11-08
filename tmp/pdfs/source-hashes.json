@@ -1,0 +1,10 @@
+{
+  "Assets/_Project/Scripts/Input/InputManager.cs": "566fbd51d969a2561957e82adedce906e0a36e78823bb0a5506d0a22d2c99279",
+  "Assets/_Project/Scripts/UI/BuildingUI.cs": "0e2c11c6b864bd9a7624ef8c18827968ce038b8a2b5b5dfc731d69963dd7177f",
+  "Assets/_Project/Scripts/Buildings/Placement/BuildingModel.cs": "905af2622a5d7e612a7347c7b6b8e1188b6e5533643c0e1f848517f7a028785c",
+  "Assets/_Project/Scripts/Buildings/Placement/BuildingPlacement.cs": "8fcac9cde3960ddc36e2ff78b1fe883eae73ce62ac9f68f65d2c7cc1c56b0db4",
+  "Assets/_Project/Scripts/Buildings/Placement/BuildingPreview.cs": "5295004cee82b4a3247e332dbb19836b9d56dc8bcb4e932ac50de06973be624f",
+  "Assets/_Project/Scripts/Buildings/Placement/BuildingShapeUnit.cs": "05bb44d8feb1c581042c9f79e3f9997bf461c96fc3f50a8da61c2578d212acde",
+  "Assets/_Project/Scripts/Grid/Systems/GridManager.cs": "3c50c44dbb848f873000f9c505fd50b0158afc9c8695990e8c44fe2b6b7e8464",
+  "Assets/_Project/ScriptableObjects/Buildings/SoScripts/BuildingData.cs": "a6775d129586bf37dd6146b07808c08c6baa7102ee81fdb09ff976c18cacfc8e"
+}

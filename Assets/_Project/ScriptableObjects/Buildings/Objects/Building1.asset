@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf4ac069ffaeb246aa786d6e3317708, type: 3}
+  m_Name: Building1
+  m_EditorClassIdentifier: Assembly-CSharp::BuildingData
+  <Description>k__BackingField: 
+  <Cost>k__BackingField: 0
+  <Model>k__BackingField: {fileID: 1444966299232267439, guid: f02b5893ad6ae4e4c9701deb61a53e10, type: 3}
