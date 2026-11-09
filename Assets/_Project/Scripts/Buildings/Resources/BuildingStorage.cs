@@ -4,14 +4,13 @@ public class BuildingStorage : MonoBehaviour
 {
     [SerializeField] private BuildingData buildingData;
 
-    private int currentAmount;
-    private int maxCapacity;
+    public int currentAmount {  get; private set; }
+    public int maxCapacity { get; private set; }
     private int procucedResources;
 
     public void Setup(BuildingData buildingData)
     {
         this.buildingData = buildingData;
-        procucedResources = buildingData.resourceQuantity;
         currentAmount = 0;
         maxCapacity = buildingData.maxStorage;
 
@@ -26,6 +25,7 @@ public class BuildingStorage : MonoBehaviour
         int freeStorage = maxCapacity - currentAmount;
         amount = Mathf.Min(freeStorage, amount);
         currentAmount += amount;
+
     }
 
     public int RemoveResources(int amount) //Schaut wieviele Ressourcen entnommen werden können und rechnet dann den niedrigeren raus
