@@ -120,6 +120,14 @@ public class BuildingPlacement : MonoBehaviour
         BuildingModel previewModel = currentPreview.GetBuildingModel();
 
         BuildingModel placedBuilding = Instantiate(currentBuilding.Model, previewModel.transform.position, previewModel.transform.rotation);
+        BuildingStorage storage = placedBuilding.GetComponent<BuildingStorage>();
+        ResourceProduction production = placedBuilding.GetComponent<ResourceProduction>();
+        
+        if(storage != null && production != null)
+        {
+            storage.Setup(currentBuilding);
+            production.Setup(currentBuilding); 
+        }
 
         grid.SetBuildig(placedBuilding, placedBuilding.GetAllBuildingPositions());
 
