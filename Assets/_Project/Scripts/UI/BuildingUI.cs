@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class BuildingUI : MonoBehaviour
 {
-    public event Action<BuildingData> OnBuildingSelected;
+    public event Action<BuildingModel> OnBuildingSelected;
 
     [SerializeField] private Button buildingButton;
     [SerializeField] private GameObject buildingPanel;
@@ -15,9 +15,9 @@ public class BuildingUI : MonoBehaviour
     [SerializeField] private Button building2;
     [SerializeField] private Button building3;
 
-    [SerializeField] private BuildingData building1x1;
-    [SerializeField] private BuildingData building2x2;
-    [SerializeField] private BuildingData building3x3;
+    [SerializeField] private BuildingModel building1x1;
+    [SerializeField] private BuildingModel building2x2;
+    [SerializeField] private BuildingModel building3x3;
 
     public void Start() //Listener für die Buttons erstellen
     {

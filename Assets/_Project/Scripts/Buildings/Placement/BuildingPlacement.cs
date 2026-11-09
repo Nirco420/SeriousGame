@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingPlacement : MonoBehaviour
@@ -5,19 +6,18 @@ public class BuildingPlacement : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private InputManager inputManager;
     [SerializeField] private BuildingUI buildingUI;
-    [SerializeField] private BuildingPreview previewPrefab;
+    [SerializeField] private Material positive;
+    [SerializeField] private Material negative;
     [SerializeField] private GridManager grid;
     [SerializeField] private MeshCollider meshCollider;
     [SerializeField] private float tapThreshold = 20f;
 
-    private BuildingData currentBuilding;
-    private BuildingPreview currentPreview;
+    private BuildingModel currentPreview;
     private bool isDragging;
-
     private Vector2 touchStartPosition;
     private bool hasMoved;
 
-    private void OnEnable()
+    private void OnEnable() //BuildingPlacement als Empfänger hinzufügen
     {
         inputManager.OnFingerMoved += OnTouchMoved;
         inputManager.OnFingerBegan += OnTouchBegan;
@@ -25,29 +25,47 @@ public class BuildingPlacement : MonoBehaviour
         buildingUI.OnBuildingSelected += GetSelectedBuilding;
     }
 
-    public void OnTouchBegan(Vector2 pos) //Ray von Camera zu erzeugten Building erstellen. Prüfen ob Ray Collider vom Building trifft, wenn ja finger StartPosition auf die getroffene Position setzen
+    private void Update() //Pro Frame wird geprüft, ob eine Preview existiert, ob sie mind eine ShepUnit hat und alle Zellen darunter bebaubar sind
     {
         if (currentPreview == null)
         {
             return;
-        }  
+        }
+
+        List<Vector3> positions = currentPreview.GetAllBuildingPositions();
+        if (grid.CanBuild(positions))
+        {
+            currentPreview.SetPreviewMaterial(positive);
+        }
+        else
+        {
+            currentPreview.SetPreviewMaterial(negative);
+        }
+    }
+
+    public void OnTouchBegan(Vector2 pos) //Erzeugt einen Ray von der Camera zum Objekt. Wenn einer der Objektcollider getroffen wurde, dann treffer position übergeben
+    {
+        isDragging = false;
+        hasMoved = false;
+        if (currentPreview == null)
+        {
+            return;
+        }
 
         Ray ray = mainCamera.ScreenPointToRay(pos);
         RaycastHit[] hits = Physics.RaycastAll(ray, Mathf.Infinity);
-
         foreach (RaycastHit hit in hits)
         {
             if (hit.collider.transform.IsChildOf(currentPreview.transform))
             {
                 isDragging = true;
-                hasMoved = false;
                 touchStartPosition = pos;
                 break;
             }
         }
     }
 
-    public void OnTouchMoved(Vector2 pos) //GridSnapping, Ray erzeugen von Camera zu Fingerposition, wenn Raycast hit auf MeshCollider, dann Weltkoordinaten in Grid Koordinaten umrechnen und PreviewPosition aktuallisieren
+    public void OnTouchMoved(Vector2 pos) //Ein Ray von der camera zur Fingerposition erzeugen, wenn der MeshCollider der Baufläche getroffen wird, den Trefferpunkt in GridKoordinaten umrechen. Das Objekt dann auf diese GridKoordianten setzen
     {
         if (!isDragging || currentPreview == null)
         {
@@ -59,23 +77,20 @@ public class BuildingPlacement : MonoBehaviour
             hasMoved = true;
         }
 
-        if (!hasMoved)
+        if (hasMoved == false)
         {
             return;
         }
 
         Ray ray = mainCamera.ScreenPointToRay(pos);
-
         if (meshCollider.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity))
         {
             (int x, int z) = grid.WorldToGridPosition(hitInfo.point);
-
             currentPreview.transform.position = grid.GridToWorldCenterPosition(x, z);
-
         }
     }
 
-    public void OnTouchEnded(Vector2 pos) //Prüfen ob getapt wurde, wenn ja und die Position passt, dann Gebäude tatsächlich platzieren
+    public void OnTouchEnded(Vector2 pos) //Wenn die Bewegungschwelle
     {
         if (!isDragging)
         {
@@ -83,71 +98,66 @@ public class BuildingPlacement : MonoBehaviour
         }
 
         bool isTap = !hasMoved && Vector2.Distance(touchStartPosition, pos) <= tapThreshold;
-
-
         isDragging = false;
-
         if (isTap)
         {
             PlaceBuilding();
         }
     }
 
-    public void GetSelectedBuilding(BuildingData buildingData) //BuildingData setzen und Preview erzeugen
+    public void GetSelectedBuilding(BuildingModel buildingPrefab)//Erzeugt das Gebäude mit den richtigen Gebäudedaten, erstmal nur als Vorschau
     {
-        if(currentPreview != null)
+        ClearPreview();
+        if (buildingPrefab == null || buildingPrefab.Data == null || positive == null || negative == null)
         {
-            Destroy(currentPreview.gameObject);
+            Debug.LogError("Gebaeudedaten, Modell oder Vorschau-Materialien fehlen.", this);
+            return;
         }
 
-        currentBuilding = buildingData;
-        currentPreview = Instantiate(previewPrefab,transform.position, Quaternion.identity, transform);
-        currentPreview.Setup(currentBuilding, grid); 
+        currentPreview = Instantiate(buildingPrefab, transform.position, Quaternion.identity);
+        currentPreview.BeginPreview();
     }
 
-    public void PlaceBuilding() //Überprüfen ob GridCellen frei sind und dann Preview gegen das tatsächliche Gebäude tauschen
+    public void PlaceBuilding()//Hier wird das gebäude platziert, es werden nochmal alle Zellen geprüft und wenn diese frei sind, durch das Building belegt. Alle werte werden dann wieder zurückgesetzt
     {
-        if (currentPreview == null || currentBuilding == null)
+        if (currentPreview == null)
         {
             return;
         }
 
-        if (!currentPreview.CanPlace())
+        // Das Modell registriert sich und verwendet seine eigenen Gebaeudedaten.
+        if (!currentPreview.CompletePlacement(grid))
         {
             return;
         }
 
-        BuildingModel previewModel = currentPreview.GetBuildingModel();
-
-        BuildingModel placedBuilding = Instantiate(currentBuilding.Model, previewModel.transform.position, previewModel.transform.rotation);
-        BuildingStorage storage = placedBuilding.GetComponent<BuildingStorage>();
-        ResourceProduction production = placedBuilding.GetComponent<ResourceProduction>();
-        
-        if(storage != null && production != null)
-        {
-            storage.Setup(currentBuilding);
-            production.Setup(currentBuilding); 
-        }
-
-        grid.SetBuildig(placedBuilding, placedBuilding.GetAllBuildingPositions());
-
-        Destroy(currentPreview.gameObject);
-
+        // Dieselbe Instanz bleibt bestehen.
         currentPreview = null;
-        currentBuilding = null;
         isDragging = false;
+        hasMoved = false;
         buildingUI.BuildingFinished();
     }
 
+    private void ClearPreview() //Entfernt die Vorschau bzw. das Modell bei einem Auswahlswechsel
+    {
+        if (currentPreview != null)
+        {
+            // Sofort ausblenden, da Destroy erst am Frame Ende ausgeführt wird.
+            currentPreview.gameObject.SetActive(false);
+            Destroy(currentPreview.gameObject);
+        }
 
+        currentPreview = null;
+        isDragging = false;
+        hasMoved = false;
+    }
 
-    private void OnDisable() //Events wieder ausschalten
+    private void OnDisable() //Events wieder abmelden und alle werte resetten
     {
         inputManager.OnFingerMoved -= OnTouchMoved;
         inputManager.OnFingerBegan -= OnTouchBegan;
         inputManager.OnFingerEnded -= OnTouchEnded;
         buildingUI.OnBuildingSelected -= GetSelectedBuilding;
+        ClearPreview();
     }
 }
-
-    

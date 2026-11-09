@@ -13,7 +13,6 @@ public class BuildingData : ScriptableObject
 
     public string description;
     public int cost;
-    public BuildingModel Model;
 
     public int resourceQuantity;
     public int maxStorage;
