@@ -257,7 +257,7 @@ PlayerSettings:
   shaderPrecisionModel: 0
   clonedFromGUID: 069202b91adc77e41923adcf0d1b815b
   templatePackageId: com.unity.template.ar-mobile@2.1.2
-  templateDefaultScene: Assets/Scenes/SampleScene.unity
+  templateDefaultScene: Assets/_Project/Scenes/Testing/SampleScene.unity
   useCustomMainManifest: 0
   useCustomLauncherManifest: 0
   useCustomMainGradleTemplate: 0
@@ -827,7 +827,7 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    iPhone: UNITY_XR_ARKIT_LOADER_ENABLED
+    iPhone: 
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
