@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class BuildingModel : MonoBehaviour
@@ -8,11 +7,13 @@ public class BuildingModel : MonoBehaviour
     [SerializeField] private BuildingData buildingData;
 
     [SerializeField] private GridManager grid;
-    public BuildingData Data => buildingData;
+    public BuildingData Data;
+   
     public float rotation;
     private BuildingShapeUnit[] shapeUnits;
 
     private Renderer[] renderers;
+    // Fuer jeden Renderer werden seine urspruenglichen Material-Slots gespeichert.
     private Material[][] originalMaterials;
     private Material previewMaterial;
     private BuildingStorage storage;
@@ -45,36 +46,17 @@ public class BuildingModel : MonoBehaviour
         }
     }
 
-    private void Start() 
+    private void Start()// Vorschauen werden durch einen Tap platziert, feste Gebäude beim Spielstart.
     {
-        if (isPreview || isPlaced)
+        if (isPreview == true || isPlaced == true)
         {
             return;
         }
 
-        if (buildingData == null)
+        if (buildingData == null || grid == null)
         {
-            Debug.LogError($"Gebaeude '{name}': BuildingData fehlt.", this);
+            Debug.LogError("Werte im Inspector zuwesein", this);
             return;
-        }
-
-        if (grid == null)
-        {
-            var grids = FindObjectsByType<GridManager>()
-                .Where(candidate => candidate.isActiveAndEnabled && candidate.gameObject.scene == gameObject.scene)
-                .ToArray();
-            if (grids.Length != 1)
-            {
-                Debug.LogError($"Gebaeude '{name}': Kein eindeutiges aktives Grid gefunden. Bitte Grid im Inspector zuweisen.", this);
-                return;
-            }
-            grid = grids[0];
-        }
-
-        // Das Grid wird in Awake vorbereitet, bevor feste Gebäude Start ausführen.
-        if (!CompletePlacement(grid))
-        {
-            Debug.LogError($"Gebaeude '{name}': Registrierung in Grid '{grid.name}' fehlgeschlagen. Grid muss bereit sein und alle Grundflaechenzellen muessen frei und bebaubar sein. Lager und Produktion bleiben deaktiviert.", this);
         }
     }
 
@@ -88,7 +70,7 @@ public class BuildingModel : MonoBehaviour
 
     public void SetPreviewMaterial(Material material) //Setzt Grün oder Rot für die Vorschau. Für jeden Renderer wird ein Array erstellt mit der ursprünglichen Anzahl an Materials. Dann wird jedes Material im Array mit dem Vorschau Material ersetzt. 
     {
-        if (!isPreview || previewMaterial == material)
+        if (isPreview == false || previewMaterial == material)
         {
             return;
         }
@@ -107,25 +89,28 @@ public class BuildingModel : MonoBehaviour
         }
     }
 
-    public bool CompletePlacement(GridManager targetGrid)
+    public bool CompletePlacement(GridManager targetGrid)//Schließt die Gebäudeplatzierung ab
     {
-        if (isPlaced || buildingData == null || targetGrid == null)
+        if (isPlaced == true || buildingData == null || targetGrid == null)
         {
             return false;
         }
 
-        // Erst die gesamte Grundflaeche pruefen und registrieren, dann Gameplay starten.
-        if (!targetGrid.TrySetBuilding(this, GetAllBuildingPositions()))
+        // Erst die gesamte Grundfläche prüfen und registrieren, dann Gameplay starten.
+        List<Vector3> positions = GetAllBuildingPositions();
+        if (targetGrid.TrySetBuilding(this, positions) == false)
         {
             return false;
         }
 
         grid = targetGrid;
         isPlaced = true;
+
         for (int i = 0; i < renderers.Length; i++)
         {
             renderers[i].sharedMaterials = originalMaterials[i];
         }
+
         isPreview = false;
         previewMaterial = null;
 
@@ -134,21 +119,28 @@ public class BuildingModel : MonoBehaviour
             storage.Setup(buildingData);
             storage.enabled = true;
         }
+
         if (production != null && storage != null)
         {
             production.Setup(buildingData);
             production.enabled = true;
         }
+
         return true;
     }
 
-    public void Rotate(float rotationStep)
+    public void Rotate(float rotationStep) //Führt rotation durch
     {
         wrapper.transform.Rotate(new Vector3(0, rotationStep, 0));
     }
 
-    public List<Vector3> GetAllBuildingPositions()
+    public List<Vector3> GetAllBuildingPositions() //sammelt die Weltposiotionen der ShapeUnits
     {
-        return shapeUnits.Select(unit => unit.transform.position).ToList();
+        List<Vector3> positions = new List<Vector3>();
+        foreach (BuildingShapeUnit unit in shapeUnits)
+        {
+            positions.Add(unit.transform.position);
+        }
+        return positions;
     }
 }

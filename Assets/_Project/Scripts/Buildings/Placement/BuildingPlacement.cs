@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildingPlacement : MonoBehaviour
@@ -31,9 +32,15 @@ public class BuildingPlacement : MonoBehaviour
             return;
         }
 
-        var positions = currentPreview.GetAllBuildingPositions();
-        bool canPlace = positions.Count > 0 && grid.CanBuild(positions);
-        currentPreview.SetPreviewMaterial(canPlace ? positive : negative); //Bei wahr wird verwendet genutzt sonst negativ
+        List<Vector3> positions = currentPreview.GetAllBuildingPositions();
+        if (grid.CanBuild(positions))
+        {
+            currentPreview.SetPreviewMaterial(positive);
+        }
+        else
+        {
+            currentPreview.SetPreviewMaterial(negative);
+        }
     }
 
     public void OnTouchBegan(Vector2 pos) //Erzeugt einen Ray von der Camera zum Objekt. Wenn einer der Objektcollider getroffen wurde, dann treffer position übergeben
@@ -69,7 +76,8 @@ public class BuildingPlacement : MonoBehaviour
         {
             hasMoved = true;
         }
-        if (!hasMoved)
+
+        if (hasMoved == false)
         {
             return;
         }
@@ -134,7 +142,7 @@ public class BuildingPlacement : MonoBehaviour
     {
         if (currentPreview != null)
         {
-            // Sofort ausblenden, da Destroy erst am Frame-Ende ausgeführt wird.
+            // Sofort ausblenden, da Destroy erst am Frame Ende ausgeführt wird.
             currentPreview.gameObject.SetActive(false);
             Destroy(currentPreview.gameObject);
         }

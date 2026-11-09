@@ -20,15 +20,14 @@ public class GridManager : MonoBehaviour
             return;
         }
 
-        Physics.SyncTransforms();
         grid = new BuildingGridCell[width, height];
 
         for (int x = 0; x < grid.GetLength(0); x++)
         {
-            for (int y = 0; y < grid.GetLength(1); y++)
+            for (int z = 0; z < grid.GetLength(1); z++)
             {
-                grid[x, y] = new();
-                grid[x, y].SetBuildable(IsCellOnCollider(x, y));
+                grid[x, z] = new BuildingGridCell();
+                grid[x, z].SetBuildable(IsCellOnCollider(x, z));
             }
         }
         IsReady = true;
@@ -46,24 +45,14 @@ public class GridManager : MonoBehaviour
         return (x,z);
     }
 
-    // Alte Schnittstelle bleibt erhalten, kann aber keine Belegungen ueberschreiben.
-    public void SetBuildig(BuildingModel building, List<Vector3> allBuildingPositions)
+    public bool TrySetBuilding(BuildingModel building, List<Vector3> allBuildingPositions) //Trägt das Gebäude auf die Zellen ein, wenn diese frei sind
     {
-        if (!TrySetBuilding(building, allBuildingPositions))
-        {
-            Debug.LogError("Grid: Gebaeude konnte nicht registriert werden. Grundflaeche ist ungueltig, belegt oder das Grid nicht bereit.", this);
-        }
-    }
-
-    public bool TrySetBuilding(BuildingModel building, List<Vector3> allBuildingPositions)
-    {
-        // Zuerst ALLE Zellen pruefen. Bei einem Fehler bleibt das gesamte Grid unveraendert.
-        if (building == null || !CanBuild(allBuildingPositions))
+        if (building == null || CanBuild(allBuildingPositions) == false)
         {
             return false;
         }
 
-        foreach (var buildingPos in allBuildingPositions)
+        foreach (Vector3 buildingPos in allBuildingPositions)
         {
             (int x, int z) = WorldToGridPosition(buildingPos);
             grid[x, z].SetBuilding(building);
@@ -74,11 +63,11 @@ public class GridManager : MonoBehaviour
     public bool CanBuild(List<Vector3> allBuildingPositions) //Geht alle ZellPositionen durch und prüft, ob sie im Grid liegen, ob sie frei sind und ob sie auf dem meshCollider liegen
     {
 
-        if (!IsReady || allBuildingPositions == null || allBuildingPositions.Count == 0)
+        if (IsReady == false || allBuildingPositions == null || allBuildingPositions.Count == 0)
         {
             return false;
         }
-        foreach (var buildingPos in allBuildingPositions)
+        foreach (Vector3 buildingPos in allBuildingPositions)
         {
             (int x, int z) = WorldToGridPosition(buildingPos);
             
