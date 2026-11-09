@@ -78,6 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa94f30ab85c1a48bab3c7c1bf707ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingModel
+  buildingData: {fileID: 11400000, guid: 806c5f7aca2272045a9fcc9d6098e273, type: 2}
+  grid: {fileID: 0}
   wrapper: {fileID: 4013650843466426738}
   rotation: 0
 --- !u!1001 &1121795361384161423

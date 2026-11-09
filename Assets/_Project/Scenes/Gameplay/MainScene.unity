@@ -770,7 +770,8 @@ MonoBehaviour:
   mainCamera: {fileID: 1904973879}
   inputManager: {fileID: 295763475}
   buildingUI: {fileID: 1338792684}
-  previewPrefab: {fileID: 8631366068268520292, guid: e9b4473ac4cad544fb6d05c86b4bcbe5, type: 3}
+  positive: {fileID: 2100000, guid: 6fc23b2874cc70f48ac8f3878bf0740b, type: 2}
+  negative: {fileID: 2100000, guid: 52f8dcc43a7a17240b43a3d2715422a3, type: 2}
   grid: {fileID: 915280545}
   meshCollider: {fileID: 638733426}
   tapThreshold: 20
@@ -1272,9 +1273,9 @@ MonoBehaviour:
   building1: {fileID: 1969718599}
   building2: {fileID: 579309663}
   building3: {fileID: 1656986730}
-  building1x1: {fileID: 11400000, guid: 806c5f7aca2272045a9fcc9d6098e273, type: 2}
-  building2x2: {fileID: 11400000, guid: 37a36f7e7126c7447906373731890e33, type: 2}
-  building3x3: {fileID: 11400000, guid: df67d2b681b39c34094ef9b2fa46cf64, type: 2}
+  building1x1: {fileID: 1444966299232267439, guid: f02b5893ad6ae4e4c9701deb61a53e10, type: 3}
+  building2x2: {fileID: 1444966299232267439, guid: bede4befefa8efc4d88d965940700e09, type: 3}
+  building3x3: {fileID: 1444966299232267439, guid: a43d5ece0332f5b4b812a340d734b896, type: 3}
 --- !u!1001 &1443993307
 PrefabInstance:
   m_ObjectHideFlags: 0
