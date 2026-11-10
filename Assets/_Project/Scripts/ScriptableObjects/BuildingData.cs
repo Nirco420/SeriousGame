@@ -14,9 +14,11 @@ public class BuildingData : ScriptableObject
     public string description;
     public int cost;
 
+    public BuildingType type;
+    public ResourceData resource;
+
     public int resourceQuantity;
     public int maxStorage;
-    public float zyklusTime;
 
 
 }
