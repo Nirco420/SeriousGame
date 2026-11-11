@@ -1,6 +1,7 @@
 using Mono.Cecil;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class TransportManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TransportManager : MonoBehaviour
     [SerializeField] private Transform startStoragPos;
     [SerializeField] private Transform mainStoragePos;
     [SerializeField] private GameObject cart;
+    [SerializeField] private SplineAnimate splineAnimate;
 
     [SerializeField] private int transportCapacity;
     public int currentLoad {  get; private set; }
@@ -38,20 +40,25 @@ public class TransportManager : MonoBehaviour
         
     }
 
-    public IEnumerator MoveToMainStorage(Transform startPos, Transform targetPos, float kmh ) //Aanimation von Startposition zu Endpostion
+    public IEnumerator MoveToMainStorage(float kmh) //Animation von StartPosition zum ende des Paths
     {
-        while(Vector3.Distance(cart.transform.position, targetPos.transform.position) > 0.05f)
+        splineAnimate.MaxSpeed = kmh;
+        splineAnimate.Restart(false);
+
+        while(splineAnimate.NormalizedTime < 1)
         {
-            cart.transform.position = Vector3.MoveTowards(cart.transform.position, targetPos.transform.position, kmh * Time.deltaTime);
+            splineAnimate.NormalizedTime = Mathf.MoveTowards(splineAnimate.NormalizedTime, 1f, Time.deltaTime / splineAnimate.Duration);
             yield return null;
         }
     }
 
-    public IEnumerator MoveBackToSegmentStorage(Transform targetPos, Transform startPos, float kmh) //Animation von EndPosition wieder zurück
+    public IEnumerator MoveBackToSegmentStorage(float kmh) //Animation von Stast wieder zurück zum Lager
     {
-        while(Vector3.Distance(cart.transform.position, startPos.transform.position) > 0.05f)
+        splineAnimate.MaxSpeed = kmh;
+
+        while(splineAnimate.NormalizedTime >= 0)
         {
-            cart.transform.position = Vector3.MoveTowards(cart.transform.position, startPos.transform.position, kmh * Time.deltaTime);
+            splineAnimate.NormalizedTime = Mathf.MoveTowards(splineAnimate.NormalizedTime, 0f, Time.deltaTime / splineAnimate.Duration);
             yield return null;
         }
     }
@@ -60,17 +67,17 @@ public class TransportManager : MonoBehaviour
     {
         if (isDriving == true)
         {
-            yield return StartCoroutine(MoveToMainStorage(startPos, targetPos, kmh));
+            yield return StartCoroutine(MoveToMainStorage(kmh));
 
             cart.SetActive(false);
             mainStorage.AddResources(currentLoad, resourceData);
             currentLoad = 0;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
 
             cart.SetActive(true);
            
-            yield return StartCoroutine(MoveBackToSegmentStorage(targetPos, startPos, kmh));
+            yield return StartCoroutine(MoveBackToSegmentStorage(kmh));
             isDriving = false;
         }
     }
