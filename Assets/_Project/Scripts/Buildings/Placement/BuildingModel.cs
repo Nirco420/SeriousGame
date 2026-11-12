@@ -6,17 +6,21 @@ public class BuildingModel : MonoBehaviour
     [SerializeField] private GameObject wrapper;
     [SerializeField] private BuildingData buildingData;
 
-    [SerializeField] private GridManager grid;
-    public BuildingData Data;
-   
+    public BuildingData Data
+    {
+        get
+        {
+            return buildingData;
+        }
+    }
+
     public float rotation;
     private BuildingShapeUnit[] shapeUnits;
 
     private Renderer[] renderers;
-    // Fuer jeden Renderer werden seine urspruenglichen Material-Slots gespeichert.
+
     private Material[][] originalMaterials;
     private Material previewMaterial;
-    private BuildingStorage storage;
     private ResourceProduction production;
     private bool isPreview;
     private bool isPlaced;
@@ -32,31 +36,13 @@ public class BuildingModel : MonoBehaviour
             originalMaterials[i] = renderers[i].sharedMaterials;
         }
 
-        storage = GetComponent<BuildingStorage>();
         production = GetComponent<ResourceProduction>();
 
        //Erst nach Registrierung starten
-        if (storage != null)
-        {
-            storage.enabled = false;
-        }
+       
         if (production != null)
         {
             production.enabled = false;
-        }
-    }
-
-    private void Start()// Vorschauen werden durch einen Tap platziert, feste Gebäude beim Spielstart.
-    {
-        if (isPreview == true || isPlaced == true)
-        {
-            return;
-        }
-
-        if (buildingData == null || grid == null)
-        {
-            Debug.LogError("Werte im Inspector zuwesein", this);
-            return;
         }
     }
 
@@ -89,13 +75,8 @@ public class BuildingModel : MonoBehaviour
         }
     }
 
-    public bool CompletePlacement(GridManager targetGrid)//Schließt die Gebäudeplatzierung ab
+    public bool CompletePlacement(GridManager targetGrid, SegmentStorage segmentStorage)//Schließt die Gebäudeplatzierung ab
     {
-        if (isPlaced == true || buildingData == null || targetGrid == null)
-        {
-            return false;
-        }
-
         // Erst die gesamte Grundfläche prüfen und registrieren, dann Gameplay starten.
         List<Vector3> positions = GetAllBuildingPositions();
         if (targetGrid.TrySetBuilding(this, positions) == false)
@@ -103,7 +84,6 @@ public class BuildingModel : MonoBehaviour
             return false;
         }
 
-        grid = targetGrid;
         isPlaced = true;
 
         for (int i = 0; i < renderers.Length; i++)
@@ -114,15 +94,9 @@ public class BuildingModel : MonoBehaviour
         isPreview = false;
         previewMaterial = null;
 
-        if (storage != null)
+        if (production != null)
         {
-            storage.Setup(buildingData);
-            storage.enabled = true;
-        }
-
-        if (production != null && storage != null)
-        {
-            production.Setup(buildingData);
+            production.Setup(buildingData, segmentStorage);
             production.enabled = true;
         }
 

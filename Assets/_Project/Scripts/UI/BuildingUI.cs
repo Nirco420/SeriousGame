@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class BuildingUI : MonoBehaviour
 {
     public event Action<BuildingModel> OnBuildingSelected;
+    public event Action<bool> OnNextRoundPressed;
 
     [SerializeField] private Button buildingButton;
     [SerializeField] private GameObject buildingPanel;
@@ -14,6 +15,8 @@ public class BuildingUI : MonoBehaviour
     [SerializeField] private Button building1;
     [SerializeField] private Button building2;
     [SerializeField] private Button building3;
+    [SerializeField] private Button nextRound;
+
 
     [SerializeField] private BuildingModel building1x1;
     [SerializeField] private BuildingModel building2x2;
@@ -26,6 +29,8 @@ public class BuildingUI : MonoBehaviour
         building1.onClick.AddListener(OnBuilding1Clicked);
         building2.onClick.AddListener(OnBuilding2Clicked);
         building3.onClick.AddListener(OnBuilding3Clicked);
+
+        nextRound.onClick.AddListener(OnEndRoundWasClicked);
 
     }
 
@@ -52,5 +57,10 @@ public class BuildingUI : MonoBehaviour
     public void OnBuilding3Clicked()//Event wenn das dreier Gebäude gewählt wurde
     {
         OnBuildingSelected?.Invoke(building3x3);
+    }
+
+    public void OnEndRoundWasClicked()
+    {
+        OnNextRoundPressed?.Invoke(true);
     }
 }

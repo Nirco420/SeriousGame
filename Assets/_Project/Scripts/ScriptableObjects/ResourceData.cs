@@ -8,9 +8,10 @@ public class ResourceData : ScriptableObject
         None,
         WOOD,
         WHEED,
-        FLAX,
+        FLACHS
     }
 
+    public ResourceType resourceType;
     public string name;
     public Sprite icon;
 }

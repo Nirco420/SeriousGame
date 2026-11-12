@@ -44,8 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172481137501791732}
   - component: {fileID: 1444966299232267439}
-  - component: {fileID: 2792439167846267934}
-  - component: {fileID: 2465455742468885685}
+  - component: {fileID: 542776685563004609}
   m_Layer: 0
   m_Name: BuildingModel2
   m_TagString: Untagged
@@ -81,11 +80,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa94f30ab85c1a48bab3c7c1bf707ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingModel
-  buildingData: {fileID: 11400000, guid: 37a36f7e7126c7447906373731890e33, type: 2}
-  grid: {fileID: 0}
   wrapper: {fileID: 4013650843466426738}
+  buildingData: {fileID: 11400000, guid: 37a36f7e7126c7447906373731890e33, type: 2}
   rotation: 0
---- !u!114 &2792439167846267934
+--- !u!114 &542776685563004609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,20 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3e74854716f80418774184e8fc5f55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResourceProduction
-  buildingData: {fileID: 0}
-  buildingStorage: {fileID: 0}
---- !u!114 &2465455742468885685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5634706695920167698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ecfe0683bac8f40aa6ebb260833838, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuildingStorage
   buildingData: {fileID: 0}
 --- !u!1001 &1121795361384161423
 PrefabInstance:

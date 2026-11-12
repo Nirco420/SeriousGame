@@ -88,26 +88,25 @@ public class GridManager : MonoBehaviour
     public void OnDrawGizmos() //Über einen Gizmos das Grid Zeichnen
     {
         Gizmos.color = Color.green;
-        if (cellSize <= 0f || width <= 0 || height <= 0)
+
+        if (cellSize <= 0f || width <= 0 || height <= 0 || meshCollider == null)
         {
             return;
         }
 
-        if (grid != null)
+        for (int x = 0; x < width; x++)
         {
-            for (int x = 0; x < grid.GetLength(0); x++)
-            {
-                for (int y = 0; y < grid.GetLength(1); y++)
+                for (int z = 0; z < height; z++)
                 {
-                    if (grid[x, y].GetBuildable() == true)
+                    if (IsCellOnCollider(x, z))
                     {
-                        Vector3 currentCellPos = GridToWorldPosition(x, y);
-                        Gizmos.DrawWireCube(new Vector3(currentCellPos.x + cellSize / 2, currentCellPos.y, currentCellPos.z + cellSize / 2), new Vector3(cellSize, 0f, cellSize));
+                        Vector3 cellCenter = GridToWorldCenterPosition(x, z);
+                        Vector3 cellDimensions = new Vector3(cellSize, 0f, cellSize);
+
+                        Gizmos.DrawWireCube(cellCenter, cellDimensions);
                     }
                 }
-            }
         }
-        
     }
 
     public bool IsCellOnCollider(int x, int z) //Erzeugt in jeder Zellecke einen Ray der prüft ob die Celle auf dem Collider liegt oder nicht. 

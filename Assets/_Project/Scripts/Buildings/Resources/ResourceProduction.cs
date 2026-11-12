@@ -2,49 +2,31 @@ using UnityEngine;
 
 public class ResourceProduction : MonoBehaviour
 {
-    [SerializeField] private BuildingData buildingData;
 
-    [SerializeField] private BuildingStorage buildingStorage;
+    private SegmentStorage producerForStorage;
     private int productionQuantity;
-    private float productionRate;
+    private ResourceData producedResource;
 
-    public void Setup(BuildingData buildingData)
+    public void Setup(BuildingData buildingData, SegmentStorage segmentStorage) //Inizialisiert die aktuelle BuildingData und meldet sie als Producer im Lager
     {
-        this.buildingData = buildingData;
-        this.buildingStorage = GetComponent<BuildingStorage>();
         productionQuantity = buildingData.resourceQuantity;
-        productionRate = buildingData.zyklusTime;
+        producedResource = buildingData.resource;
+        producerForStorage = segmentStorage;
+        producerForStorage.RegisterProducer(this);
         
     }
-
-    public void Update()
+    public void ProduceResource() //Lagert pro Runde die ProduktionsMenge des Gebäudes ein 
     {
-        if(buildingStorage == null)
-        {
-            return;
-        }
-
-        CheckProduction();
-        Debug.Log("Ressourcen werden Produziert, aktueller Lagerbestand: " + buildingStorage.currentAmount);
-        Debug.Log("Das Lager hat: " + buildingStorage.maxCapacity);
+        producerForStorage.AddResources(productionQuantity);
     }
 
-    public void ProduceResource()
+    public void OnDestroy() //Gebäude wieder abmelden wenn es nicht mehr existiert
     {
-        buildingStorage.AddResources(productionQuantity);
-    }
-
-    public void CheckProduction()
-    {
-        if (IsInvoking("ProduceResource") == true && buildingStorage.currentAmount >= buildingStorage.maxCapacity)
+        if (producerForStorage != null)
         {
-            CancelInvoke("ProduceResource");
-        }
-        else if (IsInvoking("ProduceResource") == false && buildingStorage.currentAmount < buildingStorage.maxCapacity)
-        {
-            InvokeRepeating("ProduceResource", productionRate, productionRate);
+            producerForStorage.RemoveProducer(this);
         }
     }
 
-    
+
 }

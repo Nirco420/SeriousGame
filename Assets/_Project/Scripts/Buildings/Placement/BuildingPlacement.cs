@@ -11,6 +11,7 @@ public class BuildingPlacement : MonoBehaviour
     [SerializeField] private GridManager grid;
     [SerializeField] private MeshCollider meshCollider;
     [SerializeField] private float tapThreshold = 20f;
+    [SerializeField] private SegmentStorage segmentStorage;
 
     private BuildingModel currentPreview;
     private bool isDragging;
@@ -31,7 +32,6 @@ public class BuildingPlacement : MonoBehaviour
         {
             return;
         }
-
         List<Vector3> positions = currentPreview.GetAllBuildingPositions();
         if (grid.CanBuild(positions))
         {
@@ -47,6 +47,7 @@ public class BuildingPlacement : MonoBehaviour
     {
         isDragging = false;
         hasMoved = false;
+
         if (currentPreview == null)
         {
             return;
@@ -67,7 +68,7 @@ public class BuildingPlacement : MonoBehaviour
 
     public void OnTouchMoved(Vector2 pos) //Ein Ray von der camera zur Fingerposition erzeugen, wenn der MeshCollider der Baufläche getroffen wird, den Trefferpunkt in GridKoordinaten umrechen. Das Objekt dann auf diese GridKoordianten setzen
     {
-        if (!isDragging || currentPreview == null)
+        if (currentPreview == null || isDragging == false)
         {
             return;
         }
@@ -75,11 +76,6 @@ public class BuildingPlacement : MonoBehaviour
         if (Vector2.Distance(touchStartPosition, pos) > tapThreshold)
         {
             hasMoved = true;
-        }
-
-        if (hasMoved == false)
-        {
-            return;
         }
 
         Ray ray = mainCamera.ScreenPointToRay(pos);
@@ -92,14 +88,15 @@ public class BuildingPlacement : MonoBehaviour
 
     public void OnTouchEnded(Vector2 pos) //Wenn die Bewegungschwelle
     {
-        if (!isDragging)
+        if (currentPreview == null || isDragging == false)
         {
             return;
         }
 
         bool isTap = !hasMoved && Vector2.Distance(touchStartPosition, pos) <= tapThreshold;
         isDragging = false;
-        if (isTap)
+        
+        if (isTap == true)
         {
             PlaceBuilding();
         }
@@ -108,25 +105,16 @@ public class BuildingPlacement : MonoBehaviour
     public void GetSelectedBuilding(BuildingModel buildingPrefab)//Erzeugt das Gebäude mit den richtigen Gebäudedaten, erstmal nur als Vorschau
     {
         ClearPreview();
-        if (buildingPrefab == null || buildingPrefab.Data == null || positive == null || negative == null)
-        {
-            Debug.LogError("Gebaeudedaten, Modell oder Vorschau-Materialien fehlen.", this);
-            return;
-        }
-
+       
         currentPreview = Instantiate(buildingPrefab, transform.position, Quaternion.identity);
         currentPreview.BeginPreview();
     }
 
     public void PlaceBuilding()//Hier wird das gebäude platziert, es werden nochmal alle Zellen geprüft und wenn diese frei sind, durch das Building belegt. Alle werte werden dann wieder zurückgesetzt
     {
-        if (currentPreview == null)
-        {
-            return;
-        }
 
-        // Das Modell registriert sich und verwendet seine eigenen Gebaeudedaten.
-        if (!currentPreview.CompletePlacement(grid))
+        // Das Modell registriert sich und verwendet seine eigenen Gebäudedaten.
+        if (!currentPreview.CompletePlacement(grid, segmentStorage))
         {
             return;
         }
