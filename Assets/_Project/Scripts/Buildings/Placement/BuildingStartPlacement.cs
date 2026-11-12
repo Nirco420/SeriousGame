@@ -8,7 +8,7 @@ public class BuildingStartPlacement : MonoBehaviour
 
 #if UNITY_EDITOR
     [ContextMenu("Am Grid ausrichten")]
-    private void SnapToGrid()
+    private void SnapToGrid() //StartGebäude können hiermit bei der Platzierung dierekt ans GridPlatziert werden
     {
         if (Application.isPlaying || building == null || grid == null)
         {

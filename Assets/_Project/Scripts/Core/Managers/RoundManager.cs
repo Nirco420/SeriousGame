@@ -7,7 +7,8 @@ public class RoundManager : MonoBehaviour
     [SerializeField] private BuildingUI ui;
     [SerializeField] private List<SegmentStorage> storages = new List<SegmentStorage>();
     [SerializeField] private TransportManager transport;
-    private int currentRound {  get; set; }
+    [SerializeField] private DemendManger demendManger;
+    public int currentRound {  get; private set; }
     
 
     private void OnEnable() //Event von der Ui abonnieren
@@ -19,17 +20,16 @@ public class RoundManager : MonoBehaviour
     {
         if (isRoundFinished == false)
         {
-            Debug.Log("Runde wurde noch nicht beendet");
             return;
         }
 
-        Debug.Log("Runde wurde erfolgreich beendet");
         transport.StartTransport();
         foreach (SegmentStorage storage in storages)
         {
             storage.ProducePerRound();
         }
         currentRound++;
+        demendManger.CheckDemandsForRound(currentRound);
     }
 
     private void OnDisable() //Event wieder deabonnieren
