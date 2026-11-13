@@ -14,6 +14,6 @@ public class ResourceDisplayUI : MonoBehaviour
 
     public void SetQuantity(int amount) //Menge setzen
     {
-        quantity.text = amount.ToString();
+       quantity.text = amount.ToString();
     }
 }

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Building3
   m_EditorClassIdentifier: Assembly-CSharp::BuildingData
   description: 
-  cost: 0
+  costResource: {fileID: 11400000, guid: d4e07d01db4e575439560ea56cb3a4e5, type: 2}
+  cost: 3
+  type: 0
+  resource: {fileID: 0}
   resourceQuantity: 0
   maxStorage: 0
-  zyklusTime: 0

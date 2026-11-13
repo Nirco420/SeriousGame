@@ -11,6 +11,7 @@ public class TransportManager : MonoBehaviour
     [SerializeField] private Transform mainStoragePos;
     [SerializeField] private GameObject cart;
     [SerializeField] private SplineAnimate splineAnimate;
+    [SerializeField] private ResourceDisplayUI resourceDisplayUI;
 
     [SerializeField] private int transportCapacity;
     public int currentLoad {  get; private set; }
@@ -20,14 +21,22 @@ public class TransportManager : MonoBehaviour
 
     public ResourceData resourceData {  get; private set; }
 
+    private void Update()
+    {
+        if(isDriving == false)
+        {
+            cart.SetActive(segmentStorage.assignedCarts > 0);
+        }
+    }
+
     public void StartTransport() //Startet den Transport, 
     {
-        if(isDriving == true)
+        if(isDriving == true || segmentStorage.assignedCarts == 0)
         {
             return;
         }
 
-        currentLoad = segmentStorage.RemoveResources(transportCapacity); //Aus dem Segmentlager soviele Ressourcen holen wie der wagen platz hat
+        currentLoad = segmentStorage.RemoveResources(transportCapacity * segmentStorage.assignedCarts); //Aus dem Segmentlager soviele Ressourcen holen wie der wagen platz hat. Wenn zwei Wagen zugewiesen sind, die Doppelte Menge nehmen
 
         if (currentLoad == 0)
         {
@@ -36,12 +45,15 @@ public class TransportManager : MonoBehaviour
 
         resourceData = segmentStorage.storedResource; //Resource Data übergeben
         isDriving = true;
+        resourceDisplayUI.SetResource(resourceData);
+        resourceDisplayUI.SetQuantity(currentLoad);
+
         StartCoroutine(TranportLifeCycle(startStoragPos, mainStoragePos, moveSpeed)); //Coroutine für Wagen Animation starten
-        
     }
 
     public IEnumerator MoveToMainStorage(float kmh) //Animation von StartPosition zum ende des Paths
     {
+        resourceDisplayUI.gameObject.SetActive(true);
         splineAnimate.MaxSpeed = kmh;
         splineAnimate.Restart(false);
 
@@ -54,6 +66,7 @@ public class TransportManager : MonoBehaviour
 
     public IEnumerator MoveBackToSegmentStorage(float kmh) //Animation von Stadt wieder zurück zum Lager
     {
+        resourceDisplayUI.gameObject.SetActive(false);
         splineAnimate.MaxSpeed = kmh;
 
         while(splineAnimate.NormalizedTime > 0)
