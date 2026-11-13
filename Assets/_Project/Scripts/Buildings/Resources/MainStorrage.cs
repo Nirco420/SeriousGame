@@ -28,4 +28,9 @@ public class MainStorrage : MonoBehaviour
         }
     }
 
+    public void RemoveResource(int amount, ResourceData resource) //Resourcen wieder entnehmen 
+    {
+
+    }
+
 }

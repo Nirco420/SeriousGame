@@ -6,6 +6,8 @@ public class ResourceProduction : MonoBehaviour
     private SegmentStorage producerForStorage;
     private int productionQuantity;
     private ResourceData producedResource;
+    [SerializeField] private ResourceDisplayUI displayUI;
+    
 
     public void Setup(BuildingData buildingData, SegmentStorage segmentStorage) //Inizialisiert die aktuelle BuildingData und meldet sie als Producer im Lager
     {
@@ -13,6 +15,8 @@ public class ResourceProduction : MonoBehaviour
         producedResource = buildingData.resource;
         producerForStorage = segmentStorage;
         producerForStorage.RegisterProducer(this);
+        displayUI.SetResource(producedResource);
+        displayUI.gameObject.SetActive(true);
         
     }
     public void ProduceResource() //Lagert pro Runde die ProduktionsMenge des Gebäudes ein 

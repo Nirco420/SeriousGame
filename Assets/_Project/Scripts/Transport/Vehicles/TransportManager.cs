@@ -52,11 +52,11 @@ public class TransportManager : MonoBehaviour
         }
     }
 
-    public IEnumerator MoveBackToSegmentStorage(float kmh) //Animation von Stast wieder zurück zum Lager
+    public IEnumerator MoveBackToSegmentStorage(float kmh) //Animation von Stadt wieder zurück zum Lager
     {
         splineAnimate.MaxSpeed = kmh;
 
-        while(splineAnimate.NormalizedTime >= 0)
+        while(splineAnimate.NormalizedTime > 0)
         {
             splineAnimate.NormalizedTime = Mathf.MoveTowards(splineAnimate.NormalizedTime, 0f, Time.deltaTime / splineAnimate.Duration);
             yield return null;
