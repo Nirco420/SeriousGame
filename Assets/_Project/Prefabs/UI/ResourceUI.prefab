@@ -388,3 +388,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResourceDisplayUI
   resourceIcon: {fileID: 5026306740855933468}
+  quantity: {fileID: 0}

@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1444966299232267439}
   - component: {fileID: 542776685563004609}
   m_Layer: 0
-  m_Name: BuildingModel2
+  m_Name: BuildingModel2Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingModel
   wrapper: {fileID: 4013650843466426738}
-  buildingData: {fileID: 11400000, guid: 37a36f7e7126c7447906373731890e33, type: 2}
+  buildingData: {fileID: 11400000, guid: f7aa6ad4b7c91384aa3e5808b54c980f, type: 2}
   rotation: 0
 --- !u!114 &542776685563004609
 MonoBehaviour:
