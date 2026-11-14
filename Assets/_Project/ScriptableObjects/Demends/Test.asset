@@ -22,4 +22,4 @@ MonoBehaviour:
   changeInValueHalf: 0
   changeInValueNegative: 0
   changeInDeferalInValue: 0
-  deferralPeriod: 0
+  deferralPeriod: 3
