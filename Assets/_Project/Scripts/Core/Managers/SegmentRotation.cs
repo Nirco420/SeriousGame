@@ -8,6 +8,7 @@ public class SegmentRotation : MonoBehaviour
     [SerializeField] private float rotationDuration = 0.4f;
     [SerializeField] private BuildingPlacement buildingPlacement;
     [SerializeField] private GameObject rotationPivot;
+    [SerializeField] private BuildingUI buildingUI;
 
     [SerializeField] private Segment[] segments;
     private int currentSegmentIndex;
@@ -29,7 +30,7 @@ public class SegmentRotation : MonoBehaviour
         {
             return;
         }
-
+        buildingUI.BuildingFinished();
         StartCoroutine(Rotate(amount));
     }
 

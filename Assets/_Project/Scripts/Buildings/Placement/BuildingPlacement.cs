@@ -148,7 +148,9 @@ public class BuildingPlacement : MonoBehaviour
         meshCollider = segment.surface;
         segmentStorage = segment.segmentStorage;
 
-        currentPreview = Instantiate(buildingPrefab, transform.position, grid.transform.rotation);
+        Vector3 spawnPosition = grid.GridToWorldCenterPosition(8, 9);
+
+        currentPreview = Instantiate(buildingPrefab, spawnPosition, grid.transform.rotation);
 
         currentPreview.transform.SetParent(segment.buildingParents, true);
         currentPreview.BeginPreview();
