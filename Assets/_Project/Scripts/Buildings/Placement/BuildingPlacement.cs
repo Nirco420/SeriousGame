@@ -9,10 +9,8 @@ public class BuildingPlacement : MonoBehaviour
     [SerializeField] private BuildingUI buildingUI;
     [SerializeField] private Material positive;
     [SerializeField] private Material negative;
-    [SerializeField] private GridManager grid;
-    [SerializeField] private MeshCollider meshCollider;
-    [SerializeField] private SegmentStorage segmentStorage;
     [SerializeField] private MainStorrage mainStorrage;
+    [SerializeField] private SegmentRotation segmentRotation;
 
     [SerializeField] private GameObject placementPanel;
     [SerializeField] private Button confirmButton;
@@ -22,6 +20,12 @@ public class BuildingPlacement : MonoBehaviour
     private BuildingModel currentPreview;
     private ResourceData buildingResource;
     private bool isDragging;
+    private GridManager grid;
+    private MeshCollider meshCollider;
+    private SegmentStorage segmentStorage;
+
+    public bool isPlacing => currentPreview != null;
+
 
     public void Start()
     {
@@ -132,9 +136,21 @@ public class BuildingPlacement : MonoBehaviour
 
     public void GetSelectedBuilding(BuildingModel buildingPrefab)//Erzeugt das Gebäude mit den richtigen Gebäudedaten, erstmal nur als Vorschau
     {
+        if (segmentRotation.isRotating == true)
+        {
+            return;
+        }
+
         ClearPreview();
-       
-        currentPreview = Instantiate(buildingPrefab, transform.position, Quaternion.identity);
+        Segment segment = segmentRotation.currentSegment;
+
+        grid = segment.grid;
+        meshCollider = segment.surface;
+        segmentStorage = segment.segmentStorage;
+
+        currentPreview = Instantiate(buildingPrefab, transform.position, grid.transform.rotation);
+
+        currentPreview.transform.SetParent(segment.buildingParents, true);
         currentPreview.BeginPreview();
         placementPanel.SetActive(true);
     }

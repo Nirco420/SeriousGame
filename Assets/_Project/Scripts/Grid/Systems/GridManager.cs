@@ -35,13 +35,15 @@ public class GridManager : MonoBehaviour
 
     public Vector3 GridToWorldPosition(int x, int z) //Berechnet die Grid koordinaten in Worldkoordinaten um 
     {
-        return new Vector3(transform.position.x + x * cellSize, transform.position.y, transform.position.z + z * cellSize);
+        return transform.TransformPoint(new Vector3(x * cellSize, 0f , z * cellSize));
     }
 
     public (int x, int z) WorldToGridPosition(Vector3 worldPos) //Berechnet die Worldposition in GridPositionen um 
     {
-        int x = Mathf.FloorToInt((worldPos - transform.position).x / cellSize);
-        int z = Mathf.FloorToInt((worldPos - transform.position).z / cellSize);
+        Vector3 localPos = transform.InverseTransformPoint(worldPos);
+
+        int x = Mathf.FloorToInt(localPos.x / cellSize);
+        int z = Mathf.FloorToInt(localPos.z / cellSize);
         return (x,z);
     }
 
@@ -85,49 +87,57 @@ public class GridManager : MonoBehaviour
         return true;
     }
 
-    public void OnDrawGizmos() //Über einen Gizmos das Grid Zeichnen
+    public void OnDrawGizmos() //Per Gizmos das Grid zeichnen
     {
-        Gizmos.color = Color.green;
-
         if (cellSize <= 0f || width <= 0 || height <= 0 || meshCollider == null)
         {
             return;
         }
 
+        Matrix4x4 previousMatrix = Gizmos.matrix;
+        Gizmos.matrix = transform.localToWorldMatrix;
+        Gizmos.color = Color.green;
+
         for (int x = 0; x < width; x++)
         {
-                for (int z = 0; z < height; z++)
+            for (int z = 0; z < height; z++)
+            {
+                if (IsCellOnCollider(x, z))
                 {
-                    if (IsCellOnCollider(x, z))
-                    {
-                        Vector3 cellCenter = GridToWorldCenterPosition(x, z);
-                        Vector3 cellDimensions = new Vector3(cellSize, 0f, cellSize);
+                    Vector3 center = new Vector3((x + 0.5f) * cellSize, 0f, (z + 0.5f) * cellSize);
 
-                        Gizmos.DrawWireCube(cellCenter, cellDimensions);
-                    }
+                    Gizmos.DrawWireCube(center, new Vector3(cellSize, 0f, cellSize));
                 }
+            }
         }
+
+        Gizmos.matrix = previousMatrix;
     }
 
-    public bool IsCellOnCollider(int x, int z) //Erzeugt in jeder Zellecke einen Ray der prüft ob die Celle auf dem Collider liegt oder nicht. 
+    public bool IsCellOnCollider(int x, int z) // prüft per Ray jede Ecke einer Zelle. Wenn der Ray auf den MeshCollider trifft, dann return true sonst false
     {
-        Vector3 currentCellPos = GridToWorldPosition(x, z);
-        Ray leftUpperRay = new Ray(new Vector3(currentCellPos.x + 0.3f, currentCellPos.y + 10f, currentCellPos.z + 0.3f), Vector3.down);
-        Ray rightUpperRay = new Ray(new Vector3(currentCellPos.x + (cellSize - 0.3f), currentCellPos.y + 10f, currentCellPos.z + 0.3f), Vector3.down);
-        Ray leftBottomRay = new Ray(new Vector3(currentCellPos.x + 0.3f, currentCellPos.y + 10f, currentCellPos.z + (cellSize - 0.3f)), Vector3.down);
-        Ray rightBottomRay = new Ray(new Vector3(currentCellPos.x + (cellSize - 0.3f), currentCellPos.y + 10f, currentCellPos.z + (cellSize - 0.3f)), Vector3.down);
+        float left = x * cellSize + 0.3f;
+        float right = (x + 1) * cellSize - 0.3f;
+        float top = z * cellSize + 0.3f;
+        float bottom = (z + 1) * cellSize - 0.3f;
 
+        Ray leftUpperRay = new Ray(transform.TransformPoint(new Vector3(left, 10f, top)), -transform.up);
 
-        if (meshCollider.Raycast(leftUpperRay, out RaycastHit hitInfo, Mathf.Infinity) == true && meshCollider.Raycast(rightUpperRay, out RaycastHit hitInfo1, Mathf.Infinity) == true && meshCollider.Raycast(leftBottomRay, out RaycastHit hitInfo2, Mathf.Infinity) == true && meshCollider.Raycast(rightBottomRay, out RaycastHit hitInfo3, Mathf.Infinity) == true)
-        {
-            return true;
-        }
-        return false;
+        Ray rightUpperRay = new Ray(transform.TransformPoint(new Vector3(right, 10f, top)), -transform.up);
+
+        Ray leftBottomRay = new Ray(transform.TransformPoint(new Vector3(left, 10f, bottom)), -transform.up);
+
+        Ray rightBottomRay = new Ray(transform.TransformPoint(new Vector3(right, 10f, bottom)), -transform.up);
+
+        return meshCollider.Raycast(leftUpperRay, out _, Mathf.Infinity)
+            && meshCollider.Raycast(rightUpperRay, out _, Mathf.Infinity)
+            && meshCollider.Raycast(leftBottomRay, out _, Mathf.Infinity)
+            && meshCollider.Raycast(rightBottomRay, out _, Mathf.Infinity);
     }
 
     public Vector3 GridToWorldCenterPosition(int x, int z) //Hilfsmethode für das GridSnapping um den Mittelpunkt für jede Zelle bestimmen zu können.
     {
-        return GridToWorldPosition(x, z) + new Vector3(cellSize / 2f, 0f, cellSize / 2f);
+        return transform.TransformPoint(new Vector3((x + 0.5f) * cellSize, 0f, (z + 0.5f) * cellSize));
     }
 }
 
