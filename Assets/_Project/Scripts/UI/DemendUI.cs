@@ -84,8 +84,14 @@ public class DemendUI : MonoBehaviour
 
     private void RemoveDemandEntry()
     {
-        Destroy(demandEntry.gameObject);
-        demandEntry = null;
+        demandPanel.SetActive(false);
+
+        if (demandEntry != null)
+        {
+            Destroy(demandEntry.gameObject);
+            demandEntry = null;
+        }
+
         redInfo.SetActive(false);
     }
 

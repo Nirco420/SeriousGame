@@ -5902,6 +5902,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 593824898c4f8934a8d4b628d08b1a53, type: 2}
   - {fileID: 11400000, guid: 508df1cabec736940b0da5aedd741190, type: 2}
   mainStorrage: {fileID: 553229431}
+  barometerManager: {fileID: 1577189544}
 --- !u!1 &1336769693
 GameObject:
   m_ObjectHideFlags: 0
@@ -6226,7 +6227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62, y: 783}
+  m_AnchoredPosition: {x: 62, y: 780.1}
   m_SizeDelta: {x: 39.347, y: 41.2254}
   m_Pivot: {x: 0.50000006, y: 0.49999967}
 --- !u!114 &1390358312
@@ -7264,6 +7265,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558424315}
   m_CullTransparentMesh: 1
+--- !u!1 &1577189542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577189543}
+  - component: {fileID: 1577189544}
+  m_Layer: 0
+  m_Name: BarometerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1577189543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577189542}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1669348543}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577189544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577189542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4a2aece1c4e4849bfebaaf02b84f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BarometerManager
+  cellSize: 73.5
+  circle: {fileID: 1390358311}
+  duration: 2
 --- !u!1 &1595200472
 GameObject:
   m_ObjectHideFlags: 0
@@ -7785,6 +7833,7 @@ Transform:
   - {fileID: 553229430}
   - {fileID: 1299571104}
   - {fileID: 419721520}
+  - {fileID: 1577189543}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1678065399

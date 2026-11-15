@@ -18,8 +18,8 @@ MonoBehaviour:
   quantity: 3
   triggerRound: 0
   deadline: 2
-  changeInValuePositive: 0
-  changeInValueHalf: 0
-  changeInValueNegative: 0
-  changeInDeferalInValue: 0
   deferralPeriod: 3
+  changeInValuePositive: 2
+  changeInValueHalf: 1
+  changeInValueNegative: -3
+  changeInDeferalInValue: -2

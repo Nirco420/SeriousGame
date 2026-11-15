@@ -12,6 +12,7 @@ public class DemendManger : MonoBehaviour
 
     [SerializeField]private List<DemandData> demands = new List<DemandData>();
     [SerializeField] private MainStorrage mainStorrage;
+    [SerializeField] private BarometerManager barometerManager;
     private DemandData currentDemend;
     private int nextDemandIndex;
     private int dueRound;
@@ -34,8 +35,15 @@ public class DemendManger : MonoBehaviour
     public void CheckDemandsForRound(int currentRound) //Prüfen ob schoon eine Forderung aktiv und ob in der Liste noch eine ist. Wenn ja Demand Triggern
     {
         latestRound = currentRound;
-        if(currentDemend != null)
+
+        if (currentDemend != null)
         {
+            if (currentRound >= dueRound)
+            {
+                barometerManager.ChangeValue(currentDemend.changeInValueNegative);
+                CompleteDemand();
+            }
+
             return;
         }
 
@@ -60,6 +68,7 @@ public class DemendManger : MonoBehaviour
         if (CanGiveAll() == true)
         {
             mainStorrage.RemoveResource(currentDemend.quantity, currentDemend.resource);
+            barometerManager.ChangeValue(currentDemend.changeInValuePositive);
             CompleteDemand();
         }
     }
@@ -69,6 +78,7 @@ public class DemendManger : MonoBehaviour
         if (CanGiveHalf() == true)
         {
             mainStorrage.RemoveResource(currentDemend.quantity / 2, currentDemend.resource);
+            barometerManager.ChangeValue(currentDemend.changeInValueHalf);
             CompleteDemand();
         }
     }
@@ -81,6 +91,7 @@ public class DemendManger : MonoBehaviour
         }
 
         dueRound += currentDemend.deferralPeriod;
+        barometerManager.ChangeValue(currentDemend.changeInDeferalInValue);
     }
 
     public bool HasActiveDemand()
