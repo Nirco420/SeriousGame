@@ -12,6 +12,7 @@ public class BuildingData : ScriptableObject
     }
 
     public string description;
+    public ResourceData costResource;
     public int cost;
 
     public BuildingType type;

@@ -31,6 +31,7 @@ public class DemendUI : MonoBehaviour
     private void OnEnable() //Event Abonnieren
     {
         demendManger.OnDemandDisplayRequested += DemandPopUP;
+        demendManger.OnDemandCompleted += RemoveDemandEntry;
     }
 
     public void Start() //Listener für die Buttons
@@ -59,14 +60,14 @@ public class DemendUI : MonoBehaviour
 
     }
 
-    public void ClosePopUp() //Beim schliesen des PopUps, Forderung in die Übersicht und Pop up wieder ausschalten. 
+    public void ClosePopUp() //Beim schliesen des PopUps, Forderung in die Übersicht und Popup wieder ausschalten. 
     {
         demandPanel.SetActive(false);
         if (demandEntry == null)
         {
             
             demandEntry = Instantiate(demandEntryUI, content);
-            demandEntry.Setup(demandData, demandData.deadline);
+            demandEntry.Setup(demandData, demandData.deadline, demendManger);
             redInfo.SetActive(true);
 
         }
@@ -81,8 +82,22 @@ public class DemendUI : MonoBehaviour
 
     }
 
+    private void RemoveDemandEntry()
+    {
+        demandPanel.SetActive(false);
+
+        if (demandEntry != null)
+        {
+            Destroy(demandEntry.gameObject);
+            demandEntry = null;
+        }
+
+        redInfo.SetActive(false);
+    }
+
     private void OnDisable()
     {
         demendManger.OnDemandDisplayRequested -= DemandPopUP;
+        demendManger.OnDemandCompleted -= RemoveDemandEntry;
     }
 }

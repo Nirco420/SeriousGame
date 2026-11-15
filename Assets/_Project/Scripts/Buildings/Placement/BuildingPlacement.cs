@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingPlacement : MonoBehaviour
 {
@@ -8,15 +9,30 @@ public class BuildingPlacement : MonoBehaviour
     [SerializeField] private BuildingUI buildingUI;
     [SerializeField] private Material positive;
     [SerializeField] private Material negative;
-    [SerializeField] private GridManager grid;
-    [SerializeField] private MeshCollider meshCollider;
-    [SerializeField] private float tapThreshold = 20f;
-    [SerializeField] private SegmentStorage segmentStorage;
+    [SerializeField] private MainStorrage mainStorrage;
+    [SerializeField] private SegmentRotation segmentRotation;
+
+    [SerializeField] private GameObject placementPanel;
+    [SerializeField] private Button confirmButton;
+    [SerializeField] private Button cancelButton;
+    [SerializeField] private Button rotateButton; 
 
     private BuildingModel currentPreview;
+    private ResourceData buildingResource;
     private bool isDragging;
-    private Vector2 touchStartPosition;
-    private bool hasMoved;
+    private GridManager grid;
+    private MeshCollider meshCollider;
+    private SegmentStorage segmentStorage;
+
+    public bool isPlacing => currentPreview != null;
+
+
+    public void Start()
+    {
+        confirmButton.onClick.AddListener(PlaceBuilding);
+        cancelButton.onClick.AddListener(CanclePlacement);
+        rotateButton.onClick.AddListener(RotatePreview);
+    }
 
     private void OnEnable() //BuildingPlacement als Empfänger hinzufügen
     {
@@ -32,8 +48,20 @@ public class BuildingPlacement : MonoBehaviour
         {
             return;
         }
-        List<Vector3> positions = currentPreview.GetAllBuildingPositions();
-        if (grid.CanBuild(positions))
+
+        //UI an der Gebäudeposition platzieren
+        Vector3 position = mainCamera.WorldToScreenPoint(currentPreview.transform.position);
+        placementPanel.transform.position = new Vector3(position.x, position.y, 0f);
+
+        bool canBuild = grid.CanBuild(currentPreview.GetAllBuildingPositions()); //Bool speichern um Buttons darüber zu steuern
+        
+        BuildingData data = currentPreview.Data;
+
+        canBuild = canBuild && mainStorrage.HasResources(data.cost, data.costResource);
+
+        confirmButton.interactable = canBuild;
+
+        if (canBuild == true)
         {
             currentPreview.SetPreviewMaterial(positive);
         }
@@ -43,12 +71,33 @@ public class BuildingPlacement : MonoBehaviour
         }
     }
 
+    private void CanclePlacement() //Bricht den Bau vorgang ab und schliest die UI
+    {
+        ClearPreview();
+        buildingUI.BuildingFinished();
+    }
+
+    private void RotatePreview() //Dreht das Parent-Objekt 
+    {
+        if(currentPreview == null)
+        {
+            return;
+        }
+
+        currentPreview.Rotate(90f); 
+    }
+
     public void OnTouchBegan(Vector2 pos) //Erzeugt einen Ray von der Camera zum Objekt. Wenn einer der Objektcollider getroffen wurde, dann treffer position übergeben
     {
         isDragging = false;
-        hasMoved = false;
 
         if (currentPreview == null)
+        {
+            return;
+        }
+
+        //Da collider hinter Button geprüft werden und die Platzierung dann nicht gescheid Funktioniert diese Prüfung. 
+        if (RectTransformUtility.RectangleContainsScreenPoint((RectTransform)confirmButton.transform, pos, null) || RectTransformUtility.RectangleContainsScreenPoint((RectTransform)cancelButton.transform, pos, null) ||RectTransformUtility.RectangleContainsScreenPoint((RectTransform)rotateButton.transform, pos, null))
         {
             return;
         }
@@ -60,7 +109,6 @@ public class BuildingPlacement : MonoBehaviour
             if (hit.collider.transform.IsChildOf(currentPreview.transform))
             {
                 isDragging = true;
-                touchStartPosition = pos;
                 break;
             }
         }
@@ -73,11 +121,6 @@ public class BuildingPlacement : MonoBehaviour
             return;
         }
 
-        if (Vector2.Distance(touchStartPosition, pos) > tapThreshold)
-        {
-            hasMoved = true;
-        }
-
         Ray ray = mainCamera.ScreenPointToRay(pos);
         if (meshCollider.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity))
         {
@@ -86,32 +129,49 @@ public class BuildingPlacement : MonoBehaviour
         }
     }
 
-    public void OnTouchEnded(Vector2 pos) //Wenn die Bewegungschwelle
+    public void OnTouchEnded(Vector2 pos) //Beendet den ToucInput
     {
-        if (currentPreview == null || isDragging == false)
-        {
-            return;
-        }
-
-        bool isTap = !hasMoved && Vector2.Distance(touchStartPosition, pos) <= tapThreshold;
         isDragging = false;
-        
-        if (isTap == true)
-        {
-            PlaceBuilding();
-        }
     }
 
     public void GetSelectedBuilding(BuildingModel buildingPrefab)//Erzeugt das Gebäude mit den richtigen Gebäudedaten, erstmal nur als Vorschau
     {
+        if (segmentRotation.isRotating == true)
+        {
+            return;
+        }
+
         ClearPreview();
-       
-        currentPreview = Instantiate(buildingPrefab, transform.position, Quaternion.identity);
+        Segment segment = segmentRotation.currentSegment;
+
+        grid = segment.grid;
+        meshCollider = segment.surface;
+        segmentStorage = segment.segmentStorage;
+
+        Vector3 spawnPosition = grid.GridToWorldCenterPosition(8, 9);
+
+        currentPreview = Instantiate(buildingPrefab, spawnPosition, grid.transform.rotation);
+
+        currentPreview.transform.SetParent(segment.buildingParents, true);
         currentPreview.BeginPreview();
+        placementPanel.SetActive(true);
     }
 
     public void PlaceBuilding()//Hier wird das gebäude platziert, es werden nochmal alle Zellen geprüft und wenn diese frei sind, durch das Building belegt. Alle werte werden dann wieder zurückgesetzt
     {
+        if(currentPreview == null)
+        {
+            return;
+        }
+
+        BuildingData data = currentPreview.Data;
+
+
+        if (mainStorrage.HasResources(data.cost, data.costResource) == false)
+        {
+            return;
+
+        }
 
         // Das Modell registriert sich und verwendet seine eigenen Gebäudedaten.
         if (!currentPreview.CompletePlacement(grid, segmentStorage))
@@ -119,11 +179,13 @@ public class BuildingPlacement : MonoBehaviour
             return;
         }
 
+        mainStorrage.RemoveResource(data.cost, data.costResource);
+
         // Dieselbe Instanz bleibt bestehen.
         currentPreview = null;
         isDragging = false;
-        hasMoved = false;
         buildingUI.BuildingFinished();
+        placementPanel.SetActive(false);
     }
 
     private void ClearPreview() //Entfernt die Vorschau bzw. das Modell bei einem Auswahlswechsel
@@ -137,7 +199,7 @@ public class BuildingPlacement : MonoBehaviour
 
         currentPreview = null;
         isDragging = false;
-        hasMoved = false;
+        placementPanel.SetActive(false);
     }
 
     private void OnDisable() //Events wieder abmelden und alle werte resetten

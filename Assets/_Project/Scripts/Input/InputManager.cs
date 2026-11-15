@@ -13,6 +13,10 @@ public class InputManager : MonoBehaviour
     public event Action<Vector2> OnFingerMoved;
     public event Action<Vector2> OnFingerBegan;
     public event Action<Vector2> OnFingerEnded;
+    public event Action<int> OnSwipe;
+    public event Action<Vector2> OnTap;
+
+    [SerializeField] private float swipeRange = 120f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
@@ -37,6 +41,18 @@ public class InputManager : MonoBehaviour
 
                 case TouchPhase.Ended:
                     OnFingerEnded?.Invoke(TrackFingerEndPosition(touch));
+
+                    if (touch.isTap == true)
+                    {
+                        OnTap?.Invoke(touch.screenPosition);
+                    }
+
+                    Vector2 swipe = touch.screenPosition - touch.startScreenPosition;
+
+                    if(Mathf.Abs(swipe.x) >=  swipeRange && Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y))
+                    {
+                        OnSwipe?.Invoke(swipe.x > 0 ? 1 : -1);
+                    } 
                     break;
 
                 case TouchPhase.Canceled:
@@ -60,6 +76,7 @@ public class InputManager : MonoBehaviour
     {
         return touch.screenPosition;
     }
+
 
     public void OnDisable()
     {

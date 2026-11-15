@@ -9,6 +9,7 @@ public class SegmentStorage : MonoBehaviour
 
     public int currentAmount {  get; private set; }
     public int maxCapacity { get; private set; }
+    public int assignedCarts { get; private set; }
 
     public void Awake()
     {
@@ -72,5 +73,25 @@ public class SegmentStorage : MonoBehaviour
             Debug.Log("Resource wurde hinzugefügt: " + currentAmount + "/" + maxCapacity);
         }
     }
+    public bool AssignCart() //Cart zuweisen
+    {
+        if (assignedCarts >= 3)
+        {
+            return false;
+        }
 
+        assignedCarts++;
+        return true;
+    }
+
+    public bool RemoveCarts() //Cart wieder entfernen
+    {
+        if (assignedCarts <= 0)
+        {
+            return false;
+        }
+
+        assignedCarts--;
+        return true;
+    }
 }
