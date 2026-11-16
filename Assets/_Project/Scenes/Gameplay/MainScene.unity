@@ -5648,7 +5648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingUI
   buildingButton: {fileID: 1083211779}
-  buildingPanel: {fileID: 1175951169}
+  buildingPanel: {fileID: 944333623}
   segmentRotation: {fileID: 511730905}
   building1: {fileID: 1969718599}
   building2: {fileID: 579309663}
