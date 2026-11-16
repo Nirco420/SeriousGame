@@ -1,0 +1,11 @@
+{
+  "sourceFilesUnchanged": 27,
+  "diagramViews": 8,
+  "graphvizRenderErrors": 0,
+  "htmlSyntax": "passed",
+  "viewSelectionAndZoomLogic": "passed (DOM stub, not browser)",
+  "downloadLinks": "passed",
+  "svgRasterization": "passed",
+  "browserTest": "not completed: headless Edge launch unavailable",
+  "playmode": "not performed"
+}

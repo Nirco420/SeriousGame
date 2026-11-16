@@ -1,0 +1,4082 @@
+{
+  "date": "2026-11-16",
+  "files": [
+    {
+      "path": "Assets/_Project/Editor/Tools/ProjectFolderColors.cs",
+      "sha256": "86189b98f8289e87b436534312067e075b9942b81e2d5edb62c482424db7b468"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Buildings/Placement/BuildingModel.cs",
+      "sha256": "74e11ae8dbd822817a7b96f44a49d4d870e74f01e1d088c4c18309ae696fefad"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Buildings/Placement/BuildingPlacement.cs",
+      "sha256": "527769bd2f6e8879c523425bd9bea39ee7301f9b637b363ef6064167961c4520"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Buildings/Placement/BuildingShapeUnit.cs",
+      "sha256": "05bb44d8feb1c581042c9f79e3f9997bf461c96fc3f50a8da61c2578d212acde"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Buildings/Placement/BuildingStartPlacement.cs",
+      "sha256": "25d5e6ef26c0296d265036ab22ae191b2146ef1771e637cdd0d96db900ec9ea2"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Buildings/Resources/MainStorrage.cs",
+      "sha256": "9dd857ea07388bc84da6bcf6e3ebfe1d7351dfaf6b0c7c9951a1cc665be2165a"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Buildings/Resources/ResourceProduction.cs",
+      "sha256": "f1a238104ce9460fdebf0bdd57d61eca57991bd8f7346596dfef188d5743d253"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Buildings/Resources/SegmentStorage.cs",
+      "sha256": "c4f98078395862aacb0b97df0d76a8ecc68faed657648e5d5293aa3ec59613a9"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Core/Managers/DemendManger.cs",
+      "sha256": "b77fa9aa54d3cbc8653ab2f8d30f853e97118c9fa94c666681e1eecbc42a35f2"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Core/Managers/RoundManager.cs",
+      "sha256": "8b634a316074961ffd82a47282c3d61cde3310d2036df429696284dead7b3680"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Core/Managers/Segment.cs",
+      "sha256": "45a61742e0c0993bc4d39d719bee00e718e3d281219ab268b76f65d189a4dcbf"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Core/Managers/SegmentRotation.cs",
+      "sha256": "5ea735458705e1927341e20c3ea7b754cefac8710029fda889e4670895991476"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Grid/Systems/GridManager.cs",
+      "sha256": "9f6fae31a1b09b8c357a25f319c3b18f8f3f7582f7a97d3eb8c6a3a10bd54e8b"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Input/InputManager.cs",
+      "sha256": "88169b307b1cea9995e6d21c51230256e591c0c9db22a2b19ea4a11057607cf5"
+    },
+    {
+      "path": "Assets/_Project/Scripts/ScriptableObjects/BuildingData.cs",
+      "sha256": "5e5c2ad12b023bf6ce2168c7427ab710f4b00f8a569746d7a49fa31b35e7aaff"
+    },
+    {
+      "path": "Assets/_Project/Scripts/ScriptableObjects/DemandData.cs",
+      "sha256": "aad12d8bee970fa3e935594f4f08216e1abe869d366479062708419da9f88dbd"
+    },
+    {
+      "path": "Assets/_Project/Scripts/ScriptableObjects/ResourceData.cs",
+      "sha256": "ffef69bcadc66f7a83a04bf6f896828317787dfd1de01eb97968260a9c7f5106"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Transport/Logistics/CartManager.cs",
+      "sha256": "c3bbf2e83aa28404e8debf05b6e8e86a2d6e54e8f982df4fa1b05e1fea020596"
+    },
+    {
+      "path": "Assets/_Project/Scripts/Transport/Vehicles/TransportManager.cs",
+      "sha256": "d5688cd09e5d5f1d4f6b50362d7a75d0bfbbed1f64f1ca40696d990a20287274"
+    },
+    {
+      "path": "Assets/_Project/Scripts/UI/BarometerManager.cs",
+      "sha256": "9f536789d1d4c6df769df254ab7fb0714105be920102a5efaca69a83f9bd6c20"
+    },
+    {
+      "path": "Assets/_Project/Scripts/UI/BuildingUI.cs",
+      "sha256": "bd1115503e2a8449c69432cd7fbdff8ed24db0c977f926707f5f519be2fba4e3"
+    },
+    {
+      "path": "Assets/_Project/Scripts/UI/DemandEntryUI.cs",
+      "sha256": "a177bfc96d52b3625dd929fde8000223ea1d66370e46757bb43421aa39187e58"
+    },
+    {
+      "path": "Assets/_Project/Scripts/UI/DemendUI.cs",
+      "sha256": "4b07461d57568d88f37eba0a3bf0711bbfd8dbac9599ccfef5111941bc330acf"
+    },
+    {
+      "path": "Assets/_Project/Scripts/UI/ResourceDisplayUI.cs",
+      "sha256": "eeb3de030d666b5a4010547f45a79d7c29193b71595efcb5b45d5f42608c9c4d"
+    },
+    {
+      "path": "Assets/_Project/Scripts/UI/SegmentStorageUI.cs",
+      "sha256": "d44f3a813199616b1ea46d8652176bf0ebc8ae2589851d194354d21b129d8156"
+    },
+    {
+      "path": "Assets/_Project/Scripts/UI/UIOverview.cs",
+      "sha256": "13d0cd0256a47c2caa3665581cb1ae5dd447db2f59cc38e4b72dc21077b50088"
+    },
+    {
+      "path": "Assets/_Project/Tests/TestScripts/NewTestScript.cs",
+      "sha256": "da29e2cc72436e99c872db29214d51d49f5cfc258719c4b186519154f6927e96"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ProjectFolderColors",
+      "base": null,
+      "static": true,
+      "source": "Assets/_Project/Editor/Tools/ProjectFolderColors.cs",
+      "line": 10,
+      "members": [
+        {
+          "kind": "field",
+          "name": "ColorCache",
+          "visibility": "private",
+          "type": "Dictionary<string, Color?>",
+          "declaration": "private static readonly Dictionary<string, Color?> ColorCache = new Dictionary<string, Color?>();",
+          "line": 12,
+          "uml": "-Dictionary ColorCache$"
+        },
+        {
+          "kind": "field",
+          "name": "Rules",
+          "visibility": "private",
+          "type": "KeyValuePair<string, Color>[]",
+          "declaration": "private static readonly KeyValuePair<string, Color>[] Rules =",
+          "line": 14,
+          "uml": "-KeyValuePair[] Rules$"
+        },
+        {
+          "kind": "method",
+          "name": "ProjectFolderColors",
+          "visibility": "private",
+          "type": "static",
+          "params": "",
+          "declaration": "static ProjectFolderColors()",
+          "line": 27,
+          "uml": "-ProjectFolderColors()$"
+        },
+        {
+          "kind": "method",
+          "name": "Rule",
+          "visibility": "private",
+          "type": "KeyValuePair<string, Color>",
+          "params": "string path, Color color",
+          "declaration": "private static KeyValuePair<string, Color> Rule(string path, Color color)",
+          "line": 34,
+          "uml": "-Rule(string path, Color color) KeyValuePair$"
+        },
+        {
+          "kind": "method",
+          "name": "ClearCache",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private static void ClearCache()",
+          "line": 39,
+          "uml": "-ClearCache() void$"
+        },
+        {
+          "kind": "method",
+          "name": "GetFolderColor",
+          "visibility": "private",
+          "type": "Color?",
+          "params": "string guid",
+          "declaration": "private static Color? GetFolderColor(string guid)",
+          "line": 45,
+          "uml": "-GetFolderColor(string guid) Color?$"
+        },
+        {
+          "kind": "method",
+          "name": "DrawFolder",
+          "visibility": "private",
+          "type": "void",
+          "params": "string guid, Rect selectionRect",
+          "declaration": "private static void DrawFolder(string guid, Rect selectionRect)",
+          "line": 69,
+          "uml": "-DrawFolder(string guid, Rect selectionRect) void$"
+        }
+      ],
+      "scope": "editor"
+    },
+    {
+      "id": "BuildingModel",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Buildings/Placement/BuildingModel.cs",
+      "line": 4,
+      "members": [
+        {
+          "kind": "field",
+          "name": "wrapper",
+          "visibility": "private",
+          "type": "GameObject",
+          "declaration": "private GameObject wrapper;",
+          "line": 6,
+          "uml": "-GameObject wrapper"
+        },
+        {
+          "kind": "field",
+          "name": "buildingData",
+          "visibility": "private",
+          "type": "BuildingData",
+          "declaration": "private BuildingData buildingData;",
+          "line": 7,
+          "uml": "-BuildingData buildingData"
+        },
+        {
+          "kind": "property",
+          "name": "Data",
+          "visibility": "public",
+          "type": "BuildingData",
+          "declaration": "public BuildingData Data",
+          "line": 9,
+          "uml": "+BuildingData Data"
+        },
+        {
+          "kind": "field",
+          "name": "rotation",
+          "visibility": "public",
+          "type": "float",
+          "declaration": "public float rotation;",
+          "line": 17,
+          "uml": "+float rotation"
+        },
+        {
+          "kind": "field",
+          "name": "shapeUnits",
+          "visibility": "private",
+          "type": "BuildingShapeUnit[]",
+          "declaration": "private BuildingShapeUnit[] shapeUnits;",
+          "line": 18,
+          "uml": "-BuildingShapeUnit[] shapeUnits"
+        },
+        {
+          "kind": "field",
+          "name": "renderers",
+          "visibility": "private",
+          "type": "Renderer[]",
+          "declaration": "private Renderer[] renderers;",
+          "line": 20,
+          "uml": "-Renderer[] renderers"
+        },
+        {
+          "kind": "field",
+          "name": "originalMaterials",
+          "visibility": "private",
+          "type": "Material[][]",
+          "declaration": "private Material[][] originalMaterials;",
+          "line": 22,
+          "uml": "-Material[][] originalMaterials"
+        },
+        {
+          "kind": "field",
+          "name": "previewMaterial",
+          "visibility": "private",
+          "type": "Material",
+          "declaration": "private Material previewMaterial;",
+          "line": 23,
+          "uml": "-Material previewMaterial"
+        },
+        {
+          "kind": "field",
+          "name": "production",
+          "visibility": "private",
+          "type": "ResourceProduction",
+          "declaration": "private ResourceProduction production;",
+          "line": 24,
+          "uml": "-ResourceProduction production"
+        },
+        {
+          "kind": "field",
+          "name": "isPreview",
+          "visibility": "private",
+          "type": "bool",
+          "declaration": "private bool isPreview;",
+          "line": 25,
+          "uml": "-bool isPreview"
+        },
+        {
+          "kind": "field",
+          "name": "isPlaced",
+          "visibility": "private",
+          "type": "bool",
+          "declaration": "private bool isPlaced;",
+          "line": 26,
+          "uml": "-bool isPlaced"
+        },
+        {
+          "kind": "method",
+          "name": "Awake",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void Awake()",
+          "line": 28,
+          "uml": "+Awake() void"
+        },
+        {
+          "kind": "method",
+          "name": "BeginPreview",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void BeginPreview()",
+          "line": 49,
+          "uml": "+BeginPreview() void"
+        },
+        {
+          "kind": "method",
+          "name": "SetPreviewMaterial",
+          "visibility": "public",
+          "type": "void",
+          "params": "Material material",
+          "declaration": "public void SetPreviewMaterial(Material material)",
+          "line": 57,
+          "uml": "+SetPreviewMaterial(Material material) void"
+        },
+        {
+          "kind": "method",
+          "name": "CompletePlacement",
+          "visibility": "public",
+          "type": "bool",
+          "params": "GridManager targetGrid, SegmentStorage segmentStorage",
+          "declaration": "public bool CompletePlacement(GridManager targetGrid, SegmentStorage segmentStorage)",
+          "line": 78,
+          "uml": "+CompletePlacement(GridManager targetGrid, SegmentStorage segmentStorage) bool"
+        },
+        {
+          "kind": "method",
+          "name": "Rotate",
+          "visibility": "public",
+          "type": "void",
+          "params": "float rotationStep",
+          "declaration": "public void Rotate(float rotationStep)",
+          "line": 106,
+          "uml": "+Rotate(float rotationStep) void"
+        },
+        {
+          "kind": "method",
+          "name": "GetAllBuildingPositions",
+          "visibility": "public",
+          "type": "List<Vector3>",
+          "params": "",
+          "declaration": "public List<Vector3> GetAllBuildingPositions()",
+          "line": 111,
+          "uml": "+GetAllBuildingPositions() List~Vector3~"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "BuildingPlacement",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Buildings/Placement/BuildingPlacement.cs",
+      "line": 5,
+      "members": [
+        {
+          "kind": "field",
+          "name": "mainCamera",
+          "visibility": "private",
+          "type": "Camera",
+          "declaration": "private Camera mainCamera;",
+          "line": 7,
+          "uml": "-Camera mainCamera"
+        },
+        {
+          "kind": "field",
+          "name": "inputManager",
+          "visibility": "private",
+          "type": "InputManager",
+          "declaration": "private InputManager inputManager;",
+          "line": 8,
+          "uml": "-InputManager inputManager"
+        },
+        {
+          "kind": "field",
+          "name": "buildingUI",
+          "visibility": "private",
+          "type": "BuildingUI",
+          "declaration": "private BuildingUI buildingUI;",
+          "line": 9,
+          "uml": "-BuildingUI buildingUI"
+        },
+        {
+          "kind": "field",
+          "name": "positive",
+          "visibility": "private",
+          "type": "Material",
+          "declaration": "private Material positive;",
+          "line": 10,
+          "uml": "-Material positive"
+        },
+        {
+          "kind": "field",
+          "name": "negative",
+          "visibility": "private",
+          "type": "Material",
+          "declaration": "private Material negative;",
+          "line": 11,
+          "uml": "-Material negative"
+        },
+        {
+          "kind": "field",
+          "name": "mainStorrage",
+          "visibility": "private",
+          "type": "MainStorrage",
+          "declaration": "private MainStorrage mainStorrage;",
+          "line": 12,
+          "uml": "-MainStorrage mainStorrage"
+        },
+        {
+          "kind": "field",
+          "name": "segmentRotation",
+          "visibility": "private",
+          "type": "SegmentRotation",
+          "declaration": "private SegmentRotation segmentRotation;",
+          "line": 13,
+          "uml": "-SegmentRotation segmentRotation"
+        },
+        {
+          "kind": "field",
+          "name": "placementPanel",
+          "visibility": "private",
+          "type": "GameObject",
+          "declaration": "private GameObject placementPanel;",
+          "line": 15,
+          "uml": "-GameObject placementPanel"
+        },
+        {
+          "kind": "field",
+          "name": "confirmButton",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button confirmButton;",
+          "line": 16,
+          "uml": "-Button confirmButton"
+        },
+        {
+          "kind": "field",
+          "name": "cancelButton",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button cancelButton;",
+          "line": 17,
+          "uml": "-Button cancelButton"
+        },
+        {
+          "kind": "field",
+          "name": "rotateButton",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button rotateButton;",
+          "line": 18,
+          "uml": "-Button rotateButton"
+        },
+        {
+          "kind": "field",
+          "name": "currentPreview",
+          "visibility": "private",
+          "type": "BuildingModel",
+          "declaration": "private BuildingModel currentPreview;",
+          "line": 20,
+          "uml": "-BuildingModel currentPreview"
+        },
+        {
+          "kind": "field",
+          "name": "buildingResource",
+          "visibility": "private",
+          "type": "ResourceData",
+          "declaration": "private ResourceData buildingResource;",
+          "line": 21,
+          "uml": "-ResourceData buildingResource"
+        },
+        {
+          "kind": "field",
+          "name": "isDragging",
+          "visibility": "private",
+          "type": "bool",
+          "declaration": "private bool isDragging;",
+          "line": 22,
+          "uml": "-bool isDragging"
+        },
+        {
+          "kind": "field",
+          "name": "grid",
+          "visibility": "private",
+          "type": "GridManager",
+          "declaration": "private GridManager grid;",
+          "line": 23,
+          "uml": "-GridManager grid"
+        },
+        {
+          "kind": "field",
+          "name": "meshCollider",
+          "visibility": "private",
+          "type": "MeshCollider",
+          "declaration": "private MeshCollider meshCollider;",
+          "line": 24,
+          "uml": "-MeshCollider meshCollider"
+        },
+        {
+          "kind": "field",
+          "name": "segmentStorage",
+          "visibility": "private",
+          "type": "SegmentStorage",
+          "declaration": "private SegmentStorage segmentStorage;",
+          "line": 25,
+          "uml": "-SegmentStorage segmentStorage"
+        },
+        {
+          "kind": "property",
+          "name": "isPlacing",
+          "visibility": "public",
+          "type": "bool",
+          "declaration": "public bool isPlacing => currentPreview != null;",
+          "line": 27,
+          "uml": "+bool isPlacing"
+        },
+        {
+          "kind": "method",
+          "name": "Start",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void Start()",
+          "line": 30,
+          "uml": "+Start() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnEnable",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void OnEnable()",
+          "line": 37,
+          "uml": "-OnEnable() void"
+        },
+        {
+          "kind": "method",
+          "name": "Update",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void Update()",
+          "line": 45,
+          "uml": "-Update() void"
+        },
+        {
+          "kind": "method",
+          "name": "CanclePlacement",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void CanclePlacement()",
+          "line": 74,
+          "uml": "-CanclePlacement() void"
+        },
+        {
+          "kind": "method",
+          "name": "RotatePreview",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void RotatePreview()",
+          "line": 80,
+          "uml": "-RotatePreview() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnTouchBegan",
+          "visibility": "public",
+          "type": "void",
+          "params": "Vector2 pos",
+          "declaration": "public void OnTouchBegan(Vector2 pos)",
+          "line": 90,
+          "uml": "+OnTouchBegan(Vector2 pos) void"
+        },
+        {
+          "kind": "method",
+          "name": "OnTouchMoved",
+          "visibility": "public",
+          "type": "void",
+          "params": "Vector2 pos",
+          "declaration": "public void OnTouchMoved(Vector2 pos)",
+          "line": 117,
+          "uml": "+OnTouchMoved(Vector2 pos) void"
+        },
+        {
+          "kind": "method",
+          "name": "OnTouchEnded",
+          "visibility": "public",
+          "type": "void",
+          "params": "Vector2 pos",
+          "declaration": "public void OnTouchEnded(Vector2 pos)",
+          "line": 132,
+          "uml": "+OnTouchEnded(Vector2 pos) void"
+        },
+        {
+          "kind": "method",
+          "name": "GetSelectedBuilding",
+          "visibility": "public",
+          "type": "void",
+          "params": "BuildingModel buildingPrefab",
+          "declaration": "public void GetSelectedBuilding(BuildingModel buildingPrefab)",
+          "line": 137,
+          "uml": "+GetSelectedBuilding(BuildingModel buildingPrefab) void"
+        },
+        {
+          "kind": "method",
+          "name": "PlaceBuilding",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void PlaceBuilding()",
+          "line": 160,
+          "uml": "+PlaceBuilding() void"
+        },
+        {
+          "kind": "method",
+          "name": "ClearPreview",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void ClearPreview()",
+          "line": 191,
+          "uml": "-ClearPreview() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnDisable",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void OnDisable()",
+          "line": 205,
+          "uml": "-OnDisable() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "BuildingShapeUnit",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Buildings/Placement/BuildingShapeUnit.cs",
+      "line": 5,
+      "members": [],
+      "scope": "runtime"
+    },
+    {
+      "id": "BuildingStartPlacement",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Buildings/Placement/BuildingStartPlacement.cs",
+      "line": 3,
+      "members": [
+        {
+          "kind": "field",
+          "name": "building",
+          "visibility": "private",
+          "type": "BuildingModel",
+          "declaration": "private BuildingModel building;",
+          "line": 5,
+          "uml": "-BuildingModel building"
+        },
+        {
+          "kind": "field",
+          "name": "grid",
+          "visibility": "private",
+          "type": "GridManager",
+          "declaration": "private GridManager grid;",
+          "line": 6,
+          "uml": "-GridManager grid"
+        },
+        {
+          "kind": "field",
+          "name": "segmentStorage",
+          "visibility": "private",
+          "type": "SegmentStorage",
+          "declaration": "private SegmentStorage segmentStorage;",
+          "line": 7,
+          "uml": "-SegmentStorage segmentStorage"
+        },
+        {
+          "kind": "method",
+          "name": "SnapToGrid",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void SnapToGrid()",
+          "line": 11,
+          "uml": "-SnapToGrid() void"
+        },
+        {
+          "kind": "method",
+          "name": "Start",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "void Start()",
+          "line": 34,
+          "uml": "-Start() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "MainStorrage",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Buildings/Resources/MainStorrage.cs",
+      "line": 4,
+      "members": [
+        {
+          "kind": "property",
+          "name": "wood",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int wood {  get; private set; }",
+          "line": 6,
+          "uml": "+int wood"
+        },
+        {
+          "kind": "property",
+          "name": "wheed",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int wheed { get; private set; }",
+          "line": 7,
+          "uml": "+int wheed"
+        },
+        {
+          "kind": "property",
+          "name": "flachs",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int flachs { get; private set; }",
+          "line": 8,
+          "uml": "+int flachs"
+        },
+        {
+          "kind": "property",
+          "name": "gold",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int gold {  get; private set; }",
+          "line": 9,
+          "uml": "+int gold"
+        },
+        {
+          "kind": "field",
+          "name": "startWood",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int startWood;",
+          "line": 11,
+          "uml": "-int startWood"
+        },
+        {
+          "kind": "field",
+          "name": "startWheed",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int startWheed;",
+          "line": 12,
+          "uml": "-int startWheed"
+        },
+        {
+          "kind": "field",
+          "name": "startFlachs",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int startFlachs;",
+          "line": 13,
+          "uml": "-int startFlachs"
+        },
+        {
+          "kind": "field",
+          "name": "startGold",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int startGold;",
+          "line": 14,
+          "uml": "-int startGold"
+        },
+        {
+          "kind": "method",
+          "name": "Start",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void Start()",
+          "line": 17,
+          "uml": "+Start() void"
+        },
+        {
+          "kind": "method",
+          "name": "AddResources",
+          "visibility": "public",
+          "type": "void",
+          "params": "int amount, ResourceData resource",
+          "declaration": "public void AddResources(int amount, ResourceData resource)",
+          "line": 25,
+          "uml": "+AddResources(int amount, ResourceData resource) void"
+        },
+        {
+          "kind": "method",
+          "name": "RemoveResource",
+          "visibility": "public",
+          "type": "void",
+          "params": "int amount, ResourceData resource",
+          "declaration": "public void RemoveResource(int amount, ResourceData resource)",
+          "line": 43,
+          "uml": "+RemoveResource(int amount, ResourceData resource) void"
+        },
+        {
+          "kind": "method",
+          "name": "HasResources",
+          "visibility": "public",
+          "type": "bool",
+          "params": "int amount, ResourceData resource",
+          "declaration": "public bool HasResources(int amount, ResourceData resource)",
+          "line": 75,
+          "uml": "+HasResources(int amount, ResourceData resource) bool"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "ResourceProduction",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Buildings/Resources/ResourceProduction.cs",
+      "line": 3,
+      "members": [
+        {
+          "kind": "field",
+          "name": "producerForStorage",
+          "visibility": "private",
+          "type": "SegmentStorage",
+          "declaration": "private SegmentStorage producerForStorage;",
+          "line": 6,
+          "uml": "-SegmentStorage producerForStorage"
+        },
+        {
+          "kind": "field",
+          "name": "productionQuantity",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int productionQuantity;",
+          "line": 7,
+          "uml": "-int productionQuantity"
+        },
+        {
+          "kind": "field",
+          "name": "producedResource",
+          "visibility": "private",
+          "type": "ResourceData",
+          "declaration": "private ResourceData producedResource;",
+          "line": 8,
+          "uml": "-ResourceData producedResource"
+        },
+        {
+          "kind": "field",
+          "name": "displayUI",
+          "visibility": "private",
+          "type": "ResourceDisplayUI",
+          "declaration": "private ResourceDisplayUI displayUI;",
+          "line": 9,
+          "uml": "-ResourceDisplayUI displayUI"
+        },
+        {
+          "kind": "method",
+          "name": "Setup",
+          "visibility": "public",
+          "type": "void",
+          "params": "BuildingData buildingData, SegmentStorage segmentStorage",
+          "declaration": "public void Setup(BuildingData buildingData, SegmentStorage segmentStorage)",
+          "line": 12,
+          "uml": "+Setup(BuildingData buildingData, SegmentStorage segmentStorage) void"
+        },
+        {
+          "kind": "method",
+          "name": "ProduceResource",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void ProduceResource()",
+          "line": 22,
+          "uml": "+ProduceResource() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnDestroy",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OnDestroy()",
+          "line": 27,
+          "uml": "+OnDestroy() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "SegmentStorage",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Buildings/Resources/SegmentStorage.cs",
+      "line": 4,
+      "members": [
+        {
+          "kind": "field",
+          "name": "buildingData",
+          "visibility": "private",
+          "type": "BuildingData",
+          "declaration": "private BuildingData buildingData;",
+          "line": 6,
+          "uml": "-BuildingData buildingData"
+        },
+        {
+          "kind": "property",
+          "name": "storedResource",
+          "visibility": "public",
+          "type": "ResourceData",
+          "declaration": "public ResourceData storedResource {  get; private set; }",
+          "line": 7,
+          "uml": "+ResourceData storedResource"
+        },
+        {
+          "kind": "field",
+          "name": "resourceBuildings",
+          "visibility": "private",
+          "type": "List<ResourceProduction>",
+          "declaration": "private List<ResourceProduction> resourceBuildings = new List<ResourceProduction>();",
+          "line": 8,
+          "uml": "-List~ResourceProduction~ resourceBuildings"
+        },
+        {
+          "kind": "property",
+          "name": "currentAmount",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int currentAmount {  get; private set; }",
+          "line": 10,
+          "uml": "+int currentAmount"
+        },
+        {
+          "kind": "property",
+          "name": "maxCapacity",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int maxCapacity { get; private set; }",
+          "line": 11,
+          "uml": "+int maxCapacity"
+        },
+        {
+          "kind": "property",
+          "name": "assignedCarts",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int assignedCarts { get; private set; }",
+          "line": 12,
+          "uml": "+int assignedCarts"
+        },
+        {
+          "kind": "method",
+          "name": "Awake",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void Awake()",
+          "line": 14,
+          "uml": "+Awake() void"
+        },
+        {
+          "kind": "method",
+          "name": "AddResources",
+          "visibility": "public",
+          "type": "void",
+          "params": "int amount",
+          "declaration": "public void AddResources(int amount)",
+          "line": 22,
+          "uml": "+AddResources(int amount) void"
+        },
+        {
+          "kind": "method",
+          "name": "RemoveResources",
+          "visibility": "public",
+          "type": "int",
+          "params": "int amount",
+          "declaration": "public int RemoveResources(int amount)",
+          "line": 34,
+          "uml": "+RemoveResources(int amount) int"
+        },
+        {
+          "kind": "method",
+          "name": "RegisterProducer",
+          "visibility": "public",
+          "type": "void",
+          "params": "ResourceProduction productionBuilding",
+          "declaration": "public void RegisterProducer(ResourceProduction productionBuilding)",
+          "line": 48,
+          "uml": "+RegisterProducer(ResourceProduction productionBuilding) void"
+        },
+        {
+          "kind": "method",
+          "name": "RemoveProducer",
+          "visibility": "public",
+          "type": "void",
+          "params": "ResourceProduction productionBuilding",
+          "declaration": "public void RemoveProducer(ResourceProduction productionBuilding)",
+          "line": 63,
+          "uml": "+RemoveProducer(ResourceProduction productionBuilding) void"
+        },
+        {
+          "kind": "method",
+          "name": "ProducePerRound",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void ProducePerRound()",
+          "line": 68,
+          "uml": "+ProducePerRound() void"
+        },
+        {
+          "kind": "method",
+          "name": "AssignCart",
+          "visibility": "public",
+          "type": "bool",
+          "params": "",
+          "declaration": "public bool AssignCart()",
+          "line": 76,
+          "uml": "+AssignCart() bool"
+        },
+        {
+          "kind": "method",
+          "name": "RemoveCarts",
+          "visibility": "public",
+          "type": "bool",
+          "params": "",
+          "declaration": "public bool RemoveCarts()",
+          "line": 87,
+          "uml": "+RemoveCarts() bool"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "DemendManger",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Core/Managers/DemendManger.cs",
+      "line": 8,
+      "members": [
+        {
+          "kind": "event",
+          "name": "OnDemandDisplayRequested",
+          "visibility": "public",
+          "type": "Action<DemandData, int>",
+          "declaration": "public event Action<DemandData, int> OnDemandDisplayRequested;",
+          "line": 10,
+          "uml": "+event Action OnDemandDisplayRequested"
+        },
+        {
+          "kind": "event",
+          "name": "OnDemandCompleted",
+          "visibility": "public",
+          "type": "Action",
+          "declaration": "public event Action OnDemandCompleted;",
+          "line": 11,
+          "uml": "+event Action OnDemandCompleted"
+        },
+        {
+          "kind": "field",
+          "name": "demands",
+          "visibility": "private",
+          "type": "List<DemandData>",
+          "declaration": "private List<DemandData> demands = new List<DemandData>();",
+          "line": 13,
+          "uml": "-List~DemandData~ demands"
+        },
+        {
+          "kind": "field",
+          "name": "mainStorrage",
+          "visibility": "private",
+          "type": "MainStorrage",
+          "declaration": "private MainStorrage mainStorrage;",
+          "line": 14,
+          "uml": "-MainStorrage mainStorrage"
+        },
+        {
+          "kind": "field",
+          "name": "barometerManager",
+          "visibility": "private",
+          "type": "BarometerManager",
+          "declaration": "private BarometerManager barometerManager;",
+          "line": 15,
+          "uml": "-BarometerManager barometerManager"
+        },
+        {
+          "kind": "field",
+          "name": "currentDemend",
+          "visibility": "private",
+          "type": "DemandData",
+          "declaration": "private DemandData currentDemend;",
+          "line": 16,
+          "uml": "-DemandData currentDemend"
+        },
+        {
+          "kind": "field",
+          "name": "nextDemandIndex",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int nextDemandIndex;",
+          "line": 17,
+          "uml": "-int nextDemandIndex"
+        },
+        {
+          "kind": "field",
+          "name": "dueRound",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int dueRound;",
+          "line": 18,
+          "uml": "-int dueRound"
+        },
+        {
+          "kind": "field",
+          "name": "latestRound",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int latestRound;",
+          "line": 19,
+          "uml": "-int latestRound"
+        },
+        {
+          "kind": "method",
+          "name": "TriggerDemand",
+          "visibility": "public",
+          "type": "void",
+          "params": "DemandData demand, int currentRound",
+          "declaration": "public void TriggerDemand(DemandData demand, int currentRound)",
+          "line": 21,
+          "uml": "+TriggerDemand(DemandData demand, int currentRound) void"
+        },
+        {
+          "kind": "method",
+          "name": "CheckDemandsForRound",
+          "visibility": "public",
+          "type": "void",
+          "params": "int currentRound",
+          "declaration": "public void CheckDemandsForRound(int currentRound)",
+          "line": 35,
+          "uml": "+CheckDemandsForRound(int currentRound) void"
+        },
+        {
+          "kind": "method",
+          "name": "GiveAll",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void GiveAll()",
+          "line": 65,
+          "uml": "+GiveAll() void"
+        },
+        {
+          "kind": "method",
+          "name": "GiveHalf",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void GiveHalf()",
+          "line": 76,
+          "uml": "+GiveHalf() void"
+        },
+        {
+          "kind": "method",
+          "name": "MoreTime",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void MoreTime()",
+          "line": 86,
+          "uml": "+MoreTime() void"
+        },
+        {
+          "kind": "method",
+          "name": "HasActiveDemand",
+          "visibility": "public",
+          "type": "bool",
+          "params": "",
+          "declaration": "public bool HasActiveDemand()",
+          "line": 97,
+          "uml": "+HasActiveDemand() bool"
+        },
+        {
+          "kind": "method",
+          "name": "CanGiveAll",
+          "visibility": "public",
+          "type": "bool",
+          "params": "",
+          "declaration": "public bool CanGiveAll()",
+          "line": 102,
+          "uml": "+CanGiveAll() bool"
+        },
+        {
+          "kind": "method",
+          "name": "CanGiveHalf",
+          "visibility": "public",
+          "type": "bool",
+          "params": "",
+          "declaration": "public bool CanGiveHalf()",
+          "line": 107,
+          "uml": "+CanGiveHalf() bool"
+        },
+        {
+          "kind": "method",
+          "name": "CompleteDemand",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void CompleteDemand()",
+          "line": 112,
+          "uml": "-CompleteDemand() void"
+        },
+        {
+          "kind": "method",
+          "name": "GetRemainingRounds",
+          "visibility": "public",
+          "type": "int",
+          "params": "",
+          "declaration": "public int GetRemainingRounds()",
+          "line": 118,
+          "uml": "+GetRemainingRounds() int"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "RoundManager",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Core/Managers/RoundManager.cs",
+      "line": 5,
+      "members": [
+        {
+          "kind": "field",
+          "name": "ui",
+          "visibility": "private",
+          "type": "BuildingUI",
+          "declaration": "private BuildingUI ui;",
+          "line": 7,
+          "uml": "-BuildingUI ui"
+        },
+        {
+          "kind": "field",
+          "name": "storages",
+          "visibility": "private",
+          "type": "List<SegmentStorage>",
+          "declaration": "private List<SegmentStorage> storages = new List<SegmentStorage>();",
+          "line": 8,
+          "uml": "-List~SegmentStorage~ storages"
+        },
+        {
+          "kind": "field",
+          "name": "demendManger",
+          "visibility": "private",
+          "type": "DemendManger",
+          "declaration": "private DemendManger demendManger;",
+          "line": 9,
+          "uml": "-DemendManger demendManger"
+        },
+        {
+          "kind": "property",
+          "name": "currentRound",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int currentRound {  get; private set; }",
+          "line": 10,
+          "uml": "+int currentRound"
+        },
+        {
+          "kind": "field",
+          "name": "transports",
+          "visibility": "private",
+          "type": "List<TransportManager>",
+          "declaration": "private List<TransportManager> transports = new List<TransportManager>();",
+          "line": 12,
+          "uml": "-List~TransportManager~ transports"
+        },
+        {
+          "kind": "method",
+          "name": "OnEnable",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void OnEnable()",
+          "line": 15,
+          "uml": "-OnEnable() void"
+        },
+        {
+          "kind": "method",
+          "name": "StartNextRound",
+          "visibility": "public",
+          "type": "void",
+          "params": "bool isRoundFinished",
+          "declaration": "public void StartNextRound(bool isRoundFinished)",
+          "line": 20,
+          "uml": "+StartNextRound(bool isRoundFinished) void"
+        },
+        {
+          "kind": "method",
+          "name": "OnDisable",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void OnDisable()",
+          "line": 40,
+          "uml": "-OnDisable() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "Segment",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Core/Managers/Segment.cs",
+      "line": 3,
+      "members": [
+        {
+          "kind": "field",
+          "name": "grid",
+          "visibility": "public",
+          "type": "GridManager",
+          "declaration": "public GridManager grid;",
+          "line": 5,
+          "uml": "+GridManager grid"
+        },
+        {
+          "kind": "field",
+          "name": "surface",
+          "visibility": "public",
+          "type": "MeshCollider",
+          "declaration": "public MeshCollider surface;",
+          "line": 6,
+          "uml": "+MeshCollider surface"
+        },
+        {
+          "kind": "field",
+          "name": "segmentStorage",
+          "visibility": "public",
+          "type": "SegmentStorage",
+          "declaration": "public SegmentStorage segmentStorage;",
+          "line": 7,
+          "uml": "+SegmentStorage segmentStorage"
+        },
+        {
+          "kind": "field",
+          "name": "allowedResources",
+          "visibility": "public",
+          "type": "ResourceData",
+          "declaration": "public ResourceData allowedResources;",
+          "line": 8,
+          "uml": "+ResourceData allowedResources"
+        },
+        {
+          "kind": "field",
+          "name": "buildingParents",
+          "visibility": "public",
+          "type": "Transform",
+          "declaration": "public Transform buildingParents;",
+          "line": 9,
+          "uml": "+Transform buildingParents"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "SegmentRotation",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Core/Managers/SegmentRotation.cs",
+      "line": 4,
+      "members": [
+        {
+          "kind": "field",
+          "name": "inputManager",
+          "visibility": "private",
+          "type": "InputManager",
+          "declaration": "private InputManager inputManager;",
+          "line": 6,
+          "uml": "-InputManager inputManager"
+        },
+        {
+          "kind": "field",
+          "name": "rotationStep",
+          "visibility": "private",
+          "type": "float",
+          "declaration": "private float rotationStep = 120f;",
+          "line": 7,
+          "uml": "-float rotationStep"
+        },
+        {
+          "kind": "field",
+          "name": "rotationDuration",
+          "visibility": "private",
+          "type": "float",
+          "declaration": "private float rotationDuration = 0.4f;",
+          "line": 8,
+          "uml": "-float rotationDuration"
+        },
+        {
+          "kind": "field",
+          "name": "buildingPlacement",
+          "visibility": "private",
+          "type": "BuildingPlacement",
+          "declaration": "private BuildingPlacement buildingPlacement;",
+          "line": 9,
+          "uml": "-BuildingPlacement buildingPlacement"
+        },
+        {
+          "kind": "field",
+          "name": "rotationPivot",
+          "visibility": "private",
+          "type": "GameObject",
+          "declaration": "private GameObject rotationPivot;",
+          "line": 10,
+          "uml": "-GameObject rotationPivot"
+        },
+        {
+          "kind": "field",
+          "name": "buildingUI",
+          "visibility": "private",
+          "type": "BuildingUI",
+          "declaration": "private BuildingUI buildingUI;",
+          "line": 11,
+          "uml": "-BuildingUI buildingUI"
+        },
+        {
+          "kind": "field",
+          "name": "segments",
+          "visibility": "private",
+          "type": "Segment[]",
+          "declaration": "private Segment[] segments;",
+          "line": 13,
+          "uml": "-Segment[] segments"
+        },
+        {
+          "kind": "field",
+          "name": "currentSegmentIndex",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int currentSegmentIndex;",
+          "line": 14,
+          "uml": "-int currentSegmentIndex"
+        },
+        {
+          "kind": "property",
+          "name": "currentSegment",
+          "visibility": "public",
+          "type": "Segment",
+          "declaration": "public Segment currentSegment => segments[currentSegmentIndex];",
+          "line": 17,
+          "uml": "+Segment currentSegment"
+        },
+        {
+          "kind": "field",
+          "name": "isRotating",
+          "visibility": "public",
+          "type": "bool",
+          "declaration": "public bool isRotating;",
+          "line": 20,
+          "uml": "+bool isRotating"
+        },
+        {
+          "kind": "method",
+          "name": "OnEnable",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void OnEnable()",
+          "line": 22,
+          "uml": "-OnEnable() void"
+        },
+        {
+          "kind": "method",
+          "name": "RotateOnSwipe",
+          "visibility": "private",
+          "type": "void",
+          "params": "int amount",
+          "declaration": "private void RotateOnSwipe (int amount)",
+          "line": 27,
+          "uml": "-RotateOnSwipe(int amount) void"
+        },
+        {
+          "kind": "method",
+          "name": "Rotate",
+          "visibility": "private",
+          "type": "IEnumerator",
+          "params": "int amount",
+          "declaration": "private IEnumerator Rotate(int amount)",
+          "line": 37,
+          "uml": "-Rotate(int amount) IEnumerator"
+        },
+        {
+          "kind": "method",
+          "name": "OnDisable",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void OnDisable()",
+          "line": 74,
+          "uml": "-OnDisable() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "GridManager",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Grid/Systems/GridManager.cs",
+      "line": 4,
+      "members": [
+        {
+          "kind": "field",
+          "name": "width",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int width;",
+          "line": 6,
+          "uml": "-int width"
+        },
+        {
+          "kind": "field",
+          "name": "height",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int height;",
+          "line": 7,
+          "uml": "-int height"
+        },
+        {
+          "kind": "field",
+          "name": "cellSize",
+          "visibility": "private",
+          "type": "float",
+          "declaration": "private float cellSize = 1f;",
+          "line": 8,
+          "uml": "-float cellSize"
+        },
+        {
+          "kind": "field",
+          "name": "meshCollider",
+          "visibility": "private",
+          "type": "MeshCollider",
+          "declaration": "private MeshCollider meshCollider;",
+          "line": 10,
+          "uml": "-MeshCollider meshCollider"
+        },
+        {
+          "kind": "field",
+          "name": "grid",
+          "visibility": "private",
+          "type": "BuildingGridCell[,]",
+          "declaration": "private BuildingGridCell[,] grid;",
+          "line": 13,
+          "uml": "-BuildingGridCell[,] grid"
+        },
+        {
+          "kind": "property",
+          "name": "IsReady",
+          "visibility": "public",
+          "type": "bool",
+          "declaration": "public bool IsReady { get; private set; }",
+          "line": 14,
+          "uml": "+bool IsReady"
+        },
+        {
+          "kind": "method",
+          "name": "Awake",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void Awake()",
+          "line": 16,
+          "uml": "-Awake() void"
+        },
+        {
+          "kind": "method",
+          "name": "GridToWorldPosition",
+          "visibility": "public",
+          "type": "Vector3",
+          "params": "int x, int z",
+          "declaration": "public Vector3 GridToWorldPosition(int x, int z)",
+          "line": 36,
+          "uml": "+GridToWorldPosition(int x, int z) Vector3"
+        },
+        {
+          "kind": "method",
+          "name": "WorldToGridPosition",
+          "visibility": "public",
+          "type": "(int x, int z)",
+          "params": "Vector3 worldPos",
+          "declaration": "public (int x, int z) WorldToGridPosition(Vector3 worldPos)",
+          "line": 41,
+          "uml": "+WorldToGridPosition(Vector3 worldPos) ValueTuple"
+        },
+        {
+          "kind": "method",
+          "name": "TrySetBuilding",
+          "visibility": "public",
+          "type": "bool",
+          "params": "BuildingModel building, List<Vector3> allBuildingPositions",
+          "declaration": "public bool TrySetBuilding(BuildingModel building, List<Vector3> allBuildingPositions)",
+          "line": 50,
+          "uml": "+TrySetBuilding(BuildingModel building, List~Vector3~ allBuildingPositions) bool"
+        },
+        {
+          "kind": "method",
+          "name": "CanBuild",
+          "visibility": "public",
+          "type": "bool",
+          "params": "List<Vector3> allBuildingPositions",
+          "declaration": "public bool CanBuild(List<Vector3> allBuildingPositions)",
+          "line": 65,
+          "uml": "+CanBuild(List~Vector3~ allBuildingPositions) bool"
+        },
+        {
+          "kind": "method",
+          "name": "OnDrawGizmos",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OnDrawGizmos()",
+          "line": 90,
+          "uml": "+OnDrawGizmos() void"
+        },
+        {
+          "kind": "method",
+          "name": "IsCellOnCollider",
+          "visibility": "public",
+          "type": "bool",
+          "params": "int x, int z",
+          "declaration": "public bool IsCellOnCollider(int x, int z)",
+          "line": 117,
+          "uml": "+IsCellOnCollider(int x, int z) bool"
+        },
+        {
+          "kind": "method",
+          "name": "GridToWorldCenterPosition",
+          "visibility": "public",
+          "type": "Vector3",
+          "params": "int x, int z",
+          "declaration": "public Vector3 GridToWorldCenterPosition(int x, int z)",
+          "line": 138,
+          "uml": "+GridToWorldCenterPosition(int x, int z) Vector3"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "BuildingGridCell",
+      "base": null,
+      "static": false,
+      "source": "Assets/_Project/Scripts/Grid/Systems/GridManager.cs",
+      "line": 144,
+      "members": [
+        {
+          "kind": "field",
+          "name": "building",
+          "visibility": "private",
+          "type": "BuildingModel",
+          "declaration": "private BuildingModel building;",
+          "line": 147,
+          "uml": "-BuildingModel building"
+        },
+        {
+          "kind": "field",
+          "name": "isBuildable",
+          "visibility": "private",
+          "type": "bool",
+          "declaration": "private bool isBuildable;",
+          "line": 149,
+          "uml": "-bool isBuildable"
+        },
+        {
+          "kind": "method",
+          "name": "SetBuilding",
+          "visibility": "public",
+          "type": "void",
+          "params": "BuildingModel building",
+          "declaration": "public void SetBuilding(BuildingModel building)",
+          "line": 151,
+          "uml": "+SetBuilding(BuildingModel building) void"
+        },
+        {
+          "kind": "method",
+          "name": "SetBuildable",
+          "visibility": "public",
+          "type": "void",
+          "params": "bool isBuild",
+          "declaration": "public void SetBuildable(bool isBuild)",
+          "line": 156,
+          "uml": "+SetBuildable(bool isBuild) void"
+        },
+        {
+          "kind": "method",
+          "name": "GetBuildable",
+          "visibility": "public",
+          "type": "bool",
+          "params": "",
+          "declaration": "public bool GetBuildable()",
+          "line": 161,
+          "uml": "+GetBuildable() bool"
+        },
+        {
+          "kind": "method",
+          "name": "IsEmpty",
+          "visibility": "public",
+          "type": "bool",
+          "params": "",
+          "declaration": "public bool IsEmpty()",
+          "line": 166,
+          "uml": "+IsEmpty() bool"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "InputManager",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Input/InputManager.cs",
+      "line": 11,
+      "members": [
+        {
+          "kind": "event",
+          "name": "OnFingerMoved",
+          "visibility": "public",
+          "type": "Action<Vector2>",
+          "declaration": "public event Action<Vector2> OnFingerMoved;",
+          "line": 13,
+          "uml": "+event Action~Vector2~ OnFingerMoved"
+        },
+        {
+          "kind": "event",
+          "name": "OnFingerBegan",
+          "visibility": "public",
+          "type": "Action<Vector2>",
+          "declaration": "public event Action<Vector2> OnFingerBegan;",
+          "line": 14,
+          "uml": "+event Action~Vector2~ OnFingerBegan"
+        },
+        {
+          "kind": "event",
+          "name": "OnFingerEnded",
+          "visibility": "public",
+          "type": "Action<Vector2>",
+          "declaration": "public event Action<Vector2> OnFingerEnded;",
+          "line": 15,
+          "uml": "+event Action~Vector2~ OnFingerEnded"
+        },
+        {
+          "kind": "event",
+          "name": "OnSwipe",
+          "visibility": "public",
+          "type": "Action<int>",
+          "declaration": "public event Action<int> OnSwipe;",
+          "line": 16,
+          "uml": "+event Action~int~ OnSwipe"
+        },
+        {
+          "kind": "event",
+          "name": "OnTap",
+          "visibility": "public",
+          "type": "Action<Vector2>",
+          "declaration": "public event Action<Vector2> OnTap;",
+          "line": 17,
+          "uml": "+event Action~Vector2~ OnTap"
+        },
+        {
+          "kind": "field",
+          "name": "swipeRange",
+          "visibility": "private",
+          "type": "float",
+          "declaration": "private float swipeRange = 120f;",
+          "line": 19,
+          "uml": "-float swipeRange"
+        },
+        {
+          "kind": "method",
+          "name": "OnEnable",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "void OnEnable()",
+          "line": 22,
+          "uml": "-OnEnable() void"
+        },
+        {
+          "kind": "method",
+          "name": "Update",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "void Update()",
+          "line": 28,
+          "uml": "-Update() void"
+        },
+        {
+          "kind": "method",
+          "name": "TrackFingerPosition",
+          "visibility": "public",
+          "type": "Vector2",
+          "params": "Touch touch",
+          "declaration": "public Vector2 TrackFingerPosition(Touch touch)",
+          "line": 65,
+          "uml": "+TrackFingerPosition(Touch touch) Vector2"
+        },
+        {
+          "kind": "method",
+          "name": "TrackFingerStartPosition",
+          "visibility": "public",
+          "type": "Vector2",
+          "params": "Touch touch",
+          "declaration": "public Vector2 TrackFingerStartPosition(Touch touch)",
+          "line": 70,
+          "uml": "+TrackFingerStartPosition(Touch touch) Vector2"
+        },
+        {
+          "kind": "method",
+          "name": "TrackFingerEndPosition",
+          "visibility": "public",
+          "type": "Vector2",
+          "params": "Touch touch",
+          "declaration": "public Vector2 TrackFingerEndPosition(Touch touch)",
+          "line": 75,
+          "uml": "+TrackFingerEndPosition(Touch touch) Vector2"
+        },
+        {
+          "kind": "method",
+          "name": "OnDisable",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OnDisable()",
+          "line": 81,
+          "uml": "+OnDisable() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "BuildingData",
+      "base": "ScriptableObject",
+      "static": false,
+      "source": "Assets/_Project/Scripts/ScriptableObjects/BuildingData.cs",
+      "line": 4,
+      "members": [
+        {
+          "kind": "field",
+          "name": "description",
+          "visibility": "public",
+          "type": "string",
+          "declaration": "public string description;",
+          "line": 14,
+          "uml": "+string description"
+        },
+        {
+          "kind": "field",
+          "name": "costResource",
+          "visibility": "public",
+          "type": "ResourceData",
+          "declaration": "public ResourceData costResource;",
+          "line": 15,
+          "uml": "+ResourceData costResource"
+        },
+        {
+          "kind": "field",
+          "name": "cost",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int cost;",
+          "line": 16,
+          "uml": "+int cost"
+        },
+        {
+          "kind": "field",
+          "name": "type",
+          "visibility": "public",
+          "type": "BuildingType",
+          "declaration": "public BuildingType type;",
+          "line": 18,
+          "uml": "+BuildingType type"
+        },
+        {
+          "kind": "field",
+          "name": "resource",
+          "visibility": "public",
+          "type": "ResourceData",
+          "declaration": "public ResourceData resource;",
+          "line": 19,
+          "uml": "+ResourceData resource"
+        },
+        {
+          "kind": "field",
+          "name": "resourceQuantity",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int resourceQuantity;",
+          "line": 21,
+          "uml": "+int resourceQuantity"
+        },
+        {
+          "kind": "field",
+          "name": "maxStorage",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int maxStorage;",
+          "line": 22,
+          "uml": "+int maxStorage"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "BuildingData_BuildingType",
+      "label": "BuildingData.BuildingType",
+      "enum": true,
+      "source": "Assets/_Project/Scripts/ScriptableObjects/BuildingData.cs",
+      "line": 6,
+      "members": [
+        {
+          "name": "None",
+          "kind": "enum",
+          "uml": "None",
+          "declaration": "None,"
+        },
+        {
+          "name": "STORAGE",
+          "kind": "enum",
+          "uml": "STORAGE",
+          "declaration": "STORAGE,"
+        },
+        {
+          "name": "PRODUKTION",
+          "kind": "enum",
+          "uml": "PRODUKTION",
+          "declaration": "PRODUKTION,"
+        },
+        {
+          "name": "RESOURECES",
+          "kind": "enum",
+          "uml": "RESOURECES",
+          "declaration": "RESOURECES"
+        }
+      ],
+      "scope": "runtime",
+      "owner": "BuildingData"
+    },
+    {
+      "id": "DemandData",
+      "base": "ScriptableObject",
+      "static": false,
+      "source": "Assets/_Project/Scripts/ScriptableObjects/DemandData.cs",
+      "line": 4,
+      "members": [
+        {
+          "kind": "field",
+          "name": "name",
+          "visibility": "public",
+          "type": "string",
+          "declaration": "public string name;",
+          "line": 8,
+          "uml": "+string name"
+        },
+        {
+          "kind": "field",
+          "name": "description",
+          "visibility": "public",
+          "type": "string",
+          "declaration": "public string description;",
+          "line": 11,
+          "uml": "+string description"
+        },
+        {
+          "kind": "field",
+          "name": "resource",
+          "visibility": "public",
+          "type": "ResourceData",
+          "declaration": "public ResourceData resource;",
+          "line": 14,
+          "uml": "+ResourceData resource"
+        },
+        {
+          "kind": "field",
+          "name": "quantity",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int quantity;",
+          "line": 17,
+          "uml": "+int quantity"
+        },
+        {
+          "kind": "field",
+          "name": "triggerRound",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int triggerRound;",
+          "line": 21,
+          "uml": "+int triggerRound"
+        },
+        {
+          "kind": "field",
+          "name": "deadline",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int deadline;",
+          "line": 24,
+          "uml": "+int deadline"
+        },
+        {
+          "kind": "field",
+          "name": "deferralPeriod",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int deferralPeriod;",
+          "line": 27,
+          "uml": "+int deferralPeriod"
+        },
+        {
+          "kind": "field",
+          "name": "changeInValuePositive",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int changeInValuePositive;",
+          "line": 31,
+          "uml": "+int changeInValuePositive"
+        },
+        {
+          "kind": "field",
+          "name": "changeInValueHalf",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int changeInValueHalf;",
+          "line": 34,
+          "uml": "+int changeInValueHalf"
+        },
+        {
+          "kind": "field",
+          "name": "changeInValueNegative",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int changeInValueNegative;",
+          "line": 37,
+          "uml": "+int changeInValueNegative"
+        },
+        {
+          "kind": "field",
+          "name": "changeInDeferalInValue",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int changeInDeferalInValue;",
+          "line": 40,
+          "uml": "+int changeInDeferalInValue"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "ResourceData",
+      "base": "ScriptableObject",
+      "static": false,
+      "source": "Assets/_Project/Scripts/ScriptableObjects/ResourceData.cs",
+      "line": 5,
+      "members": [
+        {
+          "kind": "field",
+          "name": "resourceType",
+          "visibility": "public",
+          "type": "ResourceType",
+          "declaration": "public ResourceType resourceType;",
+          "line": 15,
+          "uml": "+ResourceType resourceType"
+        },
+        {
+          "kind": "field",
+          "name": "name",
+          "visibility": "public",
+          "type": "string",
+          "declaration": "public string name;",
+          "line": 16,
+          "uml": "+string name"
+        },
+        {
+          "kind": "field",
+          "name": "icon",
+          "visibility": "public",
+          "type": "Sprite",
+          "declaration": "public Sprite icon;",
+          "line": 17,
+          "uml": "+Sprite icon"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "ResourceData_ResourceType",
+      "label": "ResourceData.ResourceType",
+      "enum": true,
+      "source": "Assets/_Project/Scripts/ScriptableObjects/ResourceData.cs",
+      "line": 7,
+      "members": [
+        {
+          "name": "None",
+          "kind": "enum",
+          "uml": "None",
+          "declaration": "None,"
+        },
+        {
+          "name": "WOOD",
+          "kind": "enum",
+          "uml": "WOOD",
+          "declaration": "WOOD,"
+        },
+        {
+          "name": "WHEED",
+          "kind": "enum",
+          "uml": "WHEED",
+          "declaration": "WHEED,"
+        },
+        {
+          "name": "FLACHS",
+          "kind": "enum",
+          "uml": "FLACHS",
+          "declaration": "FLACHS"
+        }
+      ],
+      "scope": "runtime",
+      "owner": "ResourceData"
+    },
+    {
+      "id": "CartManager",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Transport/Logistics/CartManager.cs",
+      "line": 3,
+      "members": [
+        {
+          "kind": "field",
+          "name": "totalCarts",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int totalCarts = 2;",
+          "line": 5,
+          "uml": "-int totalCarts"
+        },
+        {
+          "kind": "property",
+          "name": "TotalCarts",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int TotalCarts => totalCarts;",
+          "line": 7,
+          "uml": "+int TotalCarts"
+        },
+        {
+          "kind": "property",
+          "name": "availableCarts",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int availableCarts { get; private set; }",
+          "line": 8,
+          "uml": "+int availableCarts"
+        },
+        {
+          "kind": "method",
+          "name": "Awake",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void Awake()",
+          "line": 10,
+          "uml": "-Awake() void"
+        },
+        {
+          "kind": "method",
+          "name": "AssignCart",
+          "visibility": "public",
+          "type": "bool",
+          "params": "SegmentStorage storage",
+          "declaration": "public bool AssignCart(SegmentStorage storage)",
+          "line": 15,
+          "uml": "+AssignCart(SegmentStorage storage) bool"
+        },
+        {
+          "kind": "method",
+          "name": "RemoveCart",
+          "visibility": "public",
+          "type": "bool",
+          "params": "SegmentStorage storage",
+          "declaration": "public bool RemoveCart(SegmentStorage storage)",
+          "line": 31,
+          "uml": "+RemoveCart(SegmentStorage storage) bool"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "TransportManager",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/Transport/Vehicles/TransportManager.cs",
+      "line": 8,
+      "members": [
+        {
+          "kind": "field",
+          "name": "segmentStorage",
+          "visibility": "private",
+          "type": "SegmentStorage",
+          "declaration": "private SegmentStorage segmentStorage;",
+          "line": 10,
+          "uml": "-SegmentStorage segmentStorage"
+        },
+        {
+          "kind": "field",
+          "name": "mainStorage",
+          "visibility": "private",
+          "type": "MainStorrage",
+          "declaration": "private MainStorrage mainStorage;",
+          "line": 11,
+          "uml": "-MainStorrage mainStorage"
+        },
+        {
+          "kind": "field",
+          "name": "startStoragPos",
+          "visibility": "private",
+          "type": "Transform",
+          "declaration": "private Transform startStoragPos;",
+          "line": 12,
+          "uml": "-Transform startStoragPos"
+        },
+        {
+          "kind": "field",
+          "name": "mainStoragePos",
+          "visibility": "private",
+          "type": "Transform",
+          "declaration": "private Transform mainStoragePos;",
+          "line": 13,
+          "uml": "-Transform mainStoragePos"
+        },
+        {
+          "kind": "field",
+          "name": "cart",
+          "visibility": "private",
+          "type": "GameObject",
+          "declaration": "private GameObject cart;",
+          "line": 14,
+          "uml": "-GameObject cart"
+        },
+        {
+          "kind": "field",
+          "name": "splineAnimate",
+          "visibility": "private",
+          "type": "SplineAnimate",
+          "declaration": "private SplineAnimate splineAnimate;",
+          "line": 15,
+          "uml": "-SplineAnimate splineAnimate"
+        },
+        {
+          "kind": "field",
+          "name": "resourceDisplayUI",
+          "visibility": "private",
+          "type": "ResourceDisplayUI",
+          "declaration": "private ResourceDisplayUI resourceDisplayUI;",
+          "line": 16,
+          "uml": "-ResourceDisplayUI resourceDisplayUI"
+        },
+        {
+          "kind": "field",
+          "name": "transportCapacity",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int transportCapacity;",
+          "line": 19,
+          "uml": "-int transportCapacity"
+        },
+        {
+          "kind": "property",
+          "name": "currentLoad",
+          "visibility": "public",
+          "type": "int",
+          "declaration": "public int currentLoad {  get; private set; }",
+          "line": 20,
+          "uml": "+int currentLoad"
+        },
+        {
+          "kind": "field",
+          "name": "moveSpeed",
+          "visibility": "public",
+          "type": "float",
+          "declaration": "public float moveSpeed;",
+          "line": 21,
+          "uml": "+float moveSpeed"
+        },
+        {
+          "kind": "field",
+          "name": "isDriving",
+          "visibility": "private",
+          "type": "bool",
+          "declaration": "private bool isDriving = false;",
+          "line": 23,
+          "uml": "-bool isDriving"
+        },
+        {
+          "kind": "property",
+          "name": "resourceData",
+          "visibility": "public",
+          "type": "ResourceData",
+          "declaration": "public ResourceData resourceData {  get; private set; }",
+          "line": 25,
+          "uml": "+ResourceData resourceData"
+        },
+        {
+          "kind": "method",
+          "name": "Update",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void Update()",
+          "line": 27,
+          "uml": "-Update() void"
+        },
+        {
+          "kind": "method",
+          "name": "StartTransport",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void StartTransport()",
+          "line": 35,
+          "uml": "+StartTransport() void"
+        },
+        {
+          "kind": "method",
+          "name": "MoveToMainStorage",
+          "visibility": "public",
+          "type": "IEnumerator",
+          "params": "float kmh",
+          "declaration": "public IEnumerator MoveToMainStorage(float kmh)",
+          "line": 57,
+          "uml": "+MoveToMainStorage(float kmh) IEnumerator"
+        },
+        {
+          "kind": "method",
+          "name": "MoveBackToSegmentStorage",
+          "visibility": "public",
+          "type": "IEnumerator",
+          "params": "float kmh",
+          "declaration": "public IEnumerator MoveBackToSegmentStorage(float kmh)",
+          "line": 70,
+          "uml": "+MoveBackToSegmentStorage(float kmh) IEnumerator"
+        },
+        {
+          "kind": "method",
+          "name": "TranportLifeCycle",
+          "visibility": "public",
+          "type": "IEnumerator",
+          "params": "Transform startPos, Transform targetPos, float kmh",
+          "declaration": "public IEnumerator TranportLifeCycle(Transform startPos, Transform targetPos, float kmh)",
+          "line": 82,
+          "uml": "+TranportLifeCycle(Transform startPos, Transform targetPos, float kmh) IEnumerator"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "BarometerManager",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/UI/BarometerManager.cs",
+      "line": 5,
+      "members": [
+        {
+          "kind": "field",
+          "name": "cellSize",
+          "visibility": "private",
+          "type": "float",
+          "declaration": "private float cellSize;",
+          "line": 7,
+          "uml": "-float cellSize"
+        },
+        {
+          "kind": "field",
+          "name": "circle",
+          "visibility": "private",
+          "type": "RectTransform",
+          "declaration": "private RectTransform circle;",
+          "line": 8,
+          "uml": "-RectTransform circle"
+        },
+        {
+          "kind": "field",
+          "name": "middlePosition",
+          "visibility": "private",
+          "type": "Vector2",
+          "declaration": "private Vector2 middlePosition;",
+          "line": 10,
+          "uml": "-Vector2 middlePosition"
+        },
+        {
+          "kind": "field",
+          "name": "duration",
+          "visibility": "private",
+          "type": "float",
+          "declaration": "private float duration = 5f;",
+          "line": 11,
+          "uml": "-float duration"
+        },
+        {
+          "kind": "field",
+          "name": "isGameOver",
+          "visibility": "private",
+          "type": "bool",
+          "declaration": "private bool isGameOver;",
+          "line": 13,
+          "uml": "-bool isGameOver"
+        },
+        {
+          "kind": "field",
+          "name": "currentValue",
+          "visibility": "private",
+          "type": "int",
+          "declaration": "private int currentValue;",
+          "line": 14,
+          "uml": "-int currentValue"
+        },
+        {
+          "kind": "method",
+          "name": "Awake",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void Awake()",
+          "line": 16,
+          "uml": "+Awake() void"
+        },
+        {
+          "kind": "method",
+          "name": "UpdateBarometer",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void UpdateBarometer()",
+          "line": 21,
+          "uml": "+UpdateBarometer() void"
+        },
+        {
+          "kind": "method",
+          "name": "MoveCircle",
+          "visibility": "public",
+          "type": "IEnumerator",
+          "params": "",
+          "declaration": "public IEnumerator MoveCircle()",
+          "line": 26,
+          "uml": "+MoveCircle() IEnumerator"
+        },
+        {
+          "kind": "method",
+          "name": "ChangeValue",
+          "visibility": "public",
+          "type": "void",
+          "params": "int amount",
+          "declaration": "public void ChangeValue(int amount)",
+          "line": 44,
+          "uml": "+ChangeValue(int amount) void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "BuildingUI",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/UI/BuildingUI.cs",
+      "line": 8,
+      "members": [
+        {
+          "kind": "event",
+          "name": "OnBuildingSelected",
+          "visibility": "public",
+          "type": "Action<BuildingModel>",
+          "declaration": "public event Action<BuildingModel> OnBuildingSelected;",
+          "line": 10,
+          "uml": "+event Action~BuildingModel~ OnBuildingSelected"
+        },
+        {
+          "kind": "event",
+          "name": "OnNextRoundPressed",
+          "visibility": "public",
+          "type": "Action<bool>",
+          "declaration": "public event Action<bool> OnNextRoundPressed;",
+          "line": 11,
+          "uml": "+event Action~bool~ OnNextRoundPressed"
+        },
+        {
+          "kind": "field",
+          "name": "buildingButton",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button buildingButton;",
+          "line": 13,
+          "uml": "-Button buildingButton"
+        },
+        {
+          "kind": "field",
+          "name": "buildingPanel",
+          "visibility": "private",
+          "type": "GameObject",
+          "declaration": "private GameObject buildingPanel;",
+          "line": 14,
+          "uml": "-GameObject buildingPanel"
+        },
+        {
+          "kind": "field",
+          "name": "segmentRotation",
+          "visibility": "private",
+          "type": "SegmentRotation",
+          "declaration": "private SegmentRotation segmentRotation;",
+          "line": 15,
+          "uml": "-SegmentRotation segmentRotation"
+        },
+        {
+          "kind": "field",
+          "name": "building1",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button building1;",
+          "line": 17,
+          "uml": "-Button building1"
+        },
+        {
+          "kind": "field",
+          "name": "building2",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button building2;",
+          "line": 18,
+          "uml": "-Button building2"
+        },
+        {
+          "kind": "field",
+          "name": "building3",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button building3;",
+          "line": 19,
+          "uml": "-Button building3"
+        },
+        {
+          "kind": "field",
+          "name": "nextRound",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button nextRound;",
+          "line": 20,
+          "uml": "-Button nextRound"
+        },
+        {
+          "kind": "field",
+          "name": "building1x1",
+          "visibility": "private",
+          "type": "BuildingModel",
+          "declaration": "private BuildingModel building1x1;",
+          "line": 23,
+          "uml": "-BuildingModel building1x1"
+        },
+        {
+          "kind": "field",
+          "name": "building2x2",
+          "visibility": "private",
+          "type": "BuildingModel",
+          "declaration": "private BuildingModel building2x2;",
+          "line": 24,
+          "uml": "-BuildingModel building2x2"
+        },
+        {
+          "kind": "field",
+          "name": "building3x3",
+          "visibility": "private",
+          "type": "BuildingModel",
+          "declaration": "private BuildingModel building3x3;",
+          "line": 25,
+          "uml": "-BuildingModel building3x3"
+        },
+        {
+          "kind": "field",
+          "name": "text1x1Building",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI text1x1Building;",
+          "line": 27,
+          "uml": "-TextMeshProUGUI text1x1Building"
+        },
+        {
+          "kind": "field",
+          "name": "text2x2Building",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI text2x2Building;",
+          "line": 28,
+          "uml": "-TextMeshProUGUI text2x2Building"
+        },
+        {
+          "kind": "field",
+          "name": "text3x3Building",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI text3x3Building;",
+          "line": 29,
+          "uml": "-TextMeshProUGUI text3x3Building"
+        },
+        {
+          "kind": "field",
+          "name": "resourceImage1x1",
+          "visibility": "private",
+          "type": "Image",
+          "declaration": "private Image resourceImage1x1;",
+          "line": 31,
+          "uml": "-Image resourceImage1x1"
+        },
+        {
+          "kind": "field",
+          "name": "resourceImage2x2",
+          "visibility": "private",
+          "type": "Image",
+          "declaration": "private Image resourceImage2x2;",
+          "line": 32,
+          "uml": "-Image resourceImage2x2"
+        },
+        {
+          "kind": "field",
+          "name": "resourceImage3x3",
+          "visibility": "private",
+          "type": "Image",
+          "declaration": "private Image resourceImage3x3;",
+          "line": 33,
+          "uml": "-Image resourceImage3x3"
+        },
+        {
+          "kind": "field",
+          "name": "wheedBuilding",
+          "visibility": "private",
+          "type": "BuildingModel",
+          "declaration": "private BuildingModel wheedBuilding;",
+          "line": 36,
+          "uml": "-BuildingModel wheedBuilding"
+        },
+        {
+          "kind": "field",
+          "name": "woodBuilding",
+          "visibility": "private",
+          "type": "BuildingModel",
+          "declaration": "private BuildingModel woodBuilding;",
+          "line": 37,
+          "uml": "-BuildingModel woodBuilding"
+        },
+        {
+          "kind": "field",
+          "name": "flachsBuilding",
+          "visibility": "private",
+          "type": "BuildingModel",
+          "declaration": "private BuildingModel flachsBuilding;",
+          "line": 38,
+          "uml": "-BuildingModel flachsBuilding"
+        },
+        {
+          "kind": "method",
+          "name": "Start",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void Start()",
+          "line": 40,
+          "uml": "+Start() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnBuildingButtonClicked",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OnBuildingButtonClicked()",
+          "line": 52,
+          "uml": "+OnBuildingButtonClicked() void"
+        },
+        {
+          "kind": "method",
+          "name": "BuildingFinished",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void BuildingFinished()",
+          "line": 63,
+          "uml": "+BuildingFinished() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnBuilding1Clicked",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OnBuilding1Clicked()",
+          "line": 68,
+          "uml": "+OnBuilding1Clicked() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnBuilding2Clicked",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OnBuilding2Clicked()",
+          "line": 73,
+          "uml": "+OnBuilding2Clicked() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnBuilding3Clicked",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OnBuilding3Clicked()",
+          "line": 78,
+          "uml": "+OnBuilding3Clicked() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnEndRoundWasClicked",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OnEndRoundWasClicked()",
+          "line": 83,
+          "uml": "+OnEndRoundWasClicked() void"
+        },
+        {
+          "kind": "method",
+          "name": "ShowCostBuilding",
+          "visibility": "public",
+          "type": "void",
+          "params": "BuildingData buildingData, TextMeshProUGUI text, Image image",
+          "declaration": "public void ShowCostBuilding(BuildingData buildingData, TextMeshProUGUI text, Image image)",
+          "line": 88,
+          "uml": "+ShowCostBuilding(BuildingData buildingData, TextMeshProUGUI text, Image image) void"
+        },
+        {
+          "kind": "method",
+          "name": "RefreshUiButtons",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void RefreshUiButtons()",
+          "line": 96,
+          "uml": "+RefreshUiButtons() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "DemandEntryUI",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/UI/DemandEntryUI.cs",
+      "line": 6,
+      "members": [
+        {
+          "kind": "field",
+          "name": "demandResource",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI demandResource;",
+          "line": 8,
+          "uml": "-TextMeshProUGUI demandResource"
+        },
+        {
+          "kind": "field",
+          "name": "demandTitle",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI demandTitle;",
+          "line": 9,
+          "uml": "-TextMeshProUGUI demandTitle"
+        },
+        {
+          "kind": "field",
+          "name": "quanatityText",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI quanatityText;",
+          "line": 10,
+          "uml": "-TextMeshProUGUI quanatityText"
+        },
+        {
+          "kind": "field",
+          "name": "remainingRoundsLeft",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI remainingRoundsLeft;",
+          "line": 11,
+          "uml": "-TextMeshProUGUI remainingRoundsLeft"
+        },
+        {
+          "kind": "field",
+          "name": "giveAll",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button giveAll;",
+          "line": 13,
+          "uml": "-Button giveAll"
+        },
+        {
+          "kind": "field",
+          "name": "giveHalf",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button giveHalf;",
+          "line": 14,
+          "uml": "-Button giveHalf"
+        },
+        {
+          "kind": "field",
+          "name": "aufschub",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button aufschub;",
+          "line": 15,
+          "uml": "-Button aufschub"
+        },
+        {
+          "kind": "field",
+          "name": "demandManager",
+          "visibility": "private",
+          "type": "DemendManger",
+          "declaration": "private DemendManger demandManager;",
+          "line": 17,
+          "uml": "-DemendManger demandManager"
+        },
+        {
+          "kind": "method",
+          "name": "Setup",
+          "visibility": "public",
+          "type": "void",
+          "params": "DemandData currentDemand, int remainingRounds, DemendManger manager",
+          "declaration": "public void Setup(DemandData currentDemand, int remainingRounds, DemendManger manager)",
+          "line": 20,
+          "uml": "+Setup(DemandData currentDemand, int remainingRounds, DemendManger manager) void"
+        },
+        {
+          "kind": "method",
+          "name": "Update",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void Update()",
+          "line": 33,
+          "uml": "-Update() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "DemendUI",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/UI/DemendUI.cs",
+      "line": 5,
+      "members": [
+        {
+          "kind": "field",
+          "name": "demendManger",
+          "visibility": "private",
+          "type": "DemendManger",
+          "declaration": "private DemendManger demendManger;",
+          "line": 7,
+          "uml": "-DemendManger demendManger"
+        },
+        {
+          "kind": "field",
+          "name": "demandPanel",
+          "visibility": "private",
+          "type": "GameObject",
+          "declaration": "private GameObject demandPanel;",
+          "line": 9,
+          "uml": "-GameObject demandPanel"
+        },
+        {
+          "kind": "field",
+          "name": "headlineText",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI headlineText;",
+          "line": 10,
+          "uml": "-TextMeshProUGUI headlineText"
+        },
+        {
+          "kind": "field",
+          "name": "descriptionText",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI descriptionText;",
+          "line": 11,
+          "uml": "-TextMeshProUGUI descriptionText"
+        },
+        {
+          "kind": "field",
+          "name": "resourceName",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI resourceName;",
+          "line": 12,
+          "uml": "-TextMeshProUGUI resourceName"
+        },
+        {
+          "kind": "field",
+          "name": "demandQuantity",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI demandQuantity;",
+          "line": 13,
+          "uml": "-TextMeshProUGUI demandQuantity"
+        },
+        {
+          "kind": "field",
+          "name": "demandDeadline",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI demandDeadline;",
+          "line": 14,
+          "uml": "-TextMeshProUGUI demandDeadline"
+        },
+        {
+          "kind": "field",
+          "name": "closeButton",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button closeButton;",
+          "line": 15,
+          "uml": "-Button closeButton"
+        },
+        {
+          "kind": "field",
+          "name": "openDemandEntry",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button openDemandEntry;",
+          "line": 16,
+          "uml": "-Button openDemandEntry"
+        },
+        {
+          "kind": "field",
+          "name": "demandEntryUI",
+          "visibility": "private",
+          "type": "DemandEntryUI",
+          "declaration": "private DemandEntryUI demandEntryUI;",
+          "line": 18,
+          "uml": "-DemandEntryUI demandEntryUI"
+        },
+        {
+          "kind": "field",
+          "name": "content",
+          "visibility": "private",
+          "type": "Transform",
+          "declaration": "private Transform content;",
+          "line": 19,
+          "uml": "-Transform content"
+        },
+        {
+          "kind": "field",
+          "name": "redInfo",
+          "visibility": "private",
+          "type": "GameObject",
+          "declaration": "private GameObject redInfo;",
+          "line": 20,
+          "uml": "-GameObject redInfo"
+        },
+        {
+          "kind": "field",
+          "name": "demandOverview",
+          "visibility": "private",
+          "type": "GameObject",
+          "declaration": "private GameObject demandOverview;",
+          "line": 21,
+          "uml": "-GameObject demandOverview"
+        },
+        {
+          "kind": "field",
+          "name": "demandData",
+          "visibility": "private",
+          "type": "DemandData",
+          "declaration": "private DemandData demandData;",
+          "line": 24,
+          "uml": "-DemandData demandData"
+        },
+        {
+          "kind": "field",
+          "name": "resourceData",
+          "visibility": "private",
+          "type": "ResourceData",
+          "declaration": "private ResourceData resourceData;",
+          "line": 25,
+          "uml": "-ResourceData resourceData"
+        },
+        {
+          "kind": "field",
+          "name": "demandEntry",
+          "visibility": "private",
+          "type": "DemandEntryUI",
+          "declaration": "private DemandEntryUI demandEntry;",
+          "line": 26,
+          "uml": "-DemandEntryUI demandEntry"
+        },
+        {
+          "kind": "field",
+          "name": "currentState",
+          "visibility": "private",
+          "type": "bool",
+          "declaration": "private bool currentState = false;",
+          "line": 27,
+          "uml": "-bool currentState"
+        },
+        {
+          "kind": "method",
+          "name": "OnEnable",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void OnEnable()",
+          "line": 31,
+          "uml": "-OnEnable() void"
+        },
+        {
+          "kind": "method",
+          "name": "Start",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void Start()",
+          "line": 37,
+          "uml": "+Start() void"
+        },
+        {
+          "kind": "method",
+          "name": "DemandPopUP",
+          "visibility": "public",
+          "type": "void",
+          "params": "DemandData currentDemand, int currentRound",
+          "declaration": "public void DemandPopUP(DemandData currentDemand, int currentRound)",
+          "line": 46,
+          "uml": "+DemandPopUP(DemandData currentDemand, int currentRound) void"
+        },
+        {
+          "kind": "method",
+          "name": "ClosePopUp",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void ClosePopUp()",
+          "line": 63,
+          "uml": "+ClosePopUp() void"
+        },
+        {
+          "kind": "method",
+          "name": "OpenDemandOverview",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OpenDemandOverview()",
+          "line": 77,
+          "uml": "+OpenDemandOverview() void"
+        },
+        {
+          "kind": "method",
+          "name": "RemoveDemandEntry",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void RemoveDemandEntry()",
+          "line": 85,
+          "uml": "-RemoveDemandEntry() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnDisable",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void OnDisable()",
+          "line": 98,
+          "uml": "-OnDisable() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "ResourceDisplayUI",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/UI/ResourceDisplayUI.cs",
+      "line": 5,
+      "members": [
+        {
+          "kind": "field",
+          "name": "resourceIcon",
+          "visibility": "private",
+          "type": "Image",
+          "declaration": "private Image resourceIcon;",
+          "line": 7,
+          "uml": "-Image resourceIcon"
+        },
+        {
+          "kind": "field",
+          "name": "quantity",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI quantity;",
+          "line": 8,
+          "uml": "-TextMeshProUGUI quantity"
+        },
+        {
+          "kind": "method",
+          "name": "SetResource",
+          "visibility": "public",
+          "type": "void",
+          "params": "ResourceData resource",
+          "declaration": "public void SetResource(ResourceData resource)",
+          "line": 10,
+          "uml": "+SetResource(ResourceData resource) void"
+        },
+        {
+          "kind": "method",
+          "name": "SetQuantity",
+          "visibility": "public",
+          "type": "void",
+          "params": "int amount",
+          "declaration": "public void SetQuantity(int amount)",
+          "line": 15,
+          "uml": "+SetQuantity(int amount) void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "SegmentStorageUI",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/UI/SegmentStorageUI.cs",
+      "line": 6,
+      "members": [
+        {
+          "kind": "field",
+          "name": "segmentStorageUi",
+          "visibility": "private",
+          "type": "GameObject",
+          "declaration": "private GameObject segmentStorageUi;",
+          "line": 8,
+          "uml": "-GameObject segmentStorageUi"
+        },
+        {
+          "kind": "field",
+          "name": "resourceImage",
+          "visibility": "private",
+          "type": "Image",
+          "declaration": "private Image resourceImage;",
+          "line": 9,
+          "uml": "-Image resourceImage"
+        },
+        {
+          "kind": "field",
+          "name": "amountText",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI amountText;",
+          "line": 10,
+          "uml": "-TextMeshProUGUI amountText"
+        },
+        {
+          "kind": "field",
+          "name": "closeButton",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button closeButton;",
+          "line": 11,
+          "uml": "-Button closeButton"
+        },
+        {
+          "kind": "field",
+          "name": "cartManager",
+          "visibility": "private",
+          "type": "CartManager",
+          "declaration": "private CartManager cartManager;",
+          "line": 12,
+          "uml": "-CartManager cartManager"
+        },
+        {
+          "kind": "field",
+          "name": "panelOffset",
+          "visibility": "private",
+          "type": "Vector3",
+          "declaration": "private Vector3 panelOffset= new Vector3(80f,0f,0f);",
+          "line": 13,
+          "uml": "-Vector3 panelOffset"
+        },
+        {
+          "kind": "field",
+          "name": "inputManager",
+          "visibility": "private",
+          "type": "InputManager",
+          "declaration": "private InputManager inputManager;",
+          "line": 16,
+          "uml": "-InputManager inputManager"
+        },
+        {
+          "kind": "field",
+          "name": "mainCamera",
+          "visibility": "private",
+          "type": "Camera",
+          "declaration": "private Camera mainCamera;",
+          "line": 17,
+          "uml": "-Camera mainCamera"
+        },
+        {
+          "kind": "field",
+          "name": "cartSlot1",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button cartSlot1;",
+          "line": 20,
+          "uml": "-Button cartSlot1"
+        },
+        {
+          "kind": "field",
+          "name": "cartSlot2",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button cartSlot2;",
+          "line": 21,
+          "uml": "-Button cartSlot2"
+        },
+        {
+          "kind": "field",
+          "name": "cartSlot3",
+          "visibility": "private",
+          "type": "Button",
+          "declaration": "private Button cartSlot3;",
+          "line": 22,
+          "uml": "-Button cartSlot3"
+        },
+        {
+          "kind": "field",
+          "name": "slotEmpty",
+          "visibility": "private",
+          "type": "Sprite",
+          "declaration": "private Sprite slotEmpty;",
+          "line": 24,
+          "uml": "-Sprite slotEmpty"
+        },
+        {
+          "kind": "field",
+          "name": "slotFull",
+          "visibility": "private",
+          "type": "Sprite",
+          "declaration": "private Sprite slotFull;",
+          "line": 25,
+          "uml": "-Sprite slotFull"
+        },
+        {
+          "kind": "field",
+          "name": "segmentStorage",
+          "visibility": "private",
+          "type": "SegmentStorage",
+          "declaration": "private SegmentStorage segmentStorage;",
+          "line": 27,
+          "uml": "-SegmentStorage segmentStorage"
+        },
+        {
+          "kind": "method",
+          "name": "OnEnable",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OnEnable()",
+          "line": 29,
+          "uml": "+OnEnable() void"
+        },
+        {
+          "kind": "method",
+          "name": "Start",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void Start()",
+          "line": 34,
+          "uml": "+Start() void"
+        },
+        {
+          "kind": "method",
+          "name": "OpenUI",
+          "visibility": "public",
+          "type": "void",
+          "params": "Vector2 pos",
+          "declaration": "public void OpenUI(Vector2 pos)",
+          "line": 42,
+          "uml": "+OpenUI(Vector2 pos) void"
+        },
+        {
+          "kind": "method",
+          "name": "CloseUI",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void CloseUI()",
+          "line": 64,
+          "uml": "+CloseUI() void"
+        },
+        {
+          "kind": "method",
+          "name": "GetStorageAtPosition",
+          "visibility": "private",
+          "type": "SegmentStorage",
+          "params": "Vector2 pos",
+          "declaration": "private SegmentStorage GetStorageAtPosition(Vector2 pos)",
+          "line": 69,
+          "uml": "-GetStorageAtPosition(Vector2 pos) SegmentStorage"
+        },
+        {
+          "kind": "method",
+          "name": "ToggleCart",
+          "visibility": "private",
+          "type": "void",
+          "params": "int slot",
+          "declaration": "private void ToggleCart(int slot)",
+          "line": 81,
+          "uml": "-ToggleCart(int slot) void"
+        },
+        {
+          "kind": "method",
+          "name": "RefreshCartButtons",
+          "visibility": "private",
+          "type": "void",
+          "params": "",
+          "declaration": "private void RefreshCartButtons()",
+          "line": 95,
+          "uml": "-RefreshCartButtons() void"
+        },
+        {
+          "kind": "method",
+          "name": "OnDisable",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void OnDisable()",
+          "line": 105,
+          "uml": "+OnDisable() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "UIOverview",
+      "base": "MonoBehaviour",
+      "static": false,
+      "source": "Assets/_Project/Scripts/UI/UIOverview.cs",
+      "line": 4,
+      "members": [
+        {
+          "kind": "field",
+          "name": "mainStorrage",
+          "visibility": "private",
+          "type": "MainStorrage",
+          "declaration": "private MainStorrage mainStorrage;",
+          "line": 6,
+          "uml": "-MainStorrage mainStorrage"
+        },
+        {
+          "kind": "field",
+          "name": "roundManager",
+          "visibility": "private",
+          "type": "RoundManager",
+          "declaration": "private RoundManager roundManager;",
+          "line": 7,
+          "uml": "-RoundManager roundManager"
+        },
+        {
+          "kind": "field",
+          "name": "cartManager",
+          "visibility": "private",
+          "type": "CartManager",
+          "declaration": "private CartManager cartManager;",
+          "line": 8,
+          "uml": "-CartManager cartManager"
+        },
+        {
+          "kind": "field",
+          "name": "flachsText",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI flachsText;",
+          "line": 9,
+          "uml": "-TextMeshProUGUI flachsText"
+        },
+        {
+          "kind": "field",
+          "name": "wheedText",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI wheedText;",
+          "line": 10,
+          "uml": "-TextMeshProUGUI wheedText"
+        },
+        {
+          "kind": "field",
+          "name": "woodText",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI woodText;",
+          "line": 11,
+          "uml": "-TextMeshProUGUI woodText"
+        },
+        {
+          "kind": "field",
+          "name": "currentRound",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI currentRound;",
+          "line": 12,
+          "uml": "-TextMeshProUGUI currentRound"
+        },
+        {
+          "kind": "field",
+          "name": "availabelCarts",
+          "visibility": "private",
+          "type": "TextMeshProUGUI",
+          "declaration": "private TextMeshProUGUI availabelCarts;",
+          "line": 13,
+          "uml": "-TextMeshProUGUI availabelCarts"
+        },
+        {
+          "kind": "method",
+          "name": "Update",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void Update()",
+          "line": 15,
+          "uml": "+Update() void"
+        }
+      ],
+      "scope": "runtime"
+    },
+    {
+      "id": "NewTestScript",
+      "base": null,
+      "static": false,
+      "source": "Assets/_Project/Tests/TestScripts/NewTestScript.cs",
+      "line": 6,
+      "members": [
+        {
+          "kind": "method",
+          "name": "TwoPlusTwo",
+          "visibility": "public",
+          "type": "void",
+          "params": "",
+          "declaration": "public void TwoPlusTwo()",
+          "line": 9,
+          "uml": "+TwoPlusTwo() void"
+        }
+      ],
+      "scope": "test"
+    },
+    {
+      "id": "SplineAnimate",
+      "scope": "external",
+      "members": [],
+      "label": "SplineAnimate"
+    },
+    {
+      "id": "EditorApplication",
+      "scope": "external",
+      "members": []
+    },
+    {
+      "id": "Assert",
+      "scope": "external",
+      "members": []
+    }
+  ],
+  "edges": [
+    {
+      "a": "BuildingModel",
+      "b": "BuildingShapeUnit",
+      "kind": "assoc",
+      "label": "shapeUnits",
+      "multi": "0..*"
+    },
+    {
+      "a": "BuildingModel",
+      "b": "ResourceProduction",
+      "kind": "assoc",
+      "label": "production",
+      "multi": "0..1"
+    },
+    {
+      "a": "BuildingModel",
+      "b": "BuildingData",
+      "kind": "assoc",
+      "label": "buildingData, Data",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "BuildingModel",
+      "kind": "assoc",
+      "label": "currentPreview",
+      "multi": "0..1"
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "MainStorrage",
+      "kind": "assoc",
+      "label": "mainStorrage",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "SegmentStorage",
+      "kind": "assoc",
+      "label": "segmentStorage",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "SegmentRotation",
+      "kind": "assoc",
+      "label": "segmentRotation",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "GridManager",
+      "kind": "assoc",
+      "label": "grid",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "InputManager",
+      "kind": "assoc",
+      "label": "inputManager",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "ResourceData",
+      "kind": "assoc",
+      "label": "buildingResource (ungenutzt)",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "BuildingUI",
+      "kind": "assoc",
+      "label": "buildingUI",
+      "multi": ""
+    },
+    {
+      "a": "BuildingStartPlacement",
+      "b": "BuildingModel",
+      "kind": "assoc",
+      "label": "building",
+      "multi": ""
+    },
+    {
+      "a": "BuildingStartPlacement",
+      "b": "SegmentStorage",
+      "kind": "assoc",
+      "label": "segmentStorage",
+      "multi": ""
+    },
+    {
+      "a": "BuildingStartPlacement",
+      "b": "GridManager",
+      "kind": "assoc",
+      "label": "grid",
+      "multi": ""
+    },
+    {
+      "a": "ResourceProduction",
+      "b": "SegmentStorage",
+      "kind": "assoc",
+      "label": "producerForStorage",
+      "multi": ""
+    },
+    {
+      "a": "ResourceProduction",
+      "b": "ResourceData",
+      "kind": "assoc",
+      "label": "producedResource",
+      "multi": ""
+    },
+    {
+      "a": "ResourceProduction",
+      "b": "ResourceDisplayUI",
+      "kind": "assoc",
+      "label": "displayUI",
+      "multi": ""
+    },
+    {
+      "a": "SegmentStorage",
+      "b": "ResourceProduction",
+      "kind": "assoc",
+      "label": "resourceBuildings",
+      "multi": "0..*"
+    },
+    {
+      "a": "SegmentStorage",
+      "b": "BuildingData",
+      "kind": "assoc",
+      "label": "buildingData",
+      "multi": ""
+    },
+    {
+      "a": "SegmentStorage",
+      "b": "ResourceData",
+      "kind": "assoc",
+      "label": "storedResource",
+      "multi": ""
+    },
+    {
+      "a": "DemendManger",
+      "b": "MainStorrage",
+      "kind": "assoc",
+      "label": "mainStorrage",
+      "multi": ""
+    },
+    {
+      "a": "DemendManger",
+      "b": "DemandData",
+      "kind": "assoc",
+      "label": "demands",
+      "multi": "0..*"
+    },
+    {
+      "a": "DemendManger",
+      "b": "DemandData",
+      "kind": "assoc",
+      "label": "currentDemend",
+      "multi": "0..1"
+    },
+    {
+      "a": "DemendManger",
+      "b": "BarometerManager",
+      "kind": "assoc",
+      "label": "barometerManager",
+      "multi": ""
+    },
+    {
+      "a": "RoundManager",
+      "b": "SegmentStorage",
+      "kind": "assoc",
+      "label": "storages",
+      "multi": "0..*"
+    },
+    {
+      "a": "RoundManager",
+      "b": "DemendManger",
+      "kind": "assoc",
+      "label": "demendManger",
+      "multi": ""
+    },
+    {
+      "a": "RoundManager",
+      "b": "TransportManager",
+      "kind": "assoc",
+      "label": "transports",
+      "multi": "0..*"
+    },
+    {
+      "a": "RoundManager",
+      "b": "BuildingUI",
+      "kind": "assoc",
+      "label": "ui",
+      "multi": ""
+    },
+    {
+      "a": "Segment",
+      "b": "SegmentStorage",
+      "kind": "assoc",
+      "label": "segmentStorage",
+      "multi": ""
+    },
+    {
+      "a": "Segment",
+      "b": "GridManager",
+      "kind": "assoc",
+      "label": "grid",
+      "multi": ""
+    },
+    {
+      "a": "Segment",
+      "b": "ResourceData",
+      "kind": "assoc",
+      "label": "allowedResources",
+      "multi": ""
+    },
+    {
+      "a": "SegmentRotation",
+      "b": "BuildingPlacement",
+      "kind": "assoc",
+      "label": "buildingPlacement",
+      "multi": ""
+    },
+    {
+      "a": "SegmentRotation",
+      "b": "Segment",
+      "kind": "assoc",
+      "label": "segments, currentSegment",
+      "multi": "0..*"
+    },
+    {
+      "a": "SegmentRotation",
+      "b": "InputManager",
+      "kind": "assoc",
+      "label": "inputManager",
+      "multi": ""
+    },
+    {
+      "a": "SegmentRotation",
+      "b": "BuildingUI",
+      "kind": "assoc",
+      "label": "buildingUI",
+      "multi": ""
+    },
+    {
+      "a": "GridManager",
+      "b": "BuildingGridCell",
+      "kind": "composition",
+      "label": "grid",
+      "multi": "0..*"
+    },
+    {
+      "a": "BuildingGridCell",
+      "b": "BuildingModel",
+      "kind": "assoc",
+      "label": "building",
+      "multi": "0..1"
+    },
+    {
+      "a": "BuildingData",
+      "b": "BuildingData_BuildingType",
+      "kind": "dependency",
+      "label": "type",
+      "multi": ""
+    },
+    {
+      "a": "BuildingData",
+      "b": "ResourceData",
+      "kind": "assoc",
+      "label": "costResource, resource",
+      "multi": ""
+    },
+    {
+      "a": "DemandData",
+      "b": "ResourceData",
+      "kind": "assoc",
+      "label": "resource",
+      "multi": ""
+    },
+    {
+      "a": "ResourceData",
+      "b": "ResourceData_ResourceType",
+      "kind": "dependency",
+      "label": "resourceType",
+      "multi": ""
+    },
+    {
+      "a": "TransportManager",
+      "b": "MainStorrage",
+      "kind": "assoc",
+      "label": "mainStorage",
+      "multi": ""
+    },
+    {
+      "a": "TransportManager",
+      "b": "SegmentStorage",
+      "kind": "assoc",
+      "label": "segmentStorage",
+      "multi": ""
+    },
+    {
+      "a": "TransportManager",
+      "b": "ResourceData",
+      "kind": "assoc",
+      "label": "resourceData",
+      "multi": ""
+    },
+    {
+      "a": "TransportManager",
+      "b": "ResourceDisplayUI",
+      "kind": "assoc",
+      "label": "resourceDisplayUI",
+      "multi": ""
+    },
+    {
+      "a": "BuildingUI",
+      "b": "BuildingModel",
+      "kind": "assoc",
+      "label": "building1x1, building2x2, building3x3, wheedBuilding, woodBuilding, flachsBuilding",
+      "multi": ""
+    },
+    {
+      "a": "BuildingUI",
+      "b": "SegmentRotation",
+      "kind": "assoc",
+      "label": "segmentRotation",
+      "multi": ""
+    },
+    {
+      "a": "DemandEntryUI",
+      "b": "DemendManger",
+      "kind": "assoc",
+      "label": "demandManager",
+      "multi": ""
+    },
+    {
+      "a": "DemendUI",
+      "b": "DemendManger",
+      "kind": "assoc",
+      "label": "demendManger",
+      "multi": ""
+    },
+    {
+      "a": "DemendUI",
+      "b": "DemandData",
+      "kind": "assoc",
+      "label": "demandData",
+      "multi": ""
+    },
+    {
+      "a": "DemendUI",
+      "b": "ResourceData",
+      "kind": "assoc",
+      "label": "resourceData",
+      "multi": ""
+    },
+    {
+      "a": "DemendUI",
+      "b": "DemandEntryUI",
+      "kind": "assoc",
+      "label": "demandEntryUI - Prefab",
+      "multi": ""
+    },
+    {
+      "a": "DemendUI",
+      "b": "DemandEntryUI",
+      "kind": "assoc",
+      "label": "demandEntry - Instanz",
+      "multi": "0..1"
+    },
+    {
+      "a": "SegmentStorageUI",
+      "b": "SegmentStorage",
+      "kind": "assoc",
+      "label": "segmentStorage",
+      "multi": ""
+    },
+    {
+      "a": "SegmentStorageUI",
+      "b": "InputManager",
+      "kind": "assoc",
+      "label": "inputManager",
+      "multi": ""
+    },
+    {
+      "a": "SegmentStorageUI",
+      "b": "CartManager",
+      "kind": "assoc",
+      "label": "cartManager",
+      "multi": ""
+    },
+    {
+      "a": "UIOverview",
+      "b": "MainStorrage",
+      "kind": "assoc",
+      "label": "mainStorrage",
+      "multi": ""
+    },
+    {
+      "a": "UIOverview",
+      "b": "RoundManager",
+      "kind": "assoc",
+      "label": "roundManager",
+      "multi": ""
+    },
+    {
+      "a": "UIOverview",
+      "b": "CartManager",
+      "kind": "assoc",
+      "label": "cartManager",
+      "multi": ""
+    },
+    {
+      "a": "BuildingModel",
+      "b": "GridManager",
+      "kind": "dependency",
+      "label": "CompletePlacement / TrySetBuilding",
+      "multi": ""
+    },
+    {
+      "a": "BuildingModel",
+      "b": "SegmentStorage",
+      "kind": "dependency",
+      "label": "CompletePlacement / Setup",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "BuildingData",
+      "kind": "dependency",
+      "label": "liest Data und Baukosten",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "Segment",
+      "kind": "dependency",
+      "label": "liest aktuelles Segment",
+      "multi": ""
+    },
+    {
+      "a": "BuildingUI",
+      "b": "BuildingData",
+      "kind": "dependency",
+      "label": "ShowCostBuilding / Data",
+      "multi": ""
+    },
+    {
+      "a": "BuildingUI",
+      "b": "ResourceData",
+      "kind": "dependency",
+      "label": "vergleicht allowedResources und Icons",
+      "multi": ""
+    },
+    {
+      "a": "GridManager",
+      "b": "BuildingModel",
+      "kind": "dependency",
+      "label": "TrySetBuilding",
+      "multi": ""
+    },
+    {
+      "a": "ResourceProduction",
+      "b": "BuildingData",
+      "kind": "dependency",
+      "label": "Setup",
+      "multi": ""
+    },
+    {
+      "a": "SegmentStorage",
+      "b": "BuildingModel",
+      "kind": "dependency",
+      "label": "GetComponent / Data",
+      "multi": ""
+    },
+    {
+      "a": "MainStorrage",
+      "b": "ResourceData",
+      "kind": "dependency",
+      "label": "Ressourcentyp in Methoden",
+      "multi": ""
+    },
+    {
+      "a": "CartManager",
+      "b": "SegmentStorage",
+      "kind": "dependency",
+      "label": "AssignCart / RemoveCart",
+      "multi": ""
+    },
+    {
+      "a": "DemandEntryUI",
+      "b": "DemandData",
+      "kind": "dependency",
+      "label": "Setup",
+      "multi": ""
+    },
+    {
+      "a": "ResourceDisplayUI",
+      "b": "ResourceData",
+      "kind": "dependency",
+      "label": "SetResource",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "InputManager",
+      "kind": "event",
+      "label": "abonniert OnFingerBegan/Moved/Ended",
+      "multi": ""
+    },
+    {
+      "a": "SegmentRotation",
+      "b": "InputManager",
+      "kind": "event",
+      "label": "abonniert OnSwipe",
+      "multi": ""
+    },
+    {
+      "a": "SegmentStorageUI",
+      "b": "InputManager",
+      "kind": "event",
+      "label": "abonniert OnTap",
+      "multi": ""
+    },
+    {
+      "a": "BuildingPlacement",
+      "b": "BuildingUI",
+      "kind": "event",
+      "label": "abonniert OnBuildingSelected",
+      "multi": ""
+    },
+    {
+      "a": "RoundManager",
+      "b": "BuildingUI",
+      "kind": "event",
+      "label": "abonniert OnNextRoundPressed",
+      "multi": ""
+    },
+    {
+      "a": "DemendUI",
+      "b": "DemendManger",
+      "kind": "event",
+      "label": "abonniert OnDemandDisplayRequested / OnDemandCompleted",
+      "multi": ""
+    },
+    {
+      "a": "TransportManager",
+      "b": "SplineAnimate",
+      "kind": "assoc",
+      "label": "splineAnimate",
+      "multi": ""
+    },
+    {
+      "a": "ProjectFolderColors",
+      "b": "EditorApplication",
+      "kind": "dependency",
+      "label": "abonniert Editor-Callbacks",
+      "multi": ""
+    },
+    {
+      "a": "NewTestScript",
+      "b": "Assert",
+      "kind": "dependency",
+      "label": "AreEqual",
+      "multi": ""
+    }
+  ]
+}

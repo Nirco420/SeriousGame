@@ -1,0 +1,154 @@
+# Forderungen, UI und Barometer
+
+Stand: 16. November 2026. Eine aktive Forderung, vollständige/halbe Abgabe, Aufschub, Fristablauf und Barometer. Keine neue Popup-Wiederholung bei Aufschub.
+
+[Legende und Einordnung](README.md) · [SVG öffnen](03-Forderungen-und-Barometer.svg) · [Offline-Ansicht](UML.html)
+
+```mermaid
+classDiagram
+direction LR
+class RoundManager {
+  <<MonoBehaviour>>
+  -BuildingUI ui
+  -List~SegmentStorage~ storages
+  -DemendManger demendManger
+  +int currentRound
+  -List~TransportManager~ transports
+  -OnEnable() void
+  +StartNextRound(bool isRoundFinished) void
+  -OnDisable() void
+}
+class DemendManger {
+  <<MonoBehaviour>>
+  +event Action OnDemandDisplayRequested
+  +event Action OnDemandCompleted
+  -List~DemandData~ demands
+  -MainStorrage mainStorrage
+  -BarometerManager barometerManager
+  -DemandData currentDemend
+  -int nextDemandIndex
+  -int dueRound
+  -int latestRound
+  +TriggerDemand(DemandData demand, int currentRound) void
+  +CheckDemandsForRound(int currentRound) void
+  +GiveAll() void
+  +GiveHalf() void
+  +MoreTime() void
+  +HasActiveDemand() bool
+  +CanGiveAll() bool
+  +CanGiveHalf() bool
+  -CompleteDemand() void
+  +GetRemainingRounds() int
+}
+class DemandData {
+  <<ScriptableObject>>
+  +string name
+  +string description
+  +ResourceData resource
+  +int quantity
+  +int triggerRound
+  +int deadline
+  +int deferralPeriod
+  +int changeInValuePositive
+  +int changeInValueHalf
+  +int changeInValueNegative
+  +int changeInDeferalInValue
+}
+class DemendUI {
+  <<MonoBehaviour>>
+  -DemendManger demendManger
+  -GameObject demandPanel
+  -TextMeshProUGUI headlineText
+  -TextMeshProUGUI descriptionText
+  -TextMeshProUGUI resourceName
+  -TextMeshProUGUI demandQuantity
+  -TextMeshProUGUI demandDeadline
+  -Button closeButton
+  -Button openDemandEntry
+  -DemandEntryUI demandEntryUI
+  -Transform content
+  -GameObject redInfo
+  -GameObject demandOverview
+  -DemandData demandData
+  -ResourceData resourceData
+  -DemandEntryUI demandEntry
+  -bool currentState
+  -OnEnable() void
+  +Start() void
+  +DemandPopUP(DemandData currentDemand, int currentRound) void
+  +ClosePopUp() void
+  +OpenDemandOverview() void
+  -RemoveDemandEntry() void
+  -OnDisable() void
+}
+class DemandEntryUI {
+  <<MonoBehaviour>>
+  -TextMeshProUGUI demandResource
+  -TextMeshProUGUI demandTitle
+  -TextMeshProUGUI quanatityText
+  -TextMeshProUGUI remainingRoundsLeft
+  -Button giveAll
+  -Button giveHalf
+  -Button aufschub
+  -DemendManger demandManager
+  +Setup(DemandData currentDemand, int remainingRounds, DemendManger manager) void
+  -Update() void
+}
+class BarometerManager {
+  <<MonoBehaviour>>
+  -float cellSize
+  -RectTransform circle
+  -Vector2 middlePosition
+  -float duration
+  -bool isGameOver
+  -int currentValue
+  +Awake() void
+  +UpdateBarometer() void
+  +MoveCircle() IEnumerator
+  +ChangeValue(int amount) void
+}
+class MainStorrage {
+  <<MonoBehaviour>>
+  +int wood
+  +int wheed
+  +int flachs
+  +int gold
+  -int startWood
+  -int startWheed
+  -int startFlachs
+  -int startGold
+  +Start() void
+  +AddResources(int amount, ResourceData resource) void
+  +RemoveResource(int amount, ResourceData resource) void
+  +HasResources(int amount, ResourceData resource) bool
+}
+class ResourceData {
+  <<ScriptableObject>>
+  +ResourceType resourceType
+  +string name
+  +Sprite icon
+}
+DemendManger --> MainStorrage : mainStorrage
+DemendManger --> "0..*" DemandData : demands
+DemendManger --> "0..1" DemandData : currentDemend
+DemendManger --> BarometerManager : barometerManager
+RoundManager --> DemendManger : demendManger
+DemandData --> ResourceData : resource
+DemandEntryUI --> DemendManger : demandManager
+DemendUI --> DemendManger : demendManger
+DemendUI --> DemandData : demandData
+DemendUI --> ResourceData : resourceData
+DemendUI --> DemandEntryUI : demandEntryUI - Prefab
+DemendUI --> "0..1" DemandEntryUI : demandEntry - Instanz
+MainStorrage ..> ResourceData : Ressourcentyp in Methoden
+DemandEntryUI ..> DemandData : Setup
+DemendUI ..> DemendManger : abonniert OnDemandDisplayRequested / OnDemandCompleted
+style RoundManager fill:#e0f2fe,stroke:#475569,color:#0f172a
+style DemendManger fill:#fce7f3,stroke:#475569,color:#0f172a
+style DemandData fill:#ede9fe,stroke:#475569,color:#0f172a
+style DemendUI fill:#fce7f3,stroke:#475569,color:#0f172a
+style DemandEntryUI fill:#fce7f3,stroke:#475569,color:#0f172a
+style BarometerManager fill:#fce7f3,stroke:#475569,color:#0f172a
+style MainStorrage fill:#fef3c7,stroke:#475569,color:#0f172a
+style ResourceData fill:#ede9fe,stroke:#475569,color:#0f172a
+```

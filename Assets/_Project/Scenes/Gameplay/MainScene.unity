@@ -719,7 +719,7 @@ Transform:
   m_GameObject: {fileID: 233045222}
   serializedVersion: 2
   m_LocalRotation: {x: 0.028037068, y: 0.8736069, z: -0.05069288, w: 0.4831719}
-  m_LocalPosition: {x: -12.38, y: 0.48, z: 12.33}
+  m_LocalPosition: {x: -12.320217, y: 1.1336023, z: 12.293716}
   m_LocalScale: {x: -0.70865, y: 0.6671, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2879,6 +2879,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1687459799}
   m_SourcePrefab: {fileID: 100100000, guid: a8525d8a2988b104ea7d06aea0661d17, type: 3}
+--- !u!114 &861707368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5509307857477220317, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+  m_PrefabInstance: {fileID: 5541398281924682876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineAnimate
 --- !u!1 &869379424
 GameObject:
   m_ObjectHideFlags: 0
@@ -5088,6 +5099,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ecfe0683bac8f40aa6ebb260833838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SegmentStorage
+--- !u!1 &1245013575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1601470814964527150, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+  m_PrefabInstance: {fileID: 5541398281924682876}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1262328846 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 562367509302173998, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+  m_PrefabInstance: {fileID: 5541398281924682876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d0241dc903d404f8f4d8f01d3f078a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ResourceDisplayUI
 --- !u!1 &1272248123
 GameObject:
   m_ObjectHideFlags: 0
@@ -6836,6 +6863,17 @@ MonoBehaviour:
   cellSize: 73.5
   circle: {fileID: 1390358311}
   duration: 2
+--- !u!114 &1580077682 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5630741916619507358, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+  m_PrefabInstance: {fileID: 5541398281924682876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c74f4dc9f1050da4990a4853cb319150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridManager
 --- !u!1 &1607036280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a8525d8a2988b104ea7d06aea0661d17, type: 3}
@@ -7747,6 +7785,11 @@ MonoBehaviour:
   resourceDisplayUI: {fileID: 1232049139}
   transportCapacity: 1
   moveSpeed: 5
+--- !u!4 &1736386100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1928476117549158911, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+  m_PrefabInstance: {fileID: 5541398281924682876}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1751521905
 GameObject:
   m_ObjectHideFlags: 0
@@ -9036,13 +9079,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 782622723}
     m_Modifications:
     - target: {fileID: 424518478118405223, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: cart
+      value: 
+      objectReference: {fileID: 1245013575}
+    - target: {fileID: 424518478118405223, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 424518478118405223, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
       propertyPath: mainStorage
       value: 
       objectReference: {fileID: 553229431}
     - target: {fileID: 424518478118405223, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: splineAnimate
+      value: 
+      objectReference: {fileID: 861707368}
+    - target: {fileID: 424518478118405223, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
       propertyPath: mainStoragePos
       value: 
       objectReference: {fileID: 535461201}
+    - target: {fileID: 424518478118405223, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: segmentStorage
+      value: 
+      objectReference: {fileID: 1232153796}
+    - target: {fileID: 424518478118405223, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: startStoragPos
+      value: 
+      objectReference: {fileID: 535461201}
+    - target: {fileID: 424518478118405223, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: resourceDisplayUI
+      value: 
+      objectReference: {fileID: 1262328846}
+    - target: {fileID: 424518478118405223, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: transportCapacity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6180473606568905800, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9087,6 +9158,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: SegmentSlot_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8521446475609216437, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: grid
+      value: 
+      objectReference: {fileID: 1580077682}
+    - target: {fileID: 8521446475609216437, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: segmentStorage
+      value: 
+      objectReference: {fileID: 1232153796}
+    - target: {fileID: 8521446475609216437, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: buildingParents
+      value: 
+      objectReference: {fileID: 1736386100}
+    - target: {fileID: 8521446475609216437, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
+      propertyPath: allowedResources
+      value: 
+      objectReference: {fileID: 11400000, guid: aade4415588b3f64bb1e1a2a132fe1ce, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

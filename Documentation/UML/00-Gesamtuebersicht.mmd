@@ -1,0 +1,178 @@
+classDiagram
+direction LR
+class BuildingModel {
+  <<MonoBehaviour>>
+}
+class BuildingPlacement {
+  <<MonoBehaviour>>
+}
+class BuildingShapeUnit {
+  <<MonoBehaviour>>
+}
+class BuildingStartPlacement {
+  <<MonoBehaviour>>
+}
+class MainStorrage {
+  <<MonoBehaviour>>
+}
+class ResourceProduction {
+  <<MonoBehaviour>>
+}
+class SegmentStorage {
+  <<MonoBehaviour>>
+}
+class DemendManger {
+  <<MonoBehaviour>>
+}
+class RoundManager {
+  <<MonoBehaviour>>
+}
+class Segment {
+  <<MonoBehaviour>>
+}
+class SegmentRotation {
+  <<MonoBehaviour>>
+}
+class GridManager {
+  <<MonoBehaviour>>
+}
+class BuildingGridCell {
+}
+class InputManager {
+  <<MonoBehaviour>>
+}
+class BuildingData {
+  <<ScriptableObject>>
+}
+class DemandData {
+  <<ScriptableObject>>
+}
+class ResourceData {
+  <<ScriptableObject>>
+}
+class CartManager {
+  <<MonoBehaviour>>
+}
+class TransportManager {
+  <<MonoBehaviour>>
+}
+class BarometerManager {
+  <<MonoBehaviour>>
+}
+class BuildingUI {
+  <<MonoBehaviour>>
+}
+class DemandEntryUI {
+  <<MonoBehaviour>>
+}
+class DemendUI {
+  <<MonoBehaviour>>
+}
+class ResourceDisplayUI {
+  <<MonoBehaviour>>
+}
+class SegmentStorageUI {
+  <<MonoBehaviour>>
+}
+class UIOverview {
+  <<MonoBehaviour>>
+}
+BuildingModel --> "0..*" BuildingShapeUnit : shapeUnits
+BuildingModel --> "0..1" ResourceProduction : production
+BuildingModel --> BuildingData : buildingData, Data
+BuildingPlacement --> "0..1" BuildingModel : currentPreview
+BuildingPlacement --> MainStorrage : mainStorrage
+BuildingPlacement --> SegmentStorage : segmentStorage
+BuildingPlacement --> SegmentRotation : segmentRotation
+BuildingPlacement --> GridManager : grid
+BuildingPlacement --> InputManager : inputManager
+BuildingPlacement --> ResourceData : buildingResource (ungenutzt)
+BuildingPlacement --> BuildingUI : buildingUI
+BuildingStartPlacement --> BuildingModel : building
+BuildingStartPlacement --> SegmentStorage : segmentStorage
+BuildingStartPlacement --> GridManager : grid
+ResourceProduction --> SegmentStorage : producerForStorage
+ResourceProduction --> ResourceData : producedResource
+ResourceProduction --> ResourceDisplayUI : displayUI
+SegmentStorage --> "0..*" ResourceProduction : resourceBuildings
+SegmentStorage --> BuildingData : buildingData
+SegmentStorage --> ResourceData : storedResource
+DemendManger --> MainStorrage : mainStorrage
+DemendManger --> "0..*" DemandData : demands
+DemendManger --> "0..1" DemandData : currentDemend
+DemendManger --> BarometerManager : barometerManager
+RoundManager --> "0..*" SegmentStorage : storages
+RoundManager --> DemendManger : demendManger
+RoundManager --> "0..*" TransportManager : transports
+RoundManager --> BuildingUI : ui
+Segment --> SegmentStorage : segmentStorage
+Segment --> GridManager : grid
+Segment --> ResourceData : allowedResources
+SegmentRotation --> BuildingPlacement : buildingPlacement
+SegmentRotation --> "0..*" Segment : segments, currentSegment
+SegmentRotation --> InputManager : inputManager
+SegmentRotation --> BuildingUI : buildingUI
+GridManager *-- "0..*" BuildingGridCell : grid
+BuildingGridCell --> "0..1" BuildingModel : building
+BuildingData --> ResourceData : costResource, resource
+DemandData --> ResourceData : resource
+TransportManager --> MainStorrage : mainStorage
+TransportManager --> SegmentStorage : segmentStorage
+TransportManager --> ResourceData : resourceData
+TransportManager --> ResourceDisplayUI : resourceDisplayUI
+BuildingUI --> BuildingModel : building1x1, building2x2, building3x3, wheedBuilding, woodBuilding, flachsBuilding
+BuildingUI --> SegmentRotation : segmentRotation
+DemandEntryUI --> DemendManger : demandManager
+DemendUI --> DemendManger : demendManger
+DemendUI --> DemandData : demandData
+DemendUI --> ResourceData : resourceData
+DemendUI --> DemandEntryUI : demandEntryUI - Prefab
+DemendUI --> "0..1" DemandEntryUI : demandEntry - Instanz
+SegmentStorageUI --> SegmentStorage : segmentStorage
+SegmentStorageUI --> InputManager : inputManager
+SegmentStorageUI --> CartManager : cartManager
+UIOverview --> MainStorrage : mainStorrage
+UIOverview --> RoundManager : roundManager
+UIOverview --> CartManager : cartManager
+BuildingModel ..> GridManager : CompletePlacement / TrySetBuilding
+BuildingModel ..> SegmentStorage : CompletePlacement / Setup
+BuildingPlacement ..> BuildingData : liest Data und Baukosten
+BuildingPlacement ..> Segment : liest aktuelles Segment
+BuildingUI ..> BuildingData : ShowCostBuilding / Data
+BuildingUI ..> ResourceData : vergleicht allowedResources und Icons
+GridManager ..> BuildingModel : TrySetBuilding
+ResourceProduction ..> BuildingData : Setup
+SegmentStorage ..> BuildingModel : GetComponent / Data
+MainStorrage ..> ResourceData : Ressourcentyp in Methoden
+CartManager ..> SegmentStorage : AssignCart / RemoveCart
+DemandEntryUI ..> DemandData : Setup
+ResourceDisplayUI ..> ResourceData : SetResource
+BuildingPlacement ..> InputManager : abonniert OnFingerBegan/Moved/Ended
+SegmentRotation ..> InputManager : abonniert OnSwipe
+SegmentStorageUI ..> InputManager : abonniert OnTap
+BuildingPlacement ..> BuildingUI : abonniert OnBuildingSelected
+RoundManager ..> BuildingUI : abonniert OnNextRoundPressed
+DemendUI ..> DemendManger : abonniert OnDemandDisplayRequested / OnDemandCompleted
+style BuildingModel fill:#dcfce7,stroke:#475569,color:#0f172a
+style BuildingPlacement fill:#dcfce7,stroke:#475569,color:#0f172a
+style BuildingShapeUnit fill:#dcfce7,stroke:#475569,color:#0f172a
+style BuildingStartPlacement fill:#dcfce7,stroke:#475569,color:#0f172a
+style MainStorrage fill:#fef3c7,stroke:#475569,color:#0f172a
+style ResourceProduction fill:#fef3c7,stroke:#475569,color:#0f172a
+style SegmentStorage fill:#fef3c7,stroke:#475569,color:#0f172a
+style DemendManger fill:#fce7f3,stroke:#475569,color:#0f172a
+style RoundManager fill:#e0f2fe,stroke:#475569,color:#0f172a
+style Segment fill:#e0f2fe,stroke:#475569,color:#0f172a
+style SegmentRotation fill:#e0f2fe,stroke:#475569,color:#0f172a
+style GridManager fill:#dcfce7,stroke:#475569,color:#0f172a
+style BuildingGridCell fill:#dcfce7,stroke:#475569,color:#0f172a
+style InputManager fill:#e0f2fe,stroke:#475569,color:#0f172a
+style BuildingData fill:#ede9fe,stroke:#475569,color:#0f172a
+style DemandData fill:#ede9fe,stroke:#475569,color:#0f172a
+style ResourceData fill:#ede9fe,stroke:#475569,color:#0f172a
+style CartManager fill:#fef3c7,stroke:#475569,color:#0f172a
+style TransportManager fill:#fef3c7,stroke:#475569,color:#0f172a
+style BarometerManager fill:#fce7f3,stroke:#475569,color:#0f172a
+style BuildingUI fill:#e0f2fe,stroke:#475569,color:#0f172a
+style DemandEntryUI fill:#fce7f3,stroke:#475569,color:#0f172a
+style DemendUI fill:#fce7f3,stroke:#475569,color:#0f172a

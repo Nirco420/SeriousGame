@@ -1,0 +1,66 @@
+# ScriptableObjects und Enums
+
+Stand: 16. November 2026. Die drei konfigurierbaren Datentypen mit allen Feldern. BuildingType und ResourceType sind verschachtelte Enums, keine zusätzlichen Komponenten.
+
+[Legende und Einordnung](README.md) · [SVG öffnen](04-Daten.svg) · [Offline-Ansicht](UML.html)
+
+```mermaid
+classDiagram
+direction LR
+class BuildingData {
+  <<ScriptableObject>>
+  +string description
+  +ResourceData costResource
+  +int cost
+  +BuildingType type
+  +ResourceData resource
+  +int resourceQuantity
+  +int maxStorage
+}
+class BuildingData_BuildingType["BuildingData.BuildingType"]
+class BuildingData_BuildingType {
+  <<enumeration>>
+  None
+  STORAGE
+  PRODUKTION
+  RESOURECES
+}
+class ResourceData {
+  <<ScriptableObject>>
+  +ResourceType resourceType
+  +string name
+  +Sprite icon
+}
+class ResourceData_ResourceType["ResourceData.ResourceType"]
+class ResourceData_ResourceType {
+  <<enumeration>>
+  None
+  WOOD
+  WHEED
+  FLACHS
+}
+class DemandData {
+  <<ScriptableObject>>
+  +string name
+  +string description
+  +ResourceData resource
+  +int quantity
+  +int triggerRound
+  +int deadline
+  +int deferralPeriod
+  +int changeInValuePositive
+  +int changeInValueHalf
+  +int changeInValueNegative
+  +int changeInDeferalInValue
+}
+BuildingData ..> BuildingData_BuildingType : type
+BuildingData --> ResourceData : costResource, resource
+DemandData --> ResourceData : resource
+ResourceData ..> ResourceData_ResourceType : resourceType
+ScriptableObject <|-- BuildingData
+ScriptableObject <|-- ResourceData
+ScriptableObject <|-- DemandData
+style BuildingData fill:#ede9fe,stroke:#475569,color:#0f172a
+style ResourceData fill:#ede9fe,stroke:#475569,color:#0f172a
+style DemandData fill:#ede9fe,stroke:#475569,color:#0f172a
+```
