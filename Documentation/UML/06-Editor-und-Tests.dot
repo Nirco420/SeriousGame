@@ -1,0 +1,11 @@
+digraph UML {
+graph [rankdir=LR, bgcolor="white", pad="0.35", nodesep="0.5", ranksep="1.2", splines=polyline, outputorder=edgesfirst];
+node [shape=plain];
+edge [fontname="Arial", fontsize=10, color="#64748b", fontcolor="#334155", arrowsize=0.8];
+"ProjectFolderColors" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#64748b"><TR><TD BGCOLOR="#f1f5f9"><FONT FACE="Arial" POINT-SIZE="10">internal static</FONT><BR/><FONT FACE="Arial" POINT-SIZE="15"><B>ProjectFolderColors</B></FONT></TD></TR><TR><TD ALIGN="LEFT" BGCOLOR="#ffffff"><FONT FACE="Consolas" POINT-SIZE="11">- ColorCache : Dictionary&lt;string, Color?&gt;<BR ALIGN="LEFT"/>- Rules : KeyValuePair&lt;string, Color&gt;[]<BR ALIGN="LEFT"/></FONT></TD></TR><TR><TD ALIGN="LEFT" BGCOLOR="#ffffff"><FONT FACE="Consolas" POINT-SIZE="11">ProjectFolderColors() [static]<BR ALIGN="LEFT"/>- Rule(string path, Color color) : KeyValuePair&lt;string, Color&gt;<BR ALIGN="LEFT"/>- ClearCache() : void<BR ALIGN="LEFT"/>- GetFolderColor(string guid) : Color?<BR ALIGN="LEFT"/>- DrawFolder(string guid, Rect selectionRect) : void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+"NewTestScript" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#64748b"><TR><TD BGCOLOR="#f1f5f9"><FONT FACE="Arial" POINT-SIZE="10">C#</FONT><BR/><FONT FACE="Arial" POINT-SIZE="15"><B>NewTestScript</B></FONT></TD></TR><TR><TD ALIGN="LEFT" BGCOLOR="#ffffff"><FONT FACE="Consolas" POINT-SIZE="11">+ TwoPlusTwo() : void<BR ALIGN="LEFT"/></FONT></TD></TR></TABLE>>];
+"EditorApplication" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#64748b"><TR><TD BGCOLOR="#f1f5f9"><FONT FACE="Arial" POINT-SIZE="10">Unity / package</FONT><BR/><FONT FACE="Arial" POINT-SIZE="15"><B>EditorApplication</B></FONT></TD></TR></TABLE>>];
+"Assert" [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="9" COLOR="#64748b"><TR><TD BGCOLOR="#f1f5f9"><FONT FACE="Arial" POINT-SIZE="10">Unity / package</FONT><BR/><FONT FACE="Arial" POINT-SIZE="15"><B>Assert</B></FONT></TD></TR></TABLE>>];
+"ProjectFolderColors" -> "EditorApplication" [label="abonniert Editor-Callbacks",style=dashed,arrowhead=vee];
+"NewTestScript" -> "Assert" [label="AreEqual",style=dashed,arrowhead=vee];
+}
