@@ -199,7 +199,11 @@ public class BuildingPlacement : MonoBehaviour
 
         currentPreview = null;
         isDragging = false;
-        placementPanel.SetActive(false);
+
+        if (placementPanel != null)
+        {
+            placementPanel.SetActive(false);
+        }
     }
 
     private void OnDisable() //Events wieder abmelden und alle werte resetten
