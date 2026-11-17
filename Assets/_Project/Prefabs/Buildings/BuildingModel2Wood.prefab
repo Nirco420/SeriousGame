@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.00000017881393
       objectReference: {fileID: 0}
+    - target: {fileID: 5026306740855933468, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 243b8590682abfa4288314db9e8a6f09, type: 3}
     - target: {fileID: 7074042340217574640, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_Name
       value: ResourceUI
