@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7074042340217574640, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7392539931475672584, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_SizeDelta.x
@@ -418,7 +418,7 @@ PrefabInstance:
     - target: {fileID: 2503787090719632035, guid: 1e6d5041e407c8340b6ea58fd3392e7d, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 952612558011816073, guid: dbb24b1805f7fee489c7daf9d823bfce, type: 3}
+      objectReference: {fileID: -593476272390248641, guid: 8bffd8666947a534cbf5660cf444a076, type: 3}
     - target: {fileID: 3679499712606870599, guid: 1e6d5041e407c8340b6ea58fd3392e7d, type: 3}
       propertyPath: m_Name
       value: 2x2Building
