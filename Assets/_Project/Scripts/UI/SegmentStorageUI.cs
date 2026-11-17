@@ -55,7 +55,8 @@ public class SegmentStorageUI : MonoBehaviour
         amountText.text = segmentStorage.currentAmount + " / " + segmentStorage.maxCapacity;
 
         Vector3 position = mainCamera.WorldToScreenPoint(segmentStorage.transform.position);
-        segmentStorageUi.transform.position = position + new Vector3 (panelOffset.x, panelOffset.y, -position.z);
+        float canvasScale = segmentStorageUi.GetComponentInParent<Canvas>().rootCanvas.scaleFactor;
+        segmentStorageUi.transform.position = position + new Vector3(panelOffset.x * canvasScale, panelOffset.y * canvasScale, -position.z);
 
         RefreshCartButtons();
         segmentStorageUi.SetActive(true);
