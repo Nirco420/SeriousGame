@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c78bcb119f656a49a5fde9b9d9608ee
+guid: 1729745af529a3e4d93afafa029bc987
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -8,32 +8,32 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AltesRathaus Variante 2.1_Alpha
-    second: {fileID: 2800000, guid: 3fe02c51428536541b394eb8a7253f53, type: 3}
+    second: {fileID: 2800000, guid: e3a0dde73297e4e4fab267df4570615d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AltesRathaus Variante 2.1_BaseColor
-    second: {fileID: 2800000, guid: 3c376ddd9adb85e43bb7d2923573bec3, type: 3}
+    second: {fileID: 2800000, guid: c3224bc3cfb83854197a181b47a34d9d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AltesRathaus Variante 2.1_Emission
-    second: {fileID: 2800000, guid: b56a885613c80494ca5ebf029e0b2a43, type: 3}
+    second: {fileID: 2800000, guid: c0587e4cc8c8eae479f567d95795a230, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AltesRathaus Variante 2.1_Metallic
-    second: {fileID: 2800000, guid: a0782f47871a8d547a0139c8384a6307, type: 3}
+    second: {fileID: 2800000, guid: 93cd42e556231f741a3edb7c2a4b3e75, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AltesRathaus Variante 2.1_Normal
-    second: {fileID: 2800000, guid: cd520ccf56a452a4a88bc1a4d04efb08, type: 3}
+    second: {fileID: 2800000, guid: 148d814f3b185a94190d6fd110d1d93b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: AltesRathaus Variante 2.1_Roughness
-    second: {fileID: 2800000, guid: d075d548f1b0b5b45951f064c4aa4e77, type: 3}
+    second: {fileID: 2800000, guid: 408ce5ecd0dd4a44092065215798ec5f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
