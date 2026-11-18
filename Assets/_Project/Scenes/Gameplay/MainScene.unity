@@ -6176,7 +6176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 181}
+  m_AnchoredPosition: {x: 58, y: 181}
   m_SizeDelta: {x: 39.347, y: 41.2254}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1390358312
@@ -7283,7 +7283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4a2aece1c4e4849bfebaaf02b84f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BarometerManager
-  cellSize: 73.5
+  cellSize: 60
   circle: {fileID: 1390358311}
   duration: 2
 --- !u!114 &1580077682 stripped
