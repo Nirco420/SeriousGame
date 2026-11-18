@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResourceData
   resourceType: 2
   name: Wheed
-  icon: {fileID: 21300000, guid: ce706076e991ff546a7f10b540a35176, type: 3}
+  icon: {fileID: 21300000, guid: 102439fd54799094f807f9b4b49312ff, type: 3}
