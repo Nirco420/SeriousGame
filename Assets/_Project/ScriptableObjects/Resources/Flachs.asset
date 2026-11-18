@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ResourceData
   resourceType: 3
   name: Flachs
-  icon: {fileID: 21300000, guid: a80b2d5a58e12c941811b3d40668c772, type: 3}
+  icon: {fileID: 21300000, guid: 9876a58c9dcfc76419ee2366109edc01, type: 3}
