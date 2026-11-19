@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
 public class BarometerManager : MonoBehaviour
@@ -23,7 +24,7 @@ public class BarometerManager : MonoBehaviour
         StartCoroutine(MoveCircle());
     }
 
-    public IEnumerator MoveCircle()
+    public IEnumerator MoveCircle() //Kreis per Lerp bewegen 
     {
         float time = 0;
         Vector2 startPos = circle.anchoredPosition;
@@ -41,7 +42,7 @@ public class BarometerManager : MonoBehaviour
        
     }
 
-    public void ChangeValue(int amount)
+    public void ChangeValue(int amount) //Value von den Forderungen erhalten und dementsprechend die Richtung vorgeben
     {
         currentValue = Mathf.Clamp(currentValue + amount, -4, 4);
         UpdateBarometer();
@@ -49,7 +50,7 @@ public class BarometerManager : MonoBehaviour
         if (currentValue == -4 || currentValue == 4)
         {
             isGameOver = true;
-            Debug.Log("Du hast das Spiel verloren");
+            SceneManager.LoadScene("LoseScreen");
         }
     }
 }
