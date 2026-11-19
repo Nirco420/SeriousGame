@@ -19,3 +19,4 @@ MonoBehaviour:
   resource: {fileID: 11400000, guid: d4e07d01db4e575439560ea56cb3a4e5, type: 2}
   resourceQuantity: 2
   maxStorage: 10
+  uiIcon: {fileID: 21300000, guid: 77c85cb406e11c04f898fe3cb34a7b6d, type: 3}

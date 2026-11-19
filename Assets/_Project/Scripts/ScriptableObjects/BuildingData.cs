@@ -20,6 +20,7 @@ public class BuildingData : ScriptableObject
 
     public int resourceQuantity;
     public int maxStorage;
+    public Sprite uiIcon;
 
 
 }
