@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: buildingData
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1587031518341340806, guid: a43d5ece0332f5b4b812a340d734b896, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.726
+      objectReference: {fileID: 0}
     - target: {fileID: 5634706695920167698, guid: a43d5ece0332f5b4b812a340d734b896, type: 3}
       propertyPath: m_Name
       value: StartPlacement
