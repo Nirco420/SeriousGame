@@ -184,6 +184,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3635557662307353056, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 035fd682d9d8ec447984dcb199757ce9, type: 3}
+    - target: {fileID: 3635557662307353056, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0.4558
@@ -193,12 +201,28 @@ PrefabInstance:
       value: 0.1801
       objectReference: {fileID: 0}
     - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.169
+      value: 0.0009999871
       objectReference: {fileID: 0}
     - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.183
+      value: -0.042999983
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5026306740855933468, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_Sprite
@@ -489,11 +513,11 @@ PrefabInstance:
     - target: {fileID: 810177402778382290, guid: 1e6d5041e407c8340b6ea58fd3392e7d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: eec53fb827ac0734e9cfcde11f27315f, type: 2}
+      objectReference: {fileID: 2100000, guid: 2276051eedc8ed2488c29c264ecdfdc2, type: 2}
     - target: {fileID: 2503787090719632035, guid: 1e6d5041e407c8340b6ea58fd3392e7d, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5236545481511204394, guid: 2b1d8c7eb7cce8149a8eab222bef41a7, type: 3}
+      objectReference: {fileID: 3878550781837394237, guid: 29f4c556252085a4fbd950ceb2c157a3, type: 3}
     - target: {fileID: 3679499712606870599, guid: 1e6d5041e407c8340b6ea58fd3392e7d, type: 3}
       propertyPath: m_Name
       value: 2x2Building

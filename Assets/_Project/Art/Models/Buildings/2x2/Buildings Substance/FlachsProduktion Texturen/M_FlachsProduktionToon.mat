@@ -33,7 +33,7 @@ Material:
     - _FixedLight: 0
     - _LightTintStrength: 0.3
     - _MidLevel: 0.5
-    - _OutlineWidth: 0.03
+    - _OutlineWidth: 0.006
     - _PaletteAmount: 0
     - _ReceiveShadowAmount: 1
     - _RimPower: 3
