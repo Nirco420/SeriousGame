@@ -189,16 +189,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3635557662307353056, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 035fd682d9d8ec447984dcb199757ce9, type: 3}
+    - target: {fileID: 3635557662307353056, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_Color.a
-      value: 0.39215687
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.00000017881393
+      value: -0.202
       objectReference: {fileID: 0}
     - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00000017881393
+      value: 0.173
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227153731795086678, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5026306740855933468, guid: 22e8fdc0db89e694db2ce883cde8921c, type: 3}
       propertyPath: m_Sprite
@@ -493,11 +513,11 @@ PrefabInstance:
     - target: {fileID: 810177402778382290, guid: 1e6d5041e407c8340b6ea58fd3392e7d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: eec53fb827ac0734e9cfcde11f27315f, type: 2}
+      objectReference: {fileID: 2100000, guid: e51dc2ef86237034da1d0e5d01e96c1a, type: 2}
     - target: {fileID: 2503787090719632035, guid: 1e6d5041e407c8340b6ea58fd3392e7d, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -593476272390248641, guid: 8bffd8666947a534cbf5660cf444a076, type: 3}
+      objectReference: {fileID: 6076297578444336408, guid: 44973111b3cf40b408978f0eac6cbf8f, type: 3}
     - target: {fileID: 3679499712606870599, guid: 1e6d5041e407c8340b6ea58fd3392e7d, type: 3}
       propertyPath: m_Name
       value: 2x2Building
