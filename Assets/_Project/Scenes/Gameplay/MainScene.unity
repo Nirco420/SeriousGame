@@ -56091,8 +56091,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DemendManger
   demands:
-  - {fileID: 11400000, guid: 593824898c4f8934a8d4b628d08b1a53, type: 2}
-  - {fileID: 11400000, guid: 508df1cabec736940b0da5aedd741190, type: 2}
+  - {fileID: 11400000, guid: 4ddb69cf1f769d4418c7fc13b95ebbb4, type: 2}
+  - {fileID: 11400000, guid: 958ae2370ce61664fa2d1c54a86eefa6, type: 2}
+  - {fileID: 11400000, guid: abe3c113b65340b4ca91729de579855b, type: 2}
+  - {fileID: 11400000, guid: 4793493e7f7fb2b4bac55f0ced06a6c6, type: 2}
+  - {fileID: 11400000, guid: 5fd9a281cce79db4db14002a8275fe05, type: 2}
+  - {fileID: 11400000, guid: 61a47c73ed8e35a4ca3e2111481f4cc6, type: 2}
   mainStorrage: {fileID: 553229431}
   barometerManager: {fileID: 1577189544}
 --- !u!1001 &1302574846
@@ -76249,11 +76253,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Gr\xFC\xDF di, i bin d\u2019Gr\xE4fin Euphemia!\nMir schreibet s Jahr
-    1796, und d\u2019Franzose bedrohet unser Wei\xDFenhorn.\nAls neuer Stadtmagistrat
-    hosch du jetzt s\u2019Saga!\nLass unsre Betriebe schaffa, sorg f\xFCr Vorr\xE4t
-    und organisier d\u2019W\xE4ge.\nErf\xFCll d\u2019Forderunga vo de Franzosa, damit
-    unser St\xE4dtle verschont bleibt!"
+  m_text: "Ah, da seid Ihr ja endlich, Magistrat! Es wird h\xF6chste Zeit. Mich solltet
+    Ihr kennen: Ich bin die Gr\xE4fin von Wei\xDFenhorn, Euphemia Fugger. Um ehrlich
+    zu sein, steht es nicht gut um meine Stadt. Eine franz\xF6sische Armee soll hier
+    bald eintreffen. Wenn wir sie nicht mit Waren bes\xE4nftigen k\xF6nnen, werden
+    die Folgen f\xFCr die Stadt schrecklich sein... Aber jetzt seid Ihr ja da! Wir
+    brauchen zun\xE4chst Weizen. Veranlasst den Bau von Feldern und die Zuweisung
+    der Fuhrwagen.  "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

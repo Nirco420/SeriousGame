@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a6924f69636a947a95045994bece5a, type: 3}
+  m_Name: Demand 3
+  m_EditorClassIdentifier: Assembly-CSharp::DemandData
+  name: Die Franzosen tauchen auf!
+  description: "Unsere Verb\xE4nde sind aufgebraucht. Bringt vier B\xFCndel Flachs!"
+  resource: {fileID: 11400000, guid: 0a521a6df17981a46814d108657efbfe, type: 2}
+  quantity: 4
+  triggerRound: 9
+  deadline: 2
+  deferralPeriod: 1
+  changeInValuePositive: 1
+  changeInValueHalf: 1
+  changeInValueNegative: 2
+  changeInDeferalInValue: 1
