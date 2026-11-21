@@ -6,3 +6,6 @@
 *.unity -text merge=unityyamlmerge
 *.prefab -text merge=unityyamlmerge
 *.meta -text merge=unityyamlmerge
+git switch gamedesign
+git fetch origin
+git merge origin/develop
