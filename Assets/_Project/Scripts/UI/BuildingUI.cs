@@ -77,7 +77,8 @@ public class BuildingUI : MonoBehaviour
 
     public void OnBuilding3Clicked()//Event wenn das dreier Gebäude gewählt wurde
     {
-        OnBuildingSelected?.Invoke(building3x3);
+        //OnBuildingSelected?.Invoke(building3x3);
+        buildingPanel?.SetActive(false);
     }
 
     public void OnEndRoundWasClicked() //Event Triggern, dass die Runde beendet worden ist
@@ -111,6 +112,7 @@ public class BuildingUI : MonoBehaviour
         }
 
         building2.gameObject.SetActive(building2x2.Data.resource == resource);
+        building2.image.sprite = building2x2.Data.uiIcon;
 
         ShowCostBuilding(building1x1.Data, text1x1Building, resourceImage1x1);
         ShowCostBuilding(building2x2.Data, text2x2Building, resourceImage2x2);
