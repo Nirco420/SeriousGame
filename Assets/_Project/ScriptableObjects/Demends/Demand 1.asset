@@ -21,5 +21,5 @@ MonoBehaviour:
   deferralPeriod: 1
   changeInValuePositive: 1
   changeInValueHalf: 1
-  changeInValueNegative: 2
-  changeInDeferalInValue: 1
+  changeInValueNegative: -2
+  changeInDeferalInValue: -1
