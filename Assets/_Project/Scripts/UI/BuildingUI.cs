@@ -112,6 +112,7 @@ public class BuildingUI : MonoBehaviour
         }
 
         building2.gameObject.SetActive(building2x2.Data.resource == resource);
+        building2.image.sprite = building2x2.Data.uiIcon;
 
         ShowCostBuilding(building1x1.Data, text1x1Building, resourceImage1x1);
         ShowCostBuilding(building2x2.Data, text2x2Building, resourceImage2x2);
