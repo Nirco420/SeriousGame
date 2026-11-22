@@ -6312,7 +6312,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 1729745af529a3e4d93afafa029bc987, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4cc1f02706238474ab1e645dee976d3b, type: 2}
     - target: {fileID: 919132149155446097, guid: 1729745af529a3e4d93afafa029bc987, type: 3}
@@ -18881,7 +18881,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7635826562936255635, guid: 6e84d49a9079f51499161cb146119347, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f33806e0e848aca4fa990b89be1eccaf, type: 2}
     - target: {fileID: 919132149155446097, guid: 6e84d49a9079f51499161cb146119347, type: 3}
@@ -24833,7 +24833,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: e6b2fbc85709b544c9de33bf9287c936, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c07889358e9062e4ea3929a8282887ef, type: 2}
     - target: {fileID: 919132149155446097, guid: e6b2fbc85709b544c9de33bf9287c936, type: 3}
@@ -33451,7 +33451,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7635826562936255635, guid: a8525d8a2988b104ea7d06aea0661d17, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 226faa1cb00eb684abba6c268047f119, type: 2}
     - target: {fileID: -6400281290468069383, guid: a8525d8a2988b104ea7d06aea0661d17, type: 3}
@@ -43548,7 +43548,7 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2429630976318109243, guid: f9a51778c0f93b7438a8c36eb02da2f9, type: 3}
-      propertyPath: 'm_Materials.Array.data[3]'
+      propertyPath: m_Materials.Array.data[3]
       value: 
       objectReference: {fileID: 2100000, guid: 8b1701b64fdf2de45981ce65af9e9e92, type: 2}
     - target: {fileID: 3237980566590946124, guid: f9a51778c0f93b7438a8c36eb02da2f9, type: 3}
@@ -56115,8 +56115,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DemendManger
   demands:
-  - {fileID: 11400000, guid: 593824898c4f8934a8d4b628d08b1a53, type: 2}
-  - {fileID: 11400000, guid: 508df1cabec736940b0da5aedd741190, type: 2}
+  - {fileID: 11400000, guid: 4ddb69cf1f769d4418c7fc13b95ebbb4, type: 2}
+  - {fileID: 11400000, guid: 958ae2370ce61664fa2d1c54a86eefa6, type: 2}
+  - {fileID: 11400000, guid: abe3c113b65340b4ca91729de579855b, type: 2}
+  - {fileID: 11400000, guid: 4793493e7f7fb2b4bac55f0ced06a6c6, type: 2}
+  - {fileID: 11400000, guid: 5fd9a281cce79db4db14002a8275fe05, type: 2}
+  - {fileID: 11400000, guid: 61a47c73ed8e35a4ca3e2111481f4cc6, type: 2}
   mainStorrage: {fileID: 553229431}
   barometerManager: {fileID: 1577189544}
 --- !u!1001 &1302574846
@@ -62032,7 +62036,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7635826562936255635, guid: a8525d8a2988b104ea7d06aea0661d17, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 226faa1cb00eb684abba6c268047f119, type: 2}
     - target: {fileID: -6400281290468069383, guid: a8525d8a2988b104ea7d06aea0661d17, type: 3}
@@ -65693,8 +65697,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -67426,7 +67430,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 759dd6c58993c2743bf8bb28676a2506, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eda25b116381e4747b80a8065b583fd4, type: 2}
     - target: {fileID: 919132149155446097, guid: 759dd6c58993c2743bf8bb28676a2506, type: 3}
@@ -75423,7 +75427,7 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: e0a082b9832a0364b8d94f4693f96736, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 75db1469f9c0e2e4da772ffcf9d254f9, type: 2}
     - target: {fileID: 919132149155446097, guid: e0a082b9832a0364b8d94f4693f96736, type: 3}
@@ -76273,11 +76277,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Gr\xFC\xDF di, i bin d\u2019Gr\xE4fin Euphemia!\nMir schreibet s Jahr
-    1796, und d\u2019Franzose bedrohet unser Wei\xDFenhorn.\nAls neuer Stadtmagistrat
-    hosch du jetzt s\u2019Saga!\nLass unsre Betriebe schaffa, sorg f\xFCr Vorr\xE4t
-    und organisier d\u2019W\xE4ge.\nErf\xFCll d\u2019Forderunga vo de Franzosa, damit
-    unser St\xE4dtle verschont bleibt!"
+  m_text: "Ah, da seid Ihr ja endlich, Magistrat! Es wird h\xF6chste Zeit. Mich solltet
+    Ihr kennen: Ich bin die Gr\xE4fin von Wei\xDFenhorn, Euphemia Fugger. Um ehrlich
+    zu sein, steht es nicht gut um meine Stadt. Eine franz\xF6sische Armee soll hier
+    bald eintreffen. Wenn wir sie nicht mit Waren bes\xE4nftigen k\xF6nnen, werden
+    die Folgen f\xFCr die Stadt schrecklich sein... Aber jetzt seid Ihr ja da! Wir
+    brauchen zun\xE4chst Weizen. Veranlasst den Bau von Feldern und die Zuweisung
+    der Fuhrwagen.  "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -88474,7 +88480,7 @@ PrefabInstance:
       value: 101.665
       objectReference: {fileID: 0}
     - target: {fileID: 1926744358608403264, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ae431ac3c9f616a47bd2d96ed059b84d, type: 2}
     - target: {fileID: 2182378324314848635, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
@@ -88498,7 +88504,7 @@ PrefabInstance:
       value: 0.484
       objectReference: {fileID: 0}
     - target: {fileID: 4920132771755303118, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 226faa1cb00eb684abba6c268047f119, type: 2}
     - target: {fileID: 4920132771755303118, guid: e22cc58ab324fa144b3cec4e41ac5dea, type: 3}
