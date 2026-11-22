@@ -77,7 +77,8 @@ public class BuildingUI : MonoBehaviour
 
     public void OnBuilding3Clicked()//Event wenn das dreier Gebäude gewählt wurde
     {
-        OnBuildingSelected?.Invoke(building3x3);
+        //OnBuildingSelected?.Invoke(building3x3);
+        buildingPanel?.SetActive(false);
     }
 
     public void OnEndRoundWasClicked() //Event Triggern, dass die Runde beendet worden ist

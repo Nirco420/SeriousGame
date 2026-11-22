@@ -513,9 +513,15 @@ MonoBehaviour:
   resourceImage: {fileID: 4154571643504729987}
   amountText: {fileID: 2433138533534209609}
   closeButton: {fileID: 4741640205820178087}
+  cartManager: {fileID: 0}
+  panelOffset: {x: 80, y: 0, z: 0}
+  inputManager: {fileID: 0}
+  mainCamera: {fileID: 0}
   cartSlot1: {fileID: 448101841682278226}
   cartSlot2: {fileID: 7252230430922601536}
   cartSlot3: {fileID: 2092225857570246376}
+  slotEmpty: {fileID: 0}
+  slotFull: {fileID: 0}
 --- !u!1 &5543435007631324050
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -66, y: 0}
   m_SizeDelta: {x: -1293.2788, y: -2166.4438}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6848326544209327461

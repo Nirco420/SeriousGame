@@ -60,6 +60,7 @@ public class SegmentStorageUI : MonoBehaviour
 
         RefreshCartButtons();
         segmentStorageUi.SetActive(true);
+        PositionPanel();
     }
 
     public void CloseUI() //Schliest die UI wieder
@@ -103,6 +104,48 @@ public class SegmentStorageUI : MonoBehaviour
 
     }
 
+    private void PositionPanel()
+    {
+        RectTransform panel = (RectTransform)segmentStorageUi.transform;
+        float canvasScale = panel.GetComponentInParent<Canvas>().rootCanvas.scaleFactor;
+
+        Vector2 buildingPosition = mainCamera.WorldToScreenPoint(segmentStorage.transform.position);
+        Vector2 halfSize = new Vector2(
+            panel.rect.width * panel.lossyScale.x / 2f,
+            panel.rect.height * panel.lossyScale.y / 2f);
+
+        float gap = 0f * canvasScale;
+
+        Rect area = Screen.safeArea;
+        area.xMin += 10f;
+        area.xMax -= 10f;
+        area.yMin += 10f;
+        area.yMax -= 10f;
+
+        Vector2[] positions =
+        {
+        buildingPosition + new Vector2(halfSize.x + gap, 0f),
+        buildingPosition - new Vector2(halfSize.x + gap, 0f),
+        buildingPosition + new Vector2(0f, halfSize.y + gap),
+        buildingPosition - new Vector2(0f, halfSize.y + gap)
+    };
+
+        foreach (Vector2 position in positions)
+        {
+            if (area.Contains(position - halfSize) &&
+                area.Contains(position + halfSize))
+            {
+                panel.position = new Vector3(position.x, position.y, 0f);
+                return;
+            }
+        }
+
+        Vector2 fallback = positions[0];
+        fallback.x = Mathf.Clamp(fallback.x, area.xMin + halfSize.x, area.xMax - halfSize.x);
+        fallback.y = Mathf.Clamp(fallback.y, area.yMin + halfSize.y, area.yMax - halfSize.y);
+
+        panel.position = new Vector3(fallback.x, fallback.y, 0f);
+    }
     public void OnDisable()
     {
         inputManager.OnTap -= OpenUI;
