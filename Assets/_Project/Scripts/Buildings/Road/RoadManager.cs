@@ -39,14 +39,13 @@ public class RoadManager : MonoBehaviour
     public void OnEnable()
     {
         buildingUI.OnBuildingSelected += OnRoadStartBuilding;
-        placement.buildingMoved += 
+        placement.buildingMoved += GetStartPosition;
        
     }
 
     public void Awake()
     {
         currentBuildingState = BuildingState.IDLE;
-        grid = placement.grid;
     }
   
     void Update()
@@ -57,13 +56,7 @@ public class RoadManager : MonoBehaviour
                 break;
 
             case BuildingState.PLACING:
-                if (placement.currentPreview == null)
-                {
-                    return;
-                }
-
-                (int x, int z) = grid.WorldToGridPosition(placement.currentPreview.transform.position);
-                GetStartPosition(x, z, grid);
+               
                 break;
 
             case BuildingState.DRAGING:
@@ -85,13 +78,26 @@ public class RoadManager : MonoBehaviour
         
     }
 
-    private void GetStartPosition(int x, int z, GridManager currentGrid) //aktuelles Grid holen, sowie die GridKoordinaten der Preview. Dann prüfen ob Zelle bebaubar ist und obs eine Straße ist. Wenn ja pfeile Aktivieren
+    private void GetStartPosition() //aktuelles Grid holen, sowie die GridKoordinaten der Preview. Dann prüfen ob Zelle bebaubar ist und obs eine Straße ist. Wenn ja pfeile Aktivieren
     {
-        grid = currentGrid;
+        if (placement.currentPreview == null)
+        {
+            return;
+        }
+
+
+        grid = placement.grid;
+        roadDirection = placement.currentPreview.GetComponent<RoadDirection>();
+        (int x, int z) = grid.WorldToGridPosition(placement.currentPreview.transform.position);
         if (grid.CanBuild(placement.currentPreview.GetAllBuildingPositions()) == true && placement.currentPreview.BuildingData.type == BuildingData.BuildingType.ROAD)
         {
-            CreateArrows(x,z);
+            CreateArrows(x, z);
         }
+        else
+        {
+            roadDirection.DeactivateArrows();
+        }
+
     }
 
     private void CreateArrows(int x, int z) //Nachbarn der aktuellen Zelle suchen und prüfen ob die nachbarn bebaut werden können oder nicht. Wenn ja pfeil anzeigen wenn nein nicht 
@@ -110,7 +116,7 @@ public class RoadManager : MonoBehaviour
         neighborCells.Add(leftNeighbor);
         neighborCells.Add(downNeighbor);
 
-        roadDirection = placement.currentPreview.GetComponent<RoadDirection>();
+        
 
         foreach (Vector2Int neighbors in neighborCells)
         {
@@ -123,6 +129,12 @@ public class RoadManager : MonoBehaviour
             roadDirection.GetDirection(direction, grid.CanBuild(neighborPositions));
             
         }
+    }
+
+    public void OnDisable()
+    {
+        buildingUI.OnBuildingSelected -= OnRoadStartBuilding;
+        placement.buildingMoved -= GetStartPosition;
     }
 
 

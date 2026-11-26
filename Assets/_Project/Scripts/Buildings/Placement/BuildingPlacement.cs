@@ -27,7 +27,7 @@ public class BuildingPlacement : MonoBehaviour
 
     public bool isPlacing => currentPreview != null;
 
-    public event Action<bool> buildingMoved;
+    public event Action buildingMoved;
 
     public void Start()
     {
@@ -92,7 +92,7 @@ public class BuildingPlacement : MonoBehaviour
     public void OnTouchBegan(Vector2 pos) //Erzeugt einen Ray von der Camera zum Objekt. Wenn einer der Objektcollider getroffen wurde, dann treffer position übergeben
     {
         isDragging = false;
-        buildingMoved?.Invoke(isDragging);
+        buildingMoved?.Invoke();
 
         if (currentPreview == null)
         {
@@ -135,7 +135,7 @@ public class BuildingPlacement : MonoBehaviour
     public void OnTouchEnded(Vector2 pos) //Beendet den ToucInput
     {
         isDragging = false;
-        buildingMoved?.Invoke(isDragging);
+        buildingMoved?.Invoke();
     }
 
     public void GetSelectedBuilding(BuildingModel buildingPrefab)//Erzeugt das Gebäude mit den richtigen Gebäudedaten, erstmal nur als Vorschau

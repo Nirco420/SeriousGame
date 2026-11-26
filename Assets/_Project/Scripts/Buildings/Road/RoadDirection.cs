@@ -28,4 +28,12 @@ public class RoadDirection : MonoBehaviour
         }
 
     }
+
+    public void DeactivateArrows()
+    {
+        rightArrow.SetActive(false);
+        leftArrow.SetActive(false);
+        upperArrow.SetActive(false);
+        downArrow.SetActive(false);
+    }
 }
