@@ -8,7 +8,8 @@ public class BuildingData : ScriptableObject
         None,
         STORAGE,
         PRODUKTION,
-        RESOURECES
+        RESOURECES, 
+        ROAD
     }
 
     public string description;

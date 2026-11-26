@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,15 +18,16 @@ public class BuildingPlacement : MonoBehaviour
     [SerializeField] private Button cancelButton;
     [SerializeField] private Button rotateButton; 
 
-    private BuildingModel currentPreview;
+    public BuildingModel currentPreview {  get; private set; }
     private ResourceData buildingResource;
     private bool isDragging;
-    private GridManager grid;
+    public GridManager grid {  get; private set; }
     private MeshCollider meshCollider;
     private SegmentStorage segmentStorage;
 
     public bool isPlacing => currentPreview != null;
 
+    public event Action<bool> buildingMoved;
 
     public void Start()
     {
@@ -55,7 +57,7 @@ public class BuildingPlacement : MonoBehaviour
 
         bool canBuild = grid.CanBuild(currentPreview.GetAllBuildingPositions()); //Bool speichern um Buttons darüber zu steuern
         
-        BuildingData data = currentPreview.Data;
+        BuildingData data = currentPreview.BuildingData;
 
         canBuild = canBuild && mainStorrage.HasResources(data.cost, data.costResource);
 
@@ -90,6 +92,7 @@ public class BuildingPlacement : MonoBehaviour
     public void OnTouchBegan(Vector2 pos) //Erzeugt einen Ray von der Camera zum Objekt. Wenn einer der Objektcollider getroffen wurde, dann treffer position übergeben
     {
         isDragging = false;
+        buildingMoved?.Invoke(isDragging);
 
         if (currentPreview == null)
         {
@@ -132,6 +135,7 @@ public class BuildingPlacement : MonoBehaviour
     public void OnTouchEnded(Vector2 pos) //Beendet den ToucInput
     {
         isDragging = false;
+        buildingMoved?.Invoke(isDragging);
     }
 
     public void GetSelectedBuilding(BuildingModel buildingPrefab)//Erzeugt das Gebäude mit den richtigen Gebäudedaten, erstmal nur als Vorschau
@@ -164,7 +168,7 @@ public class BuildingPlacement : MonoBehaviour
             return;
         }
 
-        BuildingData data = currentPreview.Data;
+        BuildingData data = currentPreview.BuildingData;
 
 
         if (mainStorrage.HasResources(data.cost, data.costResource) == false)

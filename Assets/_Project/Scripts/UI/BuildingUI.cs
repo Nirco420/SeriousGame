@@ -98,24 +98,24 @@ public class BuildingUI : MonoBehaviour
     {
         ResourceData resource = segmentRotation.currentSegment.allowedResources;
 
-        if (resource == wheedBuilding.Data.resource)
+        if (resource == wheedBuilding.BuildingData.resource)
         {
             building2x2 = wheedBuilding;
         }
-        else if (resource == woodBuilding.Data.resource)
+        else if (resource == woodBuilding.BuildingData.resource)
         {
             building2x2 = woodBuilding;
         }
-        else if (resource == flachsBuilding.Data.resource)
+        else if (resource == flachsBuilding.BuildingData.resource)
         {
             building2x2 = flachsBuilding;
         }
 
-        building2.gameObject.SetActive(building2x2.Data.resource == resource);
-        building2.image.sprite = building2x2.Data.uiIcon;
+        building2.gameObject.SetActive(building2x2.BuildingData.resource == resource);
+        building2.image.sprite = building2x2.BuildingData.uiIcon;
 
-        ShowCostBuilding(building1x1.Data, text1x1Building, resourceImage1x1);
-        ShowCostBuilding(building2x2.Data, text2x2Building, resourceImage2x2);
-        ShowCostBuilding(building3x3.Data, text3x3Building, resourceImage3x3);
+        ShowCostBuilding(building1x1.BuildingData, text1x1Building, resourceImage1x1);
+        ShowCostBuilding(building2x2.BuildingData, text2x2Building, resourceImage2x2);
+        ShowCostBuilding(building3x3.BuildingData, text3x3Building, resourceImage3x3);
     }
 }

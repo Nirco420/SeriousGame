@@ -13,7 +13,7 @@ public class SegmentStorage : MonoBehaviour
 
     public void Awake()
     {
-        buildingData = GetComponent<BuildingModel>().Data;
+        buildingData = GetComponent<BuildingModel>().BuildingData;
         storedResource = buildingData.resource;
         maxCapacity = buildingData.maxStorage;
         currentAmount = 0;

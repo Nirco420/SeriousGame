@@ -6,7 +6,7 @@ public class BuildingModel : MonoBehaviour
     [SerializeField] private GameObject wrapper;
     [SerializeField] private BuildingData buildingData;
 
-    public BuildingData Data
+    public BuildingData BuildingData
     {
         get
         {
