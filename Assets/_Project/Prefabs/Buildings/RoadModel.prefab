@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 6457171168518481366}
   - component: {fileID: 4614730299694474351}
   - component: {fileID: 5581353752204554567}
+  - component: {fileID: 2405506510041845048}
   m_Layer: 0
   m_Name: ArrowUp
   m_TagString: Untagged
@@ -233,6 +234,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03262418, y: 0.024019342, z: 0.061584428}
   m_Center: {x: -0.001768672, y: 0.00048425075, z: 0.00019555911}
+--- !u!114 &2405506510041845048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964249824627648682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408a308756dbf344b861bca93ca0e862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArrowDirection
+  direction: {x: 0, y: 1}
 --- !u!1 &4013650843466426738
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,6 +401,7 @@ GameObject:
   - component: {fileID: 6028398173669038207}
   - component: {fileID: 5314364265260659061}
   - component: {fileID: 7473242302046493998}
+  - component: {fileID: 6298846384517498959}
   m_Layer: 0
   m_Name: ArrowLeft
   m_TagString: Untagged
@@ -487,6 +502,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03262418, y: 0.024019342, z: 0.061584428}
   m_Center: {x: -0.001768672, y: 0.00048425075, z: 0.00019555911}
+--- !u!114 &6298846384517498959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6220366121185146558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408a308756dbf344b861bca93ca0e862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArrowDirection
+  direction: {x: -1, y: 0}
 --- !u!1 &6473273065910286614
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +527,7 @@ GameObject:
   - component: {fileID: 3038826228238610176}
   - component: {fileID: 2610951264423484500}
   - component: {fileID: 4293576347158549997}
+  - component: {fileID: 3143473834094120041}
   m_Layer: 0
   m_Name: ArrowRight
   m_TagString: Untagged
@@ -599,6 +628,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03262418, y: 0.024019342, z: 0.061584428}
   m_Center: {x: -0.001768672, y: 0.00048425075, z: 0.00019555911}
+--- !u!114 &3143473834094120041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6473273065910286614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408a308756dbf344b861bca93ca0e862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArrowDirection
+  direction: {x: 1, y: 0}
 --- !u!1 &7519181356735594322
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +653,7 @@ GameObject:
   - component: {fileID: 7951039413300345551}
   - component: {fileID: 5534535984347186479}
   - component: {fileID: 6883724438002011162}
+  - component: {fileID: 3467552878656300504}
   m_Layer: 0
   m_Name: ArrowDown
   m_TagString: Untagged
@@ -711,3 +754,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03262418, y: 0.024019342, z: 0.061584428}
   m_Center: {x: -0.001768672, y: 0.00048425075, z: 0.00019555911}
+--- !u!114 &3467552878656300504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7519181356735594322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408a308756dbf344b861bca93ca0e862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArrowDirection
+  direction: {x: 0, y: -1}

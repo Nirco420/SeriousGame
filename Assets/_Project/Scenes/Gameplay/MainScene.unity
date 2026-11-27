@@ -17474,6 +17474,8 @@ MonoBehaviour:
   input: {fileID: 295763475}
   buildingUI: {fileID: 1338792684}
   placement: {fileID: 869379425}
+  mainCamera: {fileID: 1904973879}
+  meshCollider: {fileID: 0}
 --- !u!1 &392826507
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,13 +18,15 @@ public class RoadManager : MonoBehaviour
     [SerializeField] private InputManager input; 
     [SerializeField] private BuildingUI buildingUI;
     [SerializeField] private BuildingPlacement placement;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private MeshCollider meshCollider;
     
     
     private RoadDirection roadDirection;
     private BuildingModel currentBuilding;
     private BuildingState currentBuildingState;
 
-    private Vector3Int startPos; 
+    private Vector3 startPos; 
     private Vector2Int endPosition;
     private Vector2Int constructionDirection;
 
@@ -36,11 +38,12 @@ public class RoadManager : MonoBehaviour
     private GameObject topArrow;
     private GameObject bottomArrow;
 
+
     public void OnEnable()
     {
         buildingUI.OnBuildingSelected += OnRoadStartBuilding;
-        placement.buildingMoved += GetStartPosition;
-       
+        input.OnFingerBegan += OnArrowTouchStart;
+        input.OnFingerMoved += OnArrowDragged;
     }
 
     public void Awake()
@@ -56,7 +59,7 @@ public class RoadManager : MonoBehaviour
                 break;
 
             case BuildingState.PLACING:
-               
+                GetStartPosition();
                 break;
 
             case BuildingState.DRAGING:
@@ -131,10 +134,47 @@ public class RoadManager : MonoBehaviour
         }
     }
 
+    public void OnArrowTouchStart(Vector2 pos) //Prüfen welcher Pfeil getroffen wurde und dann seine Richtung speichern
+    {
+        if (placement.currentPreview == null)
+        {
+            return;
+        }
+
+        Ray ray = mainCamera.ScreenPointToRay(pos);
+        RaycastHit[] hits = Physics.RaycastAll(ray, Mathf.Infinity);
+        GameObject hitChild = null;
+
+        foreach (RaycastHit hit in hits)
+        {
+            if (hit.collider.transform.IsChildOf(placement.currentPreview.transform))
+            {
+                hitChild = hit.collider.gameObject;
+                currentBuildingState = BuildingState.DRAGING;
+                break;
+            }
+        }
+        ArrowDirection currentArrow = hitChild.GetComponent<ArrowDirection>();
+        constructionDirection = currentArrow.direction;
+    }
+
+    public void OnArrowDragged(Vector2 pos)
+    {
+        startPos = placement.currentPreview.transform.position;
+        Ray ray = mainCamera.ScreenPointToRay(pos);
+
+        if(meshCollider.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity))
+        {
+            (int x, int z) = grid.WorldToGridPosition(hitInfo.point);
+        }
+
+    }
+
     public void OnDisable()
     {
         buildingUI.OnBuildingSelected -= OnRoadStartBuilding;
-        placement.buildingMoved -= GetStartPosition;
+        input.OnFingerMoved -= OnArrowDragged;
+        input.OnFingerBegan -= OnArrowTouchStart;
     }
 
 
