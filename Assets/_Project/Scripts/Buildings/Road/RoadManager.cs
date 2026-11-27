@@ -26,7 +26,7 @@ public class RoadManager : MonoBehaviour
     private BuildingModel currentBuilding;
     private BuildingState currentBuildingState;
 
-    private Vector3 startPos; 
+    private Vector2Int startPos; 
     private Vector2Int endPosition;
     private Vector2Int constructionDirection;
 
@@ -44,6 +44,7 @@ public class RoadManager : MonoBehaviour
         buildingUI.OnBuildingSelected += OnRoadStartBuilding;
         input.OnFingerBegan += OnArrowTouchStart;
         input.OnFingerMoved += OnArrowDragged;
+        input.OnFingerEnded += OnArrowRelease;
     }
 
     public void Awake()
@@ -143,31 +144,40 @@ public class RoadManager : MonoBehaviour
 
         Ray ray = mainCamera.ScreenPointToRay(pos);
         RaycastHit[] hits = Physics.RaycastAll(ray, Mathf.Infinity);
-        GameObject hitChild = null;
 
         foreach (RaycastHit hit in hits)
         {
-            if (hit.collider.transform.IsChildOf(placement.currentPreview.transform))
+            if (hit.collider.transform.IsChildOf(placement.currentPreview.transform) == true)
             {
-                hitChild = hit.collider.gameObject;
-                currentBuildingState = BuildingState.DRAGING;
-                break;
+               if (hit.collider.gameObject.TryGetComponent<ArrowDirection>(out ArrowDirection arrowDirection))
+               {
+                    constructionDirection = arrowDirection.direction;
+                    int x = grid.WorldToGridPosition(placement.currentPreview.transform.position).x;
+                    int z = grid.WorldToGridPosition(placement.currentPreview.transform.position).z;
+                    startPos = new Vector2Int(x, z);
+                    currentBuildingState = BuildingState.DRAGING;
+                    break;
+               }
             }
-        }
-        ArrowDirection currentArrow = hitChild.GetComponent<ArrowDirection>();
-        constructionDirection = currentArrow.direction;
+        }  
     }
 
     public void OnArrowDragged(Vector2 pos)
     {
-        startPos = placement.currentPreview.transform.position;
         Ray ray = mainCamera.ScreenPointToRay(pos);
 
         if(meshCollider.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity))
         {
             (int x, int z) = grid.WorldToGridPosition(hitInfo.point);
+            
         }
+    }
 
+    public void OnArrowRelease(Vector2 pos)
+    {
+
+
+        endPosition = new Vector2Int(Mathf.RoundToInt(pos.x), Mathf.RoundToInt(pos.y));
     }
 
     public void OnDisable()
@@ -175,6 +185,7 @@ public class RoadManager : MonoBehaviour
         buildingUI.OnBuildingSelected -= OnRoadStartBuilding;
         input.OnFingerMoved -= OnArrowDragged;
         input.OnFingerBegan -= OnArrowTouchStart;
+        input.OnFingerEnded -= OnArrowRelease;
     }
 
 
